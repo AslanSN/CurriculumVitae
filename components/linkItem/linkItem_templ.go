@@ -22,11 +22,6 @@ func formatClasses(classes interface{}) string {
 		deliberatedClasses = "link-ghost md:px-3 p-0"
 	}
 
-	// if classes.(type) != string {
-	// deliberatedClasses = classes
-	// } else {
-	// 	deliberatedClasses = "link-ghost"
-	// }
 	return defaultClasses + " " + deliberatedClasses
 }
 
