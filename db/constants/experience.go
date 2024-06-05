@@ -1,7 +1,7 @@
 package constants
 
 import (
-	"github.com/AslanSN/CV/db"
+	"github.com/AslanSN/CurriculumVitae/db"
 	"github.com/a-h/templ"
 )
 

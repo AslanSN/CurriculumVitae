@@ -6,16 +6,16 @@ import (
 	"os"
 	"path"
 
-	"github.com/AslanSN/CV/db/constants"
-	"github.com/AslanSN/CV/views"
+	"github.com/AslanSN/CurriculumVitae/db/constants"
+	"github.com/AslanSN/CurriculumVitae/views"
 	"github.com/labstack/echo/v4"
 )
 
 type HomeHandler struct {
 }
 
-func (h HomeHandler) CreateHTMLFiles(){
-		rootPath := "public"
+func (h HomeHandler) CreateHTMLFiles() {
+	rootPath := "public"
 	name := path.Join(rootPath, "index.html")
 	f, err := os.Create(name)
 	if err != nil {

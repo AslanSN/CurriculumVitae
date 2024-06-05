@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/AslanSN/CV/views"
+	"github.com/AslanSN/CurriculumVitae/views"
 	"github.com/a-h/templ"
 )
 

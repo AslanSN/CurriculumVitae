@@ -10,7 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-import "github.com/AslanSN/CV/db/constants"
+import "github.com/AslanSN/CurriculumVitae/db/constants"
 
 func AboutMe() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {

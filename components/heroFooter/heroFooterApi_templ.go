@@ -11,10 +11,10 @@ import "io"
 import "bytes"
 
 // import (
-// 	linkItem "github.com/AslanSN/CV/components/linkItem"
-// 	iconLabel "github.com/AslanSN/CV/components/iconLabel"
-// 	"github.com/AslanSN/CV/helpers"
-// 	"github.com/AslanSN/CV/db/constants"
+// 	linkItem "github.com/AslanSN/CurriculumVitae/components/linkItem"
+// 	iconLabel "github.com/AslanSN/CurriculumVitae/components/iconLabel"
+// 	"github.com/AslanSN/CurriculumVitae/helpers"
+// 	"github.com/AslanSN/CurriculumVitae/db/constants"
 // 	"errors"
 // )
 

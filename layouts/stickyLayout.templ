@@ -1,5 +1,14 @@
 package layouts
 
-templ StickyLayout() {
+import (
+	// dropdown "github.com/AslanSN/CurriculumVitae/components/dropDownButton"
+	navbar "github.com/AslanSN/CurriculumVitae/components/navbar"
+)
 
+templ StickyLayout() {
+	<div class="w-full relative">
+		@navbar.NavBar()
+		// @dropdown.DropDownButton("", "top-20")
+		{ children... }
+	</div>
 }

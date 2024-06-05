@@ -11,9 +11,9 @@ import "io"
 import "bytes"
 
 import (
-	iconLabel "github.com/AslanSN/CV/components/iconLabel"
-	linkItem "github.com/AslanSN/CV/components/linkItem"
-	"github.com/AslanSN/CV/db/constants"
+	iconLabel "github.com/AslanSN/CurriculumVitae/components/iconLabel"
+	linkItem "github.com/AslanSN/CurriculumVitae/components/linkItem"
+	"github.com/AslanSN/CurriculumVitae/db/constants"
 )
 
 func Skills() templ.Component {

@@ -1,8 +1,8 @@
 package constants
 
 import (
-	iconLabels "github.com/AslanSN/CV/components/iconLabel"
-	"github.com/AslanSN/CV/db"
+	iconLabels "github.com/AslanSN/CurriculumVitae/components/iconLabel"
+	"github.com/AslanSN/CurriculumVitae/db"
 	"github.com/a-h/templ"
 )
 

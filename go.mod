@@ -1,4 +1,4 @@
-module github.com/AslanSN/CV
+module github.com/AslanSN/CurriculumVitae
 
 go 1.22.2
 

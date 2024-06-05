@@ -1,0 +1,59 @@
+package components
+
+import "github.com/AslanSN/CurriculumVitae/components/iconComponents"
+import "github.com/AslanSN/CurriculumVitae/components/downloadItem"
+
+templ NavBar() {
+	<div class="navbar navbar-sticky navbar-glass">
+		<div class="navbar-start">
+			<div class="navbar-item btn cursor-pointer">
+				<div class="dropdwon-container justify-center">
+					<div class="dropdwon dropdown-hover flex row-auto">
+						<label tabindex="0" class="flex flex-row flex-nowrap items-center align-middle">
+							<span>
+								DOWNLOAD CV
+							</span>
+							<span>
+								@icons.DropdownIcon("currentColor")
+							</span>
+						</label>
+						<div class="dropdown-menu dropdown-menu-bottom-right mt-10">
+							@components.DownloadItem("ENGLISH", "/static/cv/AlanStaubNegro-CV-EN-24.pdf", "", "")
+							@components.DownloadItem("SPANISH", "/static/cv/AlanStaubNegro-CV-ES-24.pdf", "-1", "")
+							@components.DownloadItem("FRENCH", "#", "-1", "")
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="navbar-center">
+			<a class="navbar-item">ABOUT ME</a>
+			<a class="navbar-item">SKILLS</a>
+			<a class="navbar-item">PORTFOLIO</a>
+		</div>
+		<div class="navbar-end">
+			<div class="navbar-item btn cursor-pointer">
+				<div class="dropdwon-container justify-center">
+					<div class="dropdwon dropdown-hover flex row-auto">
+						<label tabindex="0" class="flex flex-row flex-nowrap items-center align-middle">
+							<span>
+								LANGUAGE
+							</span>
+							<span>
+								@icons.DropdownIcon("currentColor")
+							</span>
+						</label>
+						<div class="dropdown-menu dropdown-menu-bottom-center mt-10">
+							<a class="dropdown-item text-sm">
+								ENGLISH
+							</a>
+							<a tabindex="-1" class="dropdown-item text-sm">ESPAÑOL</a>
+							<a tabindex="-1" class="dropdown-item text-sm">FRANÇAIS</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="navbar-item">CONTACT ME</a>
+		</div>
+	</div>
+}

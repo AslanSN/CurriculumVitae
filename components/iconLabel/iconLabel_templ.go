@@ -11,7 +11,7 @@ import "io"
 import "bytes"
 
 import (
-	"github.com/AslanSN/CV/helpers"
+	"github.com/AslanSN/CurriculumVitae/helpers"
 )
 
 type IconLabelParams struct {

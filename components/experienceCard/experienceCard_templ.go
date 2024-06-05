@@ -11,9 +11,9 @@ import "io"
 import "bytes"
 
 import (
-	linkItem "github.com/AslanSN/CV/components/linkItem"
-	list "github.com/AslanSN/CV/components/list"
-	"github.com/AslanSN/CV/db/constants"
+	linkItem "github.com/AslanSN/CurriculumVitae/components/linkItem"
+	list "github.com/AslanSN/CurriculumVitae/components/list"
+	"github.com/AslanSN/CurriculumVitae/db/constants"
 )
 
 func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {

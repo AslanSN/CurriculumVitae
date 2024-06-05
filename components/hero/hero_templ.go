@@ -11,8 +11,8 @@ import "io"
 import "bytes"
 
 import (
-	aslanImage "github.com/AslanSN/CV/components/aslanImage"
-	heroFooter "github.com/AslanSN/CV/components/heroFooter"
+	aslanImage "github.com/AslanSN/CurriculumVitae/components/aslanImage"
+	heroFooter "github.com/AslanSN/CurriculumVitae/components/heroFooter"
 )
 
 func Hero() templ.Component {

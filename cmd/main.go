@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 
-	"github.com/AslanSN/CV/handlers"
-	"github.com/AslanSN/CV/helpers"
-	handler "github.com/AslanSN/CV/vercel"
+	"github.com/AslanSN/CurriculumVitae/handlers"
+	"github.com/AslanSN/CurriculumVitae/helpers"
+	handler "github.com/AslanSN/CurriculumVitae/vercel"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

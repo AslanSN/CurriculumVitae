@@ -11,8 +11,8 @@ import "io"
 import "bytes"
 
 import (
-	listItem "github.com/AslanSN/CV/components/listItem"
-	"github.com/AslanSN/CV/helpers"
+	listItem "github.com/AslanSN/CurriculumVitae/components/listItem"
+	"github.com/AslanSN/CurriculumVitae/helpers"
 )
 
 func List(label string, slice []string) templ.Component {
