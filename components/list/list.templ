@@ -1,0 +1,15 @@
+package components
+
+import (
+	"github.com/AslanSN/CV/helpers"
+	listItem "github.com/AslanSN/CV/components/listItem"
+)
+
+templ List(label string, slice []string) {
+	<label class="text-xl underline" for={ helpers.Identity(label) }>{ label }</label>
+	<ul class="list-disc list-inside">
+		for _, item := range slice {
+			@listItem.ListItem(item)
+		}
+	</ul>
+}

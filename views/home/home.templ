@@ -1,0 +1,36 @@
+package views
+
+import (
+	hero "github.com/AslanSN/CV/components/hero"
+	aboutMe "github.com/AslanSN/CV/components/aboutMe"
+	skills "github.com/AslanSN/CV/components/skills"
+	experienceCard "github.com/AslanSN/CV/components/experienceCard"
+	"github.com/AslanSN/CV/db/constants"
+)
+
+templ Home() {
+	<div class="sticky flex h-screen flex-row gap-4 overflow-y-auto rounded-lg sm:overflow-x-hidden">
+		<main class="flex w-full flex-col px-8 sm:px-20">
+			<div class="flex w-full flex-row flex-wrap gap-4">
+				@hero.Hero()
+				<section class="w-full grid grid-flow-row lg:grid-flow-col m-0 mb-8 gap-16 justify-items-start items-center justify-center lg:content-between">
+					@aboutMe.AboutMe()
+					@skills.Skills()
+				</section>
+				<section class="w-full mb-10 ">
+					<div class="flex flex-col">
+						<h1 class="text-5xl mb-6 w-fit font-bold">
+							EXPERIENCE
+						</h1>
+						<section class="flex flex-row flex-wrap flow justify-between">
+							for _,workplace := range constants.Workplaces {
+								@experienceCard.ExperienceCard(workplace)
+							}
+						</section>
+					</div>
+				</section>
+			</div>
+			<footer></footer>
+		</main>
+	</div>
+}

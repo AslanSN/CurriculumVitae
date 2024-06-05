@@ -1,0 +1,26 @@
+package components
+
+import (
+	"github.com/AslanSN/CV/helpers"
+)
+
+type IconLabelParams struct {
+	Id, Label, Source, Alternative string
+}
+
+templ IconLabel(params IconLabelParams) {
+	<span class="flex flex-row items-center px-2 py-3">
+		<label
+			for={ helpers.Identity(params.Id) }
+			class="cursor-pointer text-xl md:text-2xl me-2"
+		>
+			{ params.Label }
+		</label>
+		<img
+			class="w-auto h-8 cursor-pointer"
+			id={ params.Id }
+			src={ params.Source }
+			alt={ params.Alternative }
+		/>
+	</span>
+}
