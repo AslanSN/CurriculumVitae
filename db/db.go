@@ -1,3 +1,3 @@
 package db
 
-var RepoURL = "https://raw.githubusercontent.com/AslanSN/CV/master/assets"
+var RepoURL = "https://raw.githubusercontent.com/AslanSN/CurriculumVitae/master/assets"
