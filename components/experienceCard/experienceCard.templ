@@ -39,14 +39,14 @@ templ ExperienceCard(workplace constants.ExperienceStruct) {
 					{ workplace.RangeDate }
 				</span>
 			</div>
-			<section class="flex flex-row justify-between text-content2">
+			<section class="grid grid-cols-2 w-full text-content2">
 				<div>
-					<div class="px-2 w-max">
+					<div class="px-2">
 						@list.List("Techs", workplace.Techs)
 					</div>
 				</div>
 				<div>
-					<div class="px-2 max-w-48">
+					<div class="px-2">
 						@list.List("Duties", workplace.Responsabilities)
 					</div>
 				</div>
