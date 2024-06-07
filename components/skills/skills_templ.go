@@ -29,7 +29,7 @@ func Skills() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"flex flex-col items-start h-full\"><h1 class=\"text-5xl mb-6 w-fit font-bold\">SKILLS</h1><ul class=\"xl:grid xl:auto-cols-min xl:grid-cols-3 xl:items-center flex flex-col sm:flex-row flex-wrap w-fit items-baseline h-fit \">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"skills\" class=\"flex flex-col items-start h-full\"><h1 class=\"text-5xl mb-6 w-fit font-bold\">SKILLS</h1><ul class=\"xl:grid xl:auto-cols-min xl:grid-cols-3 xl:items-center flex flex-col sm:flex-row flex-wrap w-fit items-baseline h-fit \">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -41,7 +41,7 @@ func Skills() templ.Component {
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(skill.IconLabelParams.Id)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/skills/skills.templ`, Line: 17, Col: 38}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/skills/skills.templ`, Line: 16, Col: 38}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {

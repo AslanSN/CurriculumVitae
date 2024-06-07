@@ -50,7 +50,7 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div></div></div><div class=\"navbar-center\"><a class=\"navbar-item\">ABOUT ME</a> <a class=\"navbar-item\">SKILLS</a> <a class=\"navbar-item\">PORTFOLIO</a></div><div class=\"navbar-end\"><div class=\"navbar-item btn cursor-pointer\"><div class=\"dropdwon-container justify-center\"><div class=\"dropdwon dropdown-hover flex row-auto\"><label tabindex=\"0\" class=\"flex flex-row flex-nowrap items-center align-middle\"><span>LANGUAGE</span> <span>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div></div></div><div class=\"navbar-center\"><a class=\"navbar-item\" href=\"#hero\">HOME</a> <a class=\"navbar-item\" href=\"#aboutMe\">ABOUT ME</a> <a class=\"navbar-item\" href=\"#skills\">SKILLS</a> <a class=\"navbar-item\" href=\"#experience\">PORTFOLIO</a></div><div class=\"navbar-end\"><div class=\"navbar-item btn cursor-pointer\"><div class=\"dropdwon-container justify-center\"><div class=\"dropdwon dropdown-hover flex row-auto\"><label tabindex=\"0\" class=\"flex flex-row flex-nowrap items-center align-middle\"><span>LANGUAGE</span> <span>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

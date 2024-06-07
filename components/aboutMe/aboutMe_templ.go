@@ -25,7 +25,7 @@ func AboutMe() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"align-middle\"><h1 class=\"text-5xl mb-6 w-fit font-bold\">ABOUT ME</h1><p class=\"text-lg sm:text-2xl lg:text-4xl\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"aboutMe\" class=\"align-middle\"><h1 class=\"text-5xl mb-6 w-fit font-bold\">ABOUT ME</h1><p class=\"text-lg sm:text-2xl lg:text-4xl\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
