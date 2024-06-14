@@ -1,15 +1,15 @@
 package views
 
 import (
-	hero "github.com/AslanSN/CurriculumVitae/components/hero"
-	aboutMe "github.com/AslanSN/CurriculumVitae/components/aboutMe"
-	skills "github.com/AslanSN/CurriculumVitae/components/skills"
-	experienceCard "github.com/AslanSN/CurriculumVitae/components/experienceCard"
+	hero "github.com/AslanSN/CurriculumVitae/components"
+	aboutMe "github.com/AslanSN/CurriculumVitae/components"
+	skills "github.com/AslanSN/CurriculumVitae/components"
+	experienceCard "github.com/AslanSN/CurriculumVitae/components"
 	"github.com/AslanSN/CurriculumVitae/db/constants"
 	"github.com/AslanSN/CurriculumVitae/layouts"
 )
 
-templ Home() {
+templ home() {
 	<div class="sticky flex h-screen flex-row gap-4 overflow-y-auto rounded-lg sm:overflow-x-hidden">
 		<main class="flex w-full flex-col px-8 sm:px-20">
 			@layouts.StickyLayout() {

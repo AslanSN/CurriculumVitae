@@ -1,13 +1,13 @@
 package constants
 
 import (
-	iconLabel "github.com/AslanSN/CurriculumVitae/components/iconLabel"
 	"github.com/AslanSN/CurriculumVitae/db"
+	"github.com/AslanSN/CurriculumVitae/helpers"
 	"github.com/a-h/templ"
 )
 
 type SocialMediaData struct {
-	iconLabel.IconLabelParams
+	helpers.IconLabelParams
 	SocialMediaLink templ.SafeURL
 }
 
@@ -21,7 +21,7 @@ var AslanImageAlt string = "Foto en primer plano de Alan Staub Negro sonriendo"
 
 var (
 	LinkedIn = SocialMediaData{
-		IconLabelParams: iconLabel.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "linkedIn",
 			Label:       "LinkedIn",
 			Source:      db.RepoURL + "/icons/linkedin.svg",
@@ -30,7 +30,7 @@ var (
 		SocialMediaLink: "https://www.linkedin.com/in/alanstaubnegro/",
 	}
 	Github = SocialMediaData{
-		IconLabelParams: iconLabel.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "github",
 			Label:       "GitHub",
 			Source:      db.RepoURL + "/icons/github.svg",
@@ -39,7 +39,7 @@ var (
 		SocialMediaLink: "https://github.com/AslanSN",
 	}
 	X = SocialMediaData{
-		IconLabelParams: iconLabel.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "x",
 			Label:       "X",
 			Source:      db.RepoURL + "/icons/x-social-media-round-icon.svg",

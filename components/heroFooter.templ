@@ -1,8 +1,6 @@
 package components
 
 import (
-	linkItem "github.com/AslanSN/CurriculumVitae/components/linkItem"
-	iconLabel "github.com/AslanSN/CurriculumVitae/components/iconLabel"
 	"github.com/AslanSN/CurriculumVitae/db/constants"
 )
 
@@ -13,8 +11,8 @@ templ HeroFooter() {
 		>
 			for _, socialMedia := range constants.SocialMediaList {
 				<li class="mx-2" key={ socialMedia.IconLabelParams.Id }>
-					@linkItem.LinkItem(socialMedia.SocialMediaLink, nil) {
-						@iconLabel.IconLabel(socialMedia.IconLabelParams)
+					@LinkItem(socialMedia.SocialMediaLink, nil) {
+						@IconLabel(socialMedia.IconLabelParams)
 					}
 				</li>
 			}

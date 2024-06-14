@@ -11,12 +11,10 @@ import "io"
 import "bytes"
 
 import (
-	iconLabel "github.com/AslanSN/CurriculumVitae/components/iconLabel"
-	linkItem "github.com/AslanSN/CurriculumVitae/components/linkItem"
 	"github.com/AslanSN/CurriculumVitae/db/constants"
 )
 
-func Skills() templ.Component {
+func HeroFooter() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -29,25 +27,25 @@ func Skills() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"skills\" class=\"flex flex-col items-start h-full\"><h1 class=\"text-5xl mb-6 w-fit font-bold\">SKILLS</h1><ul class=\"xl:grid xl:auto-cols-min xl:grid-cols-3 xl:items-center flex flex-col sm:flex-row flex-wrap w-fit items-baseline h-fit \">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer><ul class=\"flex flex-row flex-wrap h-min w-full  items-baseline\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		for _, skill := range constants.SkillsList {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li key=\"")
+		for _, socialMedia := range constants.SocialMediaList {
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"mx-2\" key=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var2 string
-			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(skill.IconLabelParams.Id)
+			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(socialMedia.IconLabelParams.Id)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/skills/skills.templ`, Line: 16, Col: 38}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/heroFooter.templ`, Line: 13, Col: 57}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" class=\"m-2 sm:mx-0\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -57,7 +55,7 @@ func Skills() templ.Component {
 					templ_7745c5c3_Buffer = templ.GetBuffer()
 					defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 				}
-				templ_7745c5c3_Err = iconLabel.IconLabel(skill.IconLabelParams).Render(ctx, templ_7745c5c3_Buffer)
+				templ_7745c5c3_Err = IconLabel(socialMedia.IconLabelParams).Render(ctx, templ_7745c5c3_Buffer)
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -66,7 +64,7 @@ func Skills() templ.Component {
 				}
 				return templ_7745c5c3_Err
 			})
-			templ_7745c5c3_Err = linkItem.LinkItem(skill.Link, nil).Render(templ.WithChildren(ctx, templ_7745c5c3_Var3), templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = LinkItem(socialMedia.SocialMediaLink, nil).Render(templ.WithChildren(ctx, templ_7745c5c3_Var3), templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -75,7 +73,7 @@ func Skills() templ.Component {
 				return templ_7745c5c3_Err
 			}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></footer>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -2,8 +2,6 @@ package components
 
 import (
 	"github.com/AslanSN/CurriculumVitae/db/constants"
-	linkItem "github.com/AslanSN/CurriculumVitae/components/linkItem"
-	iconLabel "github.com/AslanSN/CurriculumVitae/components/iconLabel"
 )
 
 templ Skills() {
@@ -14,8 +12,8 @@ templ Skills() {
 		<ul class="xl:grid xl:auto-cols-min xl:grid-cols-3 xl:items-center flex flex-col sm:flex-row flex-wrap w-fit items-baseline h-fit ">
 			for _, skill := range constants.SkillsList {
 				<li key={ skill.IconLabelParams.Id } class="m-2 sm:mx-0">
-					@linkItem.LinkItem(skill.Link, nil) {
-						@iconLabel.IconLabel(skill.IconLabelParams)
+					@LinkItem(skill.Link, nil) {
+						@IconLabel(skill.IconLabelParams)
 					}
 				</li>
 			}

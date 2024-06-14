@@ -10,11 +10,6 @@ import "context"
 import "io"
 import "bytes"
 
-import (
-	aslanImage "github.com/AslanSN/CurriculumVitae/components/aslanImage"
-	heroFooter "github.com/AslanSN/CurriculumVitae/components/heroFooter"
-)
-
 func Hero() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
@@ -32,7 +27,7 @@ func Hero() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = heroFooter.HeroFooter().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = HeroFooter().Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -40,7 +35,7 @@ func Hero() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = aslanImage.AslanImage().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = AslanImage().Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

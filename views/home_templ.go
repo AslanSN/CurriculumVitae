@@ -11,15 +11,15 @@ import "io"
 import "bytes"
 
 import (
-	aboutMe "github.com/AslanSN/CurriculumVitae/components/aboutMe"
-	experienceCard "github.com/AslanSN/CurriculumVitae/components/experienceCard"
-	hero "github.com/AslanSN/CurriculumVitae/components/hero"
-	skills "github.com/AslanSN/CurriculumVitae/components/skills"
+	aboutMe "github.com/AslanSN/CurriculumVitae/components"
+	experienceCard "github.com/AslanSN/CurriculumVitae/components"
+	hero "github.com/AslanSN/CurriculumVitae/components"
+	skills "github.com/AslanSN/CurriculumVitae/components"
 	"github.com/AslanSN/CurriculumVitae/db/constants"
 	"github.com/AslanSN/CurriculumVitae/layouts"
 )
 
-func Home() templ.Component {
+func home() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {

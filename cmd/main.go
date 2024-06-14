@@ -14,25 +14,20 @@ import (
 func main() {
 	e := echo.New()
 
-	homeHandler := handlers.HomeHandler{}
-	// homeHandler.CreateHTMLFiles()
-
+	// Middlewares
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
+	// Vercel connection
 	e.GET("/", echo.WrapHandler(http.HandlerFunc(handler.Handler)))
 
-	e.GET(helpers.Api("/info"), homeHandler.HandleShowInfo)
-	e.GET(helpers.Api("/aboutMe"), homeHandler.HandleShowAboutMe)
-	e.GET(helpers.Api("/experience"), homeHandler.HandleShowExperience)
-	e.GET(helpers.Api("/skills"), homeHandler.HandleShowSkills)
+	// Routes
+	registerStaticRoutes(e)
+	registerDBRoutes(e)
 
-	e.Static("/static", "assets")
-	e.Static("/icons", "assets/icons")
-	e.Static("/images", "assets/images")
-	e.Static("/assets/js", "assets/js")
-
+	// Vercel Connection
 	http.Handle("/", e)
 
+	// Setup localhost port
 	e.Logger.Fatal(e.Start(":2340"))
 }

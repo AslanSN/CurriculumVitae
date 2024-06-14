@@ -11,7 +11,6 @@ import "io"
 import "bytes"
 
 import (
-	listItem "github.com/AslanSN/CurriculumVitae/components/listItem"
 	"github.com/AslanSN/CurriculumVitae/helpers"
 )
 
@@ -35,7 +34,7 @@ func List(label string, slice []string) templ.Component {
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(helpers.Identity(label))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/list/list.templ`, Line: 9, Col: 63}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/list.templ`, Line: 8, Col: 63}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
@@ -48,7 +47,7 @@ func List(label string, slice []string) templ.Component {
 		var templ_7745c5c3_Var3 string
 		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(label)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/list/list.templ`, Line: 9, Col: 73}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/list.templ`, Line: 8, Col: 73}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 		if templ_7745c5c3_Err != nil {
@@ -59,7 +58,7 @@ func List(label string, slice []string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		for _, item := range slice {
-			templ_7745c5c3_Err = listItem.ListItem(item).Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = ListItem(item).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

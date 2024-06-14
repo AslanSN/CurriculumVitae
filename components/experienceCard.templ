@@ -1,9 +1,7 @@
-package card
+package components
 
 import (
 	"github.com/AslanSN/CurriculumVitae/db/constants"
-	linkItem "github.com/AslanSN/CurriculumVitae/components/linkItem"
-	list "github.com/AslanSN/CurriculumVitae/components/list"
 )
 
 templ ExperienceCard(workplace constants.ExperienceStruct) {
@@ -16,7 +14,7 @@ templ ExperienceCard(workplace constants.ExperienceStruct) {
 		<article class="card-body sm:w-96 mx-4 first:ms-0">
 			<div class="flex flex-col">
 				if workplace.Link != "" {
-					@linkItem.LinkItem(workplace.Link, "link-success link-underline px-0 md:px-0") {
+					@LinkItem(workplace.Link, "link-success link-underline px-0 md:px-0") {
 						<h3 class="card-header text-2xl">
 							{ 	workplace.Company }
 						</h3>
@@ -42,17 +40,17 @@ templ ExperienceCard(workplace constants.ExperienceStruct) {
 			<section class="grid grid-cols-2 w-full text-content2">
 				<div>
 					<div class="px-2">
-						@list.List("Techs", workplace.Techs)
+						@List("Techs", workplace.Techs)
 					</div>
 				</div>
 				<div>
 					<div class="px-2">
-						@list.List("Duties", workplace.Responsabilities)
+						@List("Duties", workplace.Responsabilities)
 					</div>
 				</div>
 			</section>
 			<footer class="px-2 card-footer h-full flex flex-col items-start justify-center text-content2">
-				@list.List("Extra", workplace.Extra)
+				@List("Extra", workplace.Extra)
 			</footer>
 		</article>
 	</div>

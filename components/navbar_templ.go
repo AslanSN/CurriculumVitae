@@ -11,7 +11,6 @@ import "io"
 import "bytes"
 
 import "github.com/AslanSN/CurriculumVitae/components/iconComponents"
-import "github.com/AslanSN/CurriculumVitae/components/downloadItem"
 
 func NavBar() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
@@ -38,19 +37,19 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = components.DownloadItem("ENGLISH", "/static/cv/AlanStaubNegro-CV-EN-24.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("ENGLISH", "/static/cv/AlanStaubNegro-CV-EN-24.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = components.DownloadItem("SPANISH", "/static/cv/AlanStaubNegro-CV-ES-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("SPANISH", "/static/cv/AlanStaubNegro-CV-ES-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = components.DownloadItem("FRENCH", "#", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("FRENCH", "#", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div></div></div><div class=\"navbar-center\"><a class=\"navbar-item\" href=\"#hero\">HOME</a> <a class=\"navbar-item\" href=\"#aboutMe\">ABOUT ME</a> <a class=\"navbar-item\" href=\"#skills\">SKILLS</a> <a class=\"navbar-item\" href=\"#experience\">PORTFOLIO</a></div><div class=\"navbar-end\"><div class=\"navbar-item btn cursor-pointer\"><div class=\"dropdwon-container justify-center\"><div class=\"dropdwon dropdown-hover flex row-auto\"><label tabindex=\"0\" class=\"flex flex-row flex-nowrap items-center align-middle\"><span>LANGUAGE</span> <span>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div></div></div><div class=\"navbar-center\"><a class=\"navbar-item\" href=\"#hero\">HOME</a> <a class=\"navbar-item\" href=\"#aboutMe\">ABOUT ME</a> <a class=\"navbar-item\" href=\"#skills\">SKILLS</a> <a class=\"navbar-item\" href=\"#experience\">EXPERIENCE</a></div><div class=\"navbar-end\"><div class=\"navbar-item btn cursor-pointer\"><div class=\"dropdwon-container justify-center\"><div class=\"dropdwon dropdown-hover flex row-auto\"><label tabindex=\"0\" class=\"flex flex-row flex-nowrap items-center align-middle\"><span>LANGUAGE</span> <span>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

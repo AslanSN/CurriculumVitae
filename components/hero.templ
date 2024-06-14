@@ -1,9 +1,5 @@
 package components
 
-import (
-	aslanImage "github.com/AslanSN/CurriculumVitae/components/aslanImage"
-	heroFooter "github.com/AslanSN/CurriculumVitae/components/heroFooter"
-)
 
 templ Hero() {
 	<section id="hero" class="flex flex-col md:flex md:flex-row  align-middle w-full text-6xl items-center md:mt-16 md:ms-8 md:me-8 md:p-8 md:mb-4 pb-0 backdrop-blur-sm rounded-lg justify-evenly">
@@ -19,8 +15,8 @@ templ Hero() {
 					</i>
 				</h3>
 			</h1>
-			@heroFooter.HeroFooter()
+			@HeroFooter()
 		</div>
-		@aslanImage.AslanImage()
+		@AslanImage()
 	</section>
 }

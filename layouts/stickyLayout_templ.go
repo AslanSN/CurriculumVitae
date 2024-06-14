@@ -11,8 +11,8 @@ import "io"
 import "bytes"
 
 import (
-	// dropdown "github.com/AslanSN/CurriculumVitae/components/dropDownButton"
-	navbar "github.com/AslanSN/CurriculumVitae/components/navbar"
+	// dropdown "github.com/AslanSN/CurriculumVitae/components"
+	navbar "github.com/AslanSN/CurriculumVitae/components"
 )
 
 func StickyLayout() templ.Component {

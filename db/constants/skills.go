@@ -1,13 +1,13 @@
 package constants
 
 import (
-	iconLabels "github.com/AslanSN/CurriculumVitae/components/iconLabel"
 	"github.com/AslanSN/CurriculumVitae/db"
+	"github.com/AslanSN/CurriculumVitae/helpers"
 	"github.com/a-h/templ"
 )
 
 type Skill struct {
-	iconLabels.IconLabelParams
+	helpers.IconLabelParams
 	Link templ.SafeURL
 }
 
@@ -23,7 +23,7 @@ var SkillsList = []Skill{
 
 var (
 	JavaScript = Skill{
-		IconLabelParams: iconLabels.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "javaScript",
 			Label:       "JavaScript",
 			Alternative: "JavaScript Icon, white J S letters, yellow background",
@@ -32,7 +32,7 @@ var (
 		Link: "https://es.wikipedia.org/wiki/JavaScript",
 	}
 	TypeScript = Skill{
-		IconLabelParams: iconLabels.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "typeScript",
 			Label:       "TypeScript",
 			Alternative: "TypeScript Icon, white T S letters, blue background",
@@ -41,7 +41,7 @@ var (
 		Link: "https://www.typescriptlang.org/",
 	}
 	React = Skill{
-		IconLabelParams: iconLabels.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "react",
 			Label:       "React",
 			Alternative: "React Icon, an atom illustration in blue color",
@@ -50,7 +50,7 @@ var (
 		Link: "https://react.dev/",
 	}
 	Redux = Skill{
-		IconLabelParams: iconLabels.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "redux",
 			Label:       "Redux",
 			Alternative: "Redux icon, a purple triquetra with dots",
@@ -59,7 +59,7 @@ var (
 		Link: "https://redux.js.org/",
 	}
 	TanStack = Skill{
-		IconLabelParams: iconLabels.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "reactQuery",
 			Label:       `TanStack Query`,
 			Alternative: "TanStack query old icon that is as a flower with yellow center and red petals",
@@ -68,7 +68,7 @@ var (
 		Link: "https://tanstack.com/query/latest/docs/framework/react/overview",
 	}
 	AntDesign = Skill{
-		IconLabelParams: iconLabels.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "antD",
 			Label:       "Ant Design",
 			Alternative: "Ant design logo, a sided square with three quartes blue lines, the rest in red and a red dot at the center",
@@ -77,7 +77,7 @@ var (
 		Link: "https://ant.design/",
 	}
 	Go = Skill{
-		IconLabelParams: iconLabels.IconLabelParams{
+		IconLabelParams: helpers.IconLabelParams{
 			Id:          "go",
 			Label:       "Go",
 			Alternative: "Golang logo is the GO word in blue color",

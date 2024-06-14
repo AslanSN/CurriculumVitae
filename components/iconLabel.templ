@@ -4,11 +4,7 @@ import (
 	"github.com/AslanSN/CurriculumVitae/helpers"
 )
 
-type IconLabelParams struct {
-	Id, Label, Source, Alternative string
-}
-
-templ IconLabel(params IconLabelParams) {
+templ IconLabel(params helpers.IconLabelParams) {
 	<span class="flex flex-row items-center px-2 py-3">
 		<label
 			for={ helpers.Identity(params.Id) }
