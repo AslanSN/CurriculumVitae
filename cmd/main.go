@@ -3,8 +3,6 @@ package main
 import (
 	"net/http"
 
-	"github.com/AslanSN/CurriculumVitae/db"
-	// "github.com/AslanSN/CurriculumVitae/db/models"
 	handler "github.com/AslanSN/CurriculumVitae/vercel"
 
 	"github.com/labstack/echo/v4"
@@ -33,10 +31,6 @@ func registerStaticRoutes(e *echo.Echo) {
 }
 
 func main() {
-
-	// DB
-	db.DBconnection()
-
 	// Echo instance
 	e := echo.New()
 
