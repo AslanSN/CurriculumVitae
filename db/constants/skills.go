@@ -1,7 +1,6 @@
 package constants
 
 import (
-	"github.com/AslanSN/CurriculumVitae/db"
 	"github.com/AslanSN/CurriculumVitae/helpers"
 	"github.com/a-h/templ"
 )
@@ -27,7 +26,7 @@ var (
 			Id:          "javaScript",
 			Label:       "JavaScript",
 			Alternative: "JavaScript Icon, white J S letters, yellow background",
-			Source:      db.RepoURL + "/icons/javascript.svg",
+			Source:      helpers.RepoURL + "/icons/javascript.svg",
 		},
 		Link: "https://es.wikipedia.org/wiki/JavaScript",
 	}
@@ -36,7 +35,7 @@ var (
 			Id:          "typeScript",
 			Label:       "TypeScript",
 			Alternative: "TypeScript Icon, white T S letters, blue background",
-			Source:      db.RepoURL + "/icons/typescript.svg",
+			Source:      helpers.RepoURL + "/icons/typescript.svg",
 		},
 		Link: "https://www.typescriptlang.org/",
 	}
@@ -45,7 +44,7 @@ var (
 			Id:          "react",
 			Label:       "React",
 			Alternative: "React Icon, an atom illustration in blue color",
-			Source:      db.RepoURL + "/icons/react.svg",
+			Source:      helpers.RepoURL + "/icons/react.svg",
 		},
 		Link: "https://react.dev/",
 	}
@@ -54,7 +53,7 @@ var (
 			Id:          "redux",
 			Label:       "Redux",
 			Alternative: "Redux icon, a purple triquetra with dots",
-			Source:      db.RepoURL + "/icons/redux.svg",
+			Source:      helpers.RepoURL + "/icons/redux.svg",
 		},
 		Link: "https://redux.js.org/",
 	}
@@ -63,7 +62,7 @@ var (
 			Id:          "reactQuery",
 			Label:       `TanStack Query`,
 			Alternative: "TanStack query old icon that is as a flower with yellow center and red petals",
-			Source:      db.RepoURL + "/icons/reactQuery.svg",
+			Source:      helpers.RepoURL + "/icons/reactQuery.svg",
 		},
 		Link: "https://tanstack.com/query/latest/docs/framework/react/overview",
 	}
@@ -81,7 +80,7 @@ var (
 			Id:          "go",
 			Label:       "Go",
 			Alternative: "Golang logo is the GO word in blue color",
-			Source:      db.RepoURL + "/icons/golang.svg",
+			Source:      helpers.RepoURL + "/icons/golang.svg",
 		},
 		Link: "https://go.dev/",
 	}

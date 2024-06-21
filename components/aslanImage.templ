@@ -1,11 +1,11 @@
 package components
 
-import "github.com/AslanSN/CurriculumVitae/db"
+import "github.com/AslanSN/CurriculumVitae/helpers"
 
 templ AslanImage() {
 	<img
 		class="w-80 h-auto m-4"
-		src={ db.RepoURL + "/images/AslanSNPhoto.png" }
+		src={ helpers.RepoURL + "/images/AslanSNPhoto.png" }
 		alt="Placeholder AslanImageAlt"
 	/>
 }

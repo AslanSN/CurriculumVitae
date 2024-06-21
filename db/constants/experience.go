@@ -1,7 +1,7 @@
 package constants
 
 import (
-	"github.com/AslanSN/CurriculumVitae/db"
+	"github.com/AslanSN/CurriculumVitae/helpers"
 	"github.com/a-h/templ"
 )
 
@@ -62,7 +62,7 @@ var (
 		Contract:         "Freelancer",
 		Position:         "Full stack",
 		RangeDate:        "12/22 - 04/23",
-		ImageSource:      db.RepoURL + "/images/memorizame.webp",
+		ImageSource:      helpers.RepoURL + "/images/memorizame.webp",
 		ImageAlternative: "memorizeme icon, three M in three different colors, one before another getting smaller",
 		Link:             "",
 		Techs: []string{
@@ -91,7 +91,7 @@ var (
 		Contract:         "Freelancer",
 		Position:         "Full stack and more",
 		RangeDate:        "02/22 - 04/23",
-		ImageSource:      db.RepoURL + "/images/integro.webp",
+		ImageSource:      helpers.RepoURL + "/images/integro.webp",
 		ImageAlternative: "integro writed in black with the o in blue",
 		Link:             "",
 		Techs: []string{
@@ -119,7 +119,7 @@ var (
 		Contract:         "Worker",
 		Position:         "Front End",
 		RangeDate:        "12/21 - 07/22",
-		ImageSource:      db.RepoURL + "/images/attlos.webp",
+		ImageSource:      helpers.RepoURL + "/images/attlos.webp",
 		ImageAlternative: "nivimu logo consists in a blue capital n with its name bellow",
 
 		Link: "https://www.youtube.com/channel/UC7hs7M2NfwWizyRIZkkOXVA",

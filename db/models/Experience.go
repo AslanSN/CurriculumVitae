@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/AslanSN/CurriculumVitae/db"
+	"github.com/AslanSN/CurriculumVitae/helpers"
 	"github.com/a-h/templ"
 	"gorm.io/gorm"
 )
@@ -9,11 +9,19 @@ import (
 type ExperienceStruct struct {
 	gorm.Model
 
-	Id                                                                                 string        `json:"id" gorm:"not null;unique_index"`
-	Language                                                                           string        `gorm:"not null"`
-	Company, CompanyType, Contract, Position, RangeDate, ImageSource, ImageAlternative string        `gorm:"not null"`
-	Link                                                                               templ.SafeURL `gorm:"not null"`
-	Techs, Responsabilities, Extra                                                     []string      `gorm:"not null"`
+	Id               string        `json:"id" gorm:"not null;unique_index"`
+	Language         string        `json:"language" gorm:"not null"`
+	Company          string        `json:"company" gorm:"not null"`
+	Position         string        `json:"position" gorm:"not null"`
+	RangeDate        string        `json:"range-date" gorm:"not null"`
+	CompanyType      string        `json:"company-type" gorm:"not null"`
+	Contract         string        `json:"contract" gorm:"not null"`
+	ImageSource      string        `json:"image-source" gorm:"not null"`
+	ImageAlternative string        `json:"image-alternative" gorm:"not null"`
+	Link             templ.SafeURL `json:"link" gorm:"not null"`
+	Techs            []string      `json:"techs" gorm:"not null"`
+	Responsabilities []string      `json:"responsabilities" gorm:"not null"`
+	Extra            []string      `json:"extra" gorm:"not null"`
 }
 
 var Workplaces = []ExperienceStruct{
@@ -71,7 +79,7 @@ var (
 		Contract:         "Freelancer",
 		Position:         "Full stack",
 		RangeDate:        "12/22 - 04/23",
-		ImageSource:      db.RepoURL + "/images/memorizame.webp",
+		ImageSource:      helpers.RepoURL + "/images/memorizame.webp",
 		ImageAlternative: "memorizeme icon, three M in three different colors, one before another getting smaller",
 		Link:             "",
 		Techs: []string{
@@ -102,7 +110,7 @@ var (
 		Contract:         "Freelancer",
 		Position:         "Full stack and more",
 		RangeDate:        "02/22 - 04/23",
-		ImageSource:      db.RepoURL + "/images/integro.webp",
+		ImageSource:      helpers.RepoURL + "/images/integro.webp",
 		ImageAlternative: "integro writed in black with the o in blue",
 		Link:             "",
 		Techs: []string{
@@ -130,7 +138,7 @@ var (
 		Contract:         "Worker",
 		Position:         "Front End",
 		RangeDate:        "12/21 - 07/22",
-		ImageSource:      db.RepoURL + "/images/attlos.webp",
+		ImageSource:      helpers.RepoURL + "/images/attlos.webp",
 		ImageAlternative: "nivimu logo consists in a blue capital n with its name bellow",
 
 		Link: "https://www.youtube.com/channel/UC7hs7M2NfwWizyRIZkkOXVA",
@@ -154,3 +162,8 @@ var (
 		},
 	}
 )
+
+func MigrateExperience(helpers *gorm.DB) error {
+	err := helpers.AutoMigrate(&ExperienceStruct{})
+	return err
+}

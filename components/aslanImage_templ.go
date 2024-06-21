@@ -10,7 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-import "github.com/AslanSN/CurriculumVitae/db"
+import "github.com/AslanSN/CurriculumVitae/helpers"
 
 func AslanImage() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
@@ -30,9 +30,9 @@ func AslanImage() templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(db.RepoURL + "/images/AslanSNPhoto.png")
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(helpers.RepoURL + "/images/AslanSNPhoto.png")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/aslanImage.templ`, Line: 8, Col: 47}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/aslanImage.templ`, Line: 8, Col: 52}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
