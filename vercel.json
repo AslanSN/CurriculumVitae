@@ -27,7 +27,7 @@
 			"dest": "/assets/js/$1"
 		},
 		{
-			"src": "/(.*)",
+			"src": "(.*)",
 			"dest": "vercel/handler.go"
 		}
 	]

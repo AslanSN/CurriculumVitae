@@ -47,5 +47,5 @@ keep_scroll = true
 
 [proxy]
 enabled = true
-proxy_port = 8080
+proxy_port = 2345
 app_port = 2340

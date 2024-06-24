@@ -1,25 +1,40 @@
-package constants
+package models
 
 import (
 	"github.com/AslanSN/CurriculumVitae/helpers"
 	"github.com/a-h/templ"
+	"gorm.io/gorm"
 )
 
 type ExperienceStruct struct {
-	Company, CompanyType, Contract, Position, RangeDate, ImageSource, ImageAlternative string
-	Link                                                                               templ.SafeURL
-	Techs, Responsabilities, Extra                                                     []string
+	gorm.Model
+
+	Id               string        `json:"id" gorm:"not null;unique_index"`
+	Language         string        `json:"language" gorm:"not null"`
+	Company          string        `json:"company" gorm:"not null"`
+	Position         string        `json:"position" gorm:"not null"`
+	RangeDate        string        `json:"range-date" gorm:"not null"`
+	CompanyType      string        `json:"company-type" gorm:"not null"`
+	Contract         string        `json:"contract" gorm:"not null"`
+	ImageSource      string        `json:"image-source" gorm:"not null"`
+	ImageAlternative string        `json:"image-alternative" gorm:"not null"`
+	Link             templ.SafeURL `json:"link" gorm:"not null"`
+	Techs            []string      `json:"techs" gorm:"not null"`
+	Responsabilities []string      `json:"responsabilities" gorm:"not null"`
+	Extra            []string      `json:"extra" gorm:"not null"`
 }
 
 var Workplaces = []ExperienceStruct{
-	Nivimu,
-	Memorizame,
-	Integro,
-	Worksut,
+	NivimuEnglish,
+	MemorizameEnglish,
+	IntegroEnglish,
+	WorksutEnglish,
 }
 
 var (
-	Nivimu = ExperienceStruct{
+	NivimuEnglish = ExperienceStruct{
+		Id:               "nivimuen",
+		Language:         "en",
 		Company:          "Nivimu",
 		CompanyType:      "Startup",
 		Contract:         "Worker",
@@ -56,7 +71,9 @@ var (
 			"Agile, Lean, Extreme Programming",
 		},
 	}
-	Memorizame = ExperienceStruct{
+	MemorizameEnglish = ExperienceStruct{
+		Id:               "memorizame",
+		Language:         "en",
 		Company:          "Memorizame",
 		CompanyType:      "Project",
 		Contract:         "Freelancer",
@@ -85,7 +102,9 @@ var (
 			"App for learning with supermemo methodology",
 		},
 	}
-	Integro = ExperienceStruct{
+	IntegroEnglish = ExperienceStruct{
+		Id:               "integro",
+		Language:         "en",
 		Company:          "Íntegro",
 		CompanyType:      "Startup",
 		Contract:         "Freelancer",
@@ -113,7 +132,7 @@ var (
 			"Thanks to my vision I have helped to create the identity of the Íntegro company",
 		},
 	}
-	Worksut = ExperienceStruct{
+	WorksutEnglish = ExperienceStruct{
 		Company:          "Attlos",
 		CompanyType:      "Startup",
 		Contract:         "Worker",
@@ -143,3 +162,8 @@ var (
 		},
 	}
 )
+
+func MigrateExperience(helpers *gorm.DB) error {
+	err := helpers.AutoMigrate(&ExperienceStruct{})
+	return err
+}

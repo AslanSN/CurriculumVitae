@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/AslanSN/CurriculumVitae/handlers"
-	"github.com/AslanSN/CurriculumVitae/helpers"
+	// "github.com/AslanSN/CurriculumVitae/db"
+	// "github.com/AslanSN/CurriculumVitae/db/models"
 	handler "github.com/AslanSN/CurriculumVitae/vercel"
 
 	"github.com/labstack/echo/v4"
@@ -12,27 +12,27 @@ import (
 )
 
 func main() {
+
+	// DB
+	// db.DBconnection()
+
+	// Echo instance
 	e := echo.New()
 
-	homeHandler := handlers.HomeHandler{}
-	// homeHandler.CreateHTMLFiles()
-
+	// Middlewares
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
+	// Vercel connection
 	e.GET("/", echo.WrapHandler(http.HandlerFunc(handler.Handler)))
 
-	e.GET(helpers.Api("/info"), homeHandler.HandleShowInfo)
-	e.GET(helpers.Api("/aboutMe"), homeHandler.HandleShowAboutMe)
-	e.GET(helpers.Api("/experience"), homeHandler.HandleShowExperience)
-	e.GET(helpers.Api("/skills"), homeHandler.HandleShowSkills)
+	// Routes
+	registerStaticRoutes(e)
+	registerDBRoutes(e)
 
-	e.Static("/static", "assets")
-	e.Static("/icons", "assets/icons")
-	e.Static("/images", "assets/images")
-	e.Static("/assets/js", "assets/js")
-
+	// Vercel Connection
 	http.Handle("/", e)
 
+	// Setup localhost port
 	e.Logger.Fatal(e.Start(":2340"))
 }

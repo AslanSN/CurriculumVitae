@@ -3,10 +3,13 @@ package handlers
 import (
 	"context"
 	"log"
+	"net/http"
 	"os"
 	"path"
 
+	"github.com/AslanSN/CurriculumVitae/db"
 	"github.com/AslanSN/CurriculumVitae/db/constants"
+	"github.com/AslanSN/CurriculumVitae/db/models"
 	"github.com/AslanSN/CurriculumVitae/views"
 	"github.com/labstack/echo/v4"
 )
@@ -37,7 +40,14 @@ func (h HomeHandler) HandleShowInfo(c echo.Context) error {
 }
 
 func (h HomeHandler) HandleShowExperience(c echo.Context) error {
-	return show(c, constants.Workplaces)
+	var experiences []models.ExperienceStruct
+	result := db.DB.Find(&experiences)
+	if result.Error != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{
+			"error": result.Error.Error(),
+		})
+	}
+	return c.JSON(http.StatusOK, experiences)
 }
 
 func (h HomeHandler) HandleShowAboutMe(c echo.Context) error {
