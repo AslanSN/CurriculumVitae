@@ -8,7 +8,6 @@
 			}
 		}
 	],
-	"functions": {},
 	"routes": [
 		{
 			"src": "/assets/?(.*)",
