@@ -2,21 +2,34 @@ package components
 
 import (
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/components/iconComponents"
 )
 
 templ IconLabel(params helpers.IconLabelParams) {
 	<span class="flex flex-row items-center px-2 py-3">
-		<label
-			for={ helpers.Identity(params.Id) }
-			class="cursor-pointer text-xl md:text-2xl me-2"
-		>
-			{ params.Label }
-		</label>
-		<img
-			class="w-auto h-8 cursor-pointer"
-			id={ params.Id }
-			src={ params.Source }
-			alt={ params.Alternative }
-		/>
+		if params.Id == "github" {
+			<label
+				for={ helpers.Identity(params.Id) }
+				class="cursor-pointer text-xl md:text-2xl me-2"
+			>
+				{ params.Label }
+			</label>
+			<span class="w-auto h-8 cursor-pointer">
+				@icons.GithubIcon()
+			</span>
+		} else {
+			<label
+				for={ helpers.Identity(params.Id) }
+				class="cursor-pointer text-xl md:text-2xl me-2"
+			>
+				{ params.Label }
+			</label>
+			<img
+				class="w-auto h-8 cursor-pointer"
+				id={ params.Id }
+				src={ params.Source }
+				alt={ params.Alternative }
+			/>
+		}
 	</span>
 }
