@@ -3,7 +3,7 @@
 	"trailingSlash": false,
 	"functions": {
 		"vercel/handler.go": {
-			"runtime": "@vercel/go@latest"
+			"runtime": "vercel/go@latest"
 		}
 	}
 }
