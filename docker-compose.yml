@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: mycv-db
+    environment:
+      POSTGRES_USER: aslan
+      POSTGRES_PASSWORD: estecestñr3p0
+      POSTGRES_DB: mycv
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=aslan
+      - DB_PASS=password
+      - DB_NAME=mycv
+      - DB_SSLMODE=disable
+    depends_on:
+      - db
+    ports:
+      - "2340:2340"
+
+volumes:
+  db-data:
