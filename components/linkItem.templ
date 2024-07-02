@@ -11,7 +11,7 @@ func formatClasses(classes interface{}) string {
 	case nil:
 		deliberatedClasses = "link-ghost md:px-3 p-0"
 	}
-	
+
 	return defaultClasses + " " + deliberatedClasses
 }
 
@@ -22,7 +22,7 @@ templ LinkItem(href templ.SafeURL, classes interface{}) {
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<span class="cursor-pointer">
+		<span class="cursor-pointer w-full">
 			{ children... }
 		</span>
 	</a>

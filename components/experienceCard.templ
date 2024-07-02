@@ -2,6 +2,7 @@ package components
 
 import (
 	"github.com/AslanSN/CurriculumVitae/db/constants"
+	"github.com/AslanSN/CurriculumVitae/components/iconComponents"
 )
 
 templ ExperienceCard(workplace constants.ExperienceStruct) {
@@ -14,13 +15,16 @@ templ ExperienceCard(workplace constants.ExperienceStruct) {
 		<article class="card-body sm:w-96 mx-4 first:ms-0">
 			<div class="flex flex-col">
 				if workplace.Link != "" {
-					@LinkItem(workplace.Link, "link-success link-underline px-0 md:px-0") {
-						<h3 class="card-header text-2xl">
-							{ 	workplace.Company }
-						</h3>
+					@LinkItem(workplace.Link, "link text-cyan-800 hover:text-cyan-500 dark:text-cyan-600 dark:hover:text-cyan-200 link-underline px-0 md:px-0") {
+						<div class="flex items-end justify-between w-1/2">
+							<h3 class="card-header text-2xl">
+								{ 	workplace.Company }
+							</h3>
+							@icons.OpenNewTabIcon()
+						</div>
 					}
 				} else {
-					<h3 class="card-header text-2xl text-success">
+					<h3 class="card-header text-2xl text-cyan-800 dark:text-cyan-600">
 						{ 	workplace.Company }
 					</h3>
 				}
