@@ -6,10 +6,10 @@ import (
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello, Vercel!")
+    fmt.Fprintf(w, "<h1>Hello, Vercel!</h1>")
 }
 
-func main() {
-    http.HandleFunc("/", Handler)
-    http.ListenAndServe(":3000", nil)
-}
+// func main() {
+//     http.HandleFunc("/", Handler)
+//     http.ListenAndServe(":3000", nil)
+// }
