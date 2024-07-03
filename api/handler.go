@@ -10,4 +10,5 @@ import (
 func Handler(w http.ResponseWriter, r *http.Request) {
 	h := templ.Handler(views.Index())
 	h.ServeHTTP(w, r)
+	main()
 }

@@ -5,16 +5,10 @@ import (
 
 	"github.com/AslanSN/CurriculumVitae/handlers"
 	"github.com/AslanSN/CurriculumVitae/helpers"
-	handler "github.com/AslanSN/CurriculumVitae/vercel"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
-
-func Handler(w http.ResponseWriter, r *http.Request) {
-	// fmt.Fprintf(w, "<h1>Hello, Vercel!</h1>")
-	main()
-}
 
 func main() {
 	e := echo.New()
@@ -24,7 +18,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// Vercel connection
-	e.GET("/", echo.WrapHandler(http.HandlerFunc(handler.Handler)))
+	e.GET("/", echo.WrapHandler(http.HandlerFunc(Handler)))
 
 	// Routes
 	homeHandler := handlers.HomeHandler{}

@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	// "github.com/AslanSN/CurriculumVitae/db"
+	handler "github.com/AslanSN/CurriculumVitae/api"
 	"github.com/AslanSN/CurriculumVitae/handlers"
 	"github.com/AslanSN/CurriculumVitae/helpers"
-	handler "github.com/AslanSN/CurriculumVitae/vercel"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
