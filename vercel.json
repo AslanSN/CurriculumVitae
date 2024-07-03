@@ -24,7 +24,7 @@
 	],
 	"functions": {
 		"api/handler.go": {
-			"runtime": "vercel-go@0.5.2"
+			"maxDuration": 30
 		}
 	}
 }
