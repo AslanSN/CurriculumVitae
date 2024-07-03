@@ -7,11 +7,11 @@
 		},
 		{
 			"source": "/assets/icons/(.*)",
-			"destination": "/assets/icons/$1"
+			"destination": "/icons/$1"
 		},
 		{
 			"source": "/assets/images/(.*)",
-			"destination": "/assets/images/$1"
+			"destination": "/images/$1"
 		},
 		{
 			"source": "/assets/js/(.*)",
@@ -19,11 +19,11 @@
 		},
 		{
 			"source": "/(.*)",
-			"destination": "/vercel/handler.go"
+			"destination": "/api/handler.go"
 		}
 	],
 	"functions": {
-		"handler.go": {
+		"api/handler.go": {
 			"runtime": "vercel-go@0.5.2"
 		}
 	}
