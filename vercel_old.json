@@ -1,0 +1,34 @@
+{
+	"builds": [
+		{
+			"src": "vercel/handler.go",
+			"use": "@vercel/go@latest",
+			"config": {
+				"runtime": "go1.22.x"
+			}
+		}
+	],
+	"public": true,
+	"routes": [
+		{
+			"src": "/assets/?(.*)",
+			"dest": "/static/$1"
+		},
+		{
+			"src": "/assets/icons/?(.*)",
+			"dest": "/icons/$1"
+		},
+		{
+			"src": "/assets/images/(.*)",
+			"dest": "/images/$1"
+		},
+		{
+			"src": "/assets/js/(.*)",
+			"dest": "/assets/js/$1"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "vercel/handler.go"
+		}
+	]
+}
