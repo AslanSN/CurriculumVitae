@@ -23,7 +23,7 @@
 		}
 	],
 	"functions": {
-		"vercel/handler.go": {
+		"handler.go": {
 			"runtime": "vercel-go@0.5.2"
 		}
 	}
