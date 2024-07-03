@@ -24,7 +24,7 @@
 	],
 	"functions": {
 		"api/handler.go": {
-			"maxDuration": 30
+			"maxDuration": 60
 		}
 	}
 }
