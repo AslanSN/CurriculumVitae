@@ -21,10 +21,5 @@
 			"source": "/(.*)",
 			"destination": "/api/handler.go"
 		}
-	],
-	"functions": {
-		"api/handler.go": {
-			"maxDuration": 60
-		}
-	}
+	]
 }
