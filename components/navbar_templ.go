@@ -45,11 +45,11 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("ENGLISH", helpers.RepoURL+"/static/cv/AlanStaubNegro-CV-EN-24.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("ENGLISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("SPANISH", helpers.RepoURL+"/static/cv/AlanStaubNegro-CV-ES-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("SPANISH", helpers.RepoURL+"CV/AlanStaubNegro-CV-ES-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
