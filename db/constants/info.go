@@ -23,7 +23,7 @@ var (
 		IconLabelParams: helpers.IconLabelParams{
 			Id:          "linkedIn",
 			Label:       "LinkedIn",
-			Source:      "/icons/linkedin.svg",
+			Source:      helpers.RepoURL + "/icons/linkedin.svg",
 			Alternative: "LinkedIn Icon",
 		},
 		SocialMediaLink: "https://www.linkedin.com/in/alanstaubnegro/",
@@ -32,7 +32,7 @@ var (
 		IconLabelParams: helpers.IconLabelParams{
 			Id:          "github",
 			Label:       "GitHub",
-			Source:      "/icons/github.svg",
+			Source:      helpers.RepoURL + "/icons/github.svg",
 			Alternative: "Github Icon",
 		},
 		SocialMediaLink: "https://github.com/AslanSN",
@@ -41,7 +41,7 @@ var (
 		IconLabelParams: helpers.IconLabelParams{
 			Id:          "x",
 			Label:       "X",
-			Source:      "/icons/x-social-media-round-icon.svg",
+			Source:      helpers.RepoURL + "/icons/x-social-media-round-icon.svg",
 			Alternative: "X, before twitter, icon",
 		},
 		SocialMediaLink: "https://x.com/AslanSN_",
