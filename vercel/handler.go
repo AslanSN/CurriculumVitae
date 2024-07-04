@@ -11,6 +11,7 @@ import (
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 
+	log.Printf("Handler Awakened")
 	if strings.HasPrefix(r.URL.Path, "/static/") {
 		// Servir el archivo estático
 		log.Printf("Serving static file: %s", r.URL.Path)
