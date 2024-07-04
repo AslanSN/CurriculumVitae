@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"log"
 	"net/http"
 	"strings"
 
@@ -13,6 +14,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	if strings.HasPrefix(r.URL.Path, "/static/") {
 		// Servir el archivo estático
 		http.FileServer(http.Dir("./static")).ServeHTTP(w, r)
+		log.Println("Path received!, static served")
 		return
 	}
 	h := templ.Handler(views.Index())
