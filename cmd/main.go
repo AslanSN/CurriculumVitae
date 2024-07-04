@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	// "github.com/AslanSN/CurriculumVitae/db"
-	handler "github.com/AslanSN/CurriculumVitae/vercel"
 	"github.com/AslanSN/CurriculumVitae/handlers"
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	handler "github.com/AslanSN/CurriculumVitae/vercel"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -49,6 +49,7 @@ func main() {
 	e.Static("/icons", "assets/icons")
 	e.Static("/images", "assets/images")
 	e.Static("/assets/js", "assets/js")
+	e.Static("/css", "assets/css")
 
 	// Vercel Connection
 	http.Handle("/", e)
