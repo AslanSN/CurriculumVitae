@@ -8,8 +8,6 @@
 			}
 		}
 	],
-	"cleanUrls": true,
-	"trailingSlash": true,
 	"routes": [
 		{
 			"src": "/assets/(.*)",
