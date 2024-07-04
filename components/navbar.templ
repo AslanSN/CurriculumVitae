@@ -1,7 +1,9 @@
 package components
 
-import "github.com/AslanSN/CurriculumVitae/components/iconComponents"
-
+import (
+	"github.com/AslanSN/CurriculumVitae/components/iconComponents"
+	"github.com/AslanSN/CurriculumVitae/helpers"
+)
 templ NavBar() {
 	<div class="navbar navbar-sticky navbar-glass">
 		<div class="navbar-start">
@@ -17,8 +19,8 @@ templ NavBar() {
 							</span>
 						</label>
 						<div class="dropdown-menu dropdown-menu-bottom-right mt-10">
-							@DownloadItem("ENGLISH", "/static/cv/AlanStaubNegro-CV-EN-24.pdf", "", "")
-							@DownloadItem("SPANISH", "/static/cv/AlanStaubNegro-CV-ES-24.pdf", "-1", "")
+							@DownloadItem("ENGLISH", {helpers.RepoURL + "/static/cv/AlanStaubNegro-CV-EN-24.pdf"}, "", "")
+							@DownloadItem("SPANISH", {helpers.RepoURL + "/static/cv/AlanStaubNegro-CV-ES-24.pdf"}, "-1", "")
 							@DownloadItem("FRENCH", "#", "-1", "")
 						</div>
 					</div>
