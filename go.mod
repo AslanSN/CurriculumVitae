@@ -3,7 +3,7 @@ module github.com/AslanSN/CurriculumVitae
 go 1.22
 
 require (
-	github.com/a-h/templ v0.2.707
+	github.com/a-h/templ v0.2.731
 	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.12.0
 	gorm.io/driver/postgres v1.5.9
