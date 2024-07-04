@@ -205,7 +205,7 @@ func ContactModal() templ.Component {
 			}
 			return templ_7745c5c3_Err
 		})
-		templ_7745c5c3_Err = LinkItem(templ.SafeURL("https://wa.me/34664330610?text=Hola%2C%20me%20gustaría%20ponerme%20en%20contacto%20contigo."), "").Render(templ.WithChildren(ctx, templ_7745c5c3_Var5), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = LinkItem(templ.SafeURL("https://wa.me/+34664330610?text=Hola%2C%20me%20gustaría%20ponerme%20en%20contacto%20contigo."), "").Render(templ.WithChildren(ctx, templ_7745c5c3_Var5), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
