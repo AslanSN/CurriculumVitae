@@ -13,8 +13,9 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 	if strings.HasPrefix(r.URL.Path, "/static/") {
 		// Servir el archivo estático
-		http.FileServer(http.Dir("./static")).ServeHTTP(w, r)
-		log.Println("Path received!, static served")
+		log.Printf("Serving static file: %s", r.URL.Path)
+
+		http.FileServer(http.Dir("./assets")).ServeHTTP(w, r)
 		return
 	}
 	h := templ.Handler(views.Index())
