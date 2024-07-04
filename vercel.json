@@ -1,14 +1,13 @@
 {
 	"builds": [
 		{
-			"src": "api/handler.go",
+			"src": "vercel/handler.go",
 			"use": "@vercel/go@latest",
 			"config": {
 				"runtime": "go1.22.x"
 			}
 		}
 	],
-	"public": true,
 	"routes": [
 		{
 			"src": "/assets/(.*)",
@@ -27,7 +26,7 @@
 			"dest": "/assets/js/$1"
 		},
 		{
-			"src": "/(.*)",
+			"src": "(.*)",
 			"dest": "vercel/handler.go"
 		}
 	]

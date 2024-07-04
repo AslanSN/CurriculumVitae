@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	// "github.com/AslanSN/CurriculumVitae/db"
-	handler "github.com/AslanSN/CurriculumVitae/api"
+	handler "github.com/AslanSN/CurriculumVitae/vercel"
 	"github.com/AslanSN/CurriculumVitae/handlers"
 	"github.com/AslanSN/CurriculumVitae/helpers"
 
