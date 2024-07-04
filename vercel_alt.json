@@ -1,0 +1,25 @@
+{
+	"rewrites": [
+		{
+			"source": "/static",
+			"destination": "/assets/(.*)"
+		},
+		{
+			"source": "/assets/icons/(.*)",
+			"destination": "/assets/icons/$1"
+		},
+		{
+			"source": "/assets/images/(.*)",
+			"destination": "/images/$1"
+		},
+		{
+			"source": "/assets/js/(.*)",
+			"destination": "/assets/js/"
+		},
+		{
+			"source": "/(.*)",
+			"destination": "/api/handler.go"
+		}
+	],
+	"cleanUrls": true
+}

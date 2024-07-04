@@ -1,3 +1,5 @@
 package helpers
 
-var RepoURL = "https://raw.githubusercontent.com/AslanSN/CurriculumVitae/master/assets"
+import "github.com/a-h/templ"
+
+var RepoURL templ.SafeURL = "https://raw.githubusercontent.com/AslanSN/CurriculumVitae/master/assets"

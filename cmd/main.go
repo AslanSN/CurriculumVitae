@@ -25,7 +25,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// Vercel connection
-	e.GET("/", echo.WrapHandler(http.HandlerFunc(handler.Handler)))
+	e.GET("", echo.WrapHandler(http.HandlerFunc(handler.Handler)))
 
 	// Routes
 	// registerStaticRoutes(e)
@@ -49,6 +49,7 @@ func main() {
 	e.Static("/icons", "assets/icons")
 	e.Static("/images", "assets/images")
 	e.Static("/assets/js", "assets/js")
+	e.Static("/css", "assets/css")
 
 	// Vercel Connection
 	http.Handle("/", e)

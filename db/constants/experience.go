@@ -6,9 +6,9 @@ import (
 )
 
 type ExperienceStruct struct {
-	Company, CompanyType, Contract, Position, RangeDate, ImageSource, ImageAlternative string
-	Link                                                                               templ.SafeURL
-	Techs, Responsabilities, Extra                                                     []string
+	Company, CompanyType, Contract, Position, RangeDate, ImageAlternative string
+	Link, ImageSource              templ.SafeURL
+	Techs, Responsabilities, Extra []string
 }
 
 var Workplaces = []ExperienceStruct{
