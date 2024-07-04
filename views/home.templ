@@ -1,10 +1,7 @@
 package views
 
 import (
-	hero "github.com/AslanSN/CurriculumVitae/components"
-	aboutMe "github.com/AslanSN/CurriculumVitae/components"
-	skills "github.com/AslanSN/CurriculumVitae/components"
-	experienceCard "github.com/AslanSN/CurriculumVitae/components"
+	"github.com/AslanSN/CurriculumVitae/components"
 	"github.com/AslanSN/CurriculumVitae/db/constants"
 	"github.com/AslanSN/CurriculumVitae/layouts"
 )
@@ -14,10 +11,12 @@ templ home() {
 		<main class="flex w-full flex-col px-8 sm:px-20">
 			@layouts.StickyLayout() {
 				<div class="flex w-full flex-row flex-wrap gap-4">
-					@hero.Hero()
+					@components.ContactModal()
+					<div class="absolute z-40 "></div>
+					@components.Hero()
 					<section class="w-full grid grid-flow-row lg:grid-flow-col m-0 mb-8 gap-16 justify-items-start items-center justify-center lg:content-between">
-						@aboutMe.AboutMe()
-						@skills.Skills()
+						@components.AboutMe()
+						@components.Skills()
 					</section>
 					<section class="w-full mb-10 ">
 						<div class="flex flex-col">
@@ -26,7 +25,7 @@ templ home() {
 							</h1>
 							<section class="flex flex-row flex-wrap flow justify-between">
 								for _,workplace := range constants.Workplaces {
-									@experienceCard.ExperienceCard(workplace)
+									@components.ExperienceCard(workplace)
 								}
 							</section>
 						</div>

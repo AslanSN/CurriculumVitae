@@ -1,5 +1,8 @@
 package helpers
 
+import "github.com/a-h/templ"
+
 type IconLabelParams struct {
-	Id, Label, Source, Alternative string
+	Id, Label, Alternative string
+	Source                 templ.SafeURL
 }

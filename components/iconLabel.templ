@@ -1,8 +1,8 @@
 package components
 
 import (
+	icons "github.com/AslanSN/CurriculumVitae/components/iconComponents"
 	"github.com/AslanSN/CurriculumVitae/helpers"
-	"github.com/AslanSN/CurriculumVitae/components/iconComponents"
 )
 
 templ IconLabel(params helpers.IconLabelParams) {
@@ -27,7 +27,7 @@ templ IconLabel(params helpers.IconLabelParams) {
 			<img
 				class="w-auto h-8 cursor-pointer"
 				id={ params.Id }
-				src={ params.Source }
+				src={ string(params.Source) }
 				alt={ params.Alternative }
 			/>
 		}

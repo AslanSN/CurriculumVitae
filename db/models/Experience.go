@@ -16,8 +16,8 @@ type ExperienceStruct struct {
 	RangeDate        string        `json:"range-date" gorm:"not null"`
 	CompanyType      string        `json:"company-type" gorm:"not null"`
 	Contract         string        `json:"contract" gorm:"not null"`
-	ImageSource      string        `json:"image-source" gorm:"not null"`
 	ImageAlternative string        `json:"image-alternative" gorm:"not null"`
+	ImageSource      templ.SafeURL `json:"image-source" gorm:"not null"`
 	Link             templ.SafeURL `json:"link" gorm:"not null"`
 	Techs            []string      `json:"techs" gorm:"not null"`
 	Responsabilities []string      `json:"responsabilities" gorm:"not null"`

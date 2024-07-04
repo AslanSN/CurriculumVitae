@@ -9,10 +9,7 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	aboutMe "github.com/AslanSN/CurriculumVitae/components"
-	experienceCard "github.com/AslanSN/CurriculumVitae/components"
-	hero "github.com/AslanSN/CurriculumVitae/components"
-	skills "github.com/AslanSN/CurriculumVitae/components"
+	"github.com/AslanSN/CurriculumVitae/components"
 	"github.com/AslanSN/CurriculumVitae/db/constants"
 	"github.com/AslanSN/CurriculumVitae/layouts"
 )
@@ -55,7 +52,15 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = hero.Hero().Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = components.ContactModal().Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"absolute z-40 \"></div>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = components.Hero().Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -63,11 +68,11 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = aboutMe.AboutMe().Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = components.AboutMe().Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = skills.Skills().Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = components.Skills().Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -76,7 +81,7 @@ func home() templ.Component {
 				return templ_7745c5c3_Err
 			}
 			for _, workplace := range constants.Workplaces {
-				templ_7745c5c3_Err = experienceCard.ExperienceCard(workplace).Render(ctx, templ_7745c5c3_Buffer)
+				templ_7745c5c3_Err = components.ExperienceCard(workplace).Render(ctx, templ_7745c5c3_Buffer)
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}

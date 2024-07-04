@@ -8,8 +8,13 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/AslanSN/CurriculumVitae/components/iconComponents"
+import (
+	icons "github.com/AslanSN/CurriculumVitae/components/iconComponents"
+	"github.com/AslanSN/CurriculumVitae/helpers"
+)
 
+// var englishCV templ.SafeURL =
+// var spanishCV templ.SafeURL =
 func NavBar() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -40,11 +45,11 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("ENGLISH", "/static/cv/AlanStaubNegro-CV-EN-24.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("ENGLISH", helpers.RepoURL+"/static/cv/AlanStaubNegro-CV-EN-24.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("SPANISH", "/static/cv/AlanStaubNegro-CV-ES-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("SPANISH", helpers.RepoURL+"/static/cv/AlanStaubNegro-CV-ES-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -52,15 +57,7 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div></div></div><div class=\"navbar-center\"><a class=\"navbar-item\" href=\"#hero\">HOME</a> <a class=\"navbar-item\" href=\"#aboutMe\">ABOUT ME</a> <a class=\"navbar-item\" href=\"#skills\">SKILLS</a> <a class=\"navbar-item\" href=\"#experience\">EXPERIENCE</a></div><div class=\"navbar-end\"><div class=\"navbar-item btn cursor-pointer\"><div class=\"dropdwon-container justify-center\"><div class=\"dropdwon dropdown-hover flex row-auto\"><label tabindex=\"0\" class=\"flex flex-row flex-nowrap items-center align-middle\"><span>LANGUAGE</span> <span>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = icons.DropdownIcon("currentColor").Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></label><div class=\"dropdown-menu dropdown-menu-bottom-center mt-10\"><a class=\"dropdown-item text-sm\">ENGLISH</a> <a tabindex=\"-1\" class=\"dropdown-item text-sm\">ESPAÑOL</a> <a tabindex=\"-1\" class=\"dropdown-item text-sm\">FRANÇAIS</a></div></div></div></div><a class=\"navbar-item\">CONTACT ME</a></div></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div></div></div><div class=\"navbar-center\"><a class=\"navbar-item\" href=\"#hero\">HOME</a> <a class=\"navbar-item\" href=\"#aboutMe\">ABOUT ME</a> <a class=\"navbar-item\" href=\"#skills\">SKILLS</a> <a class=\"navbar-item\" href=\"#experience\">EXPERIENCE</a></div><div class=\"navbar-end\"><label class=\"btn btn-ghost\" for=\"modal-contact\">CONTACT ME</label></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

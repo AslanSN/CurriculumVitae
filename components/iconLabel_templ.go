@@ -9,7 +9,7 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/AslanSN/CurriculumVitae/components/iconComponents"
+	icons "github.com/AslanSN/CurriculumVitae/components/iconComponents"
 	"github.com/AslanSN/CurriculumVitae/helpers"
 )
 
@@ -119,9 +119,9 @@ func IconLabel(params helpers.IconLabelParams) templ.Component {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var7 string
-			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(params.Source)
+			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(string(params.Source))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/iconLabel.templ`, Line: 30, Col: 23}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/iconLabel.templ`, Line: 30, Col: 31}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 			if templ_7745c5c3_Err != nil {
