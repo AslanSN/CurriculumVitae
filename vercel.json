@@ -1,7 +1,7 @@
 {
 	"builds": [
 		{
-			"src": "vercel/handler.go",
+			"src": "/handler.go",
 			"use": "@vercel/go@latest",
 			"config": {
 				"runtime": "go1.22.x"
@@ -11,11 +11,11 @@
 	"public": true,
 	"routes": [
 		{
-			"src": "/assets/?(.*)",
+			"src": "/assets/(.*)",
 			"dest": "/static/$1"
 		},
 		{
-			"src": "/assets/icons/?(.*)",
+			"src": "/assets/icons/(.*)",
 			"dest": "/icons/$1"
 		},
 		{
