@@ -88,7 +88,6 @@ templ ContactModal() {
 					<button id="mail-btn" class="btn btn-circle btn-sm btn-ghost p-2" onclick={ copyText("mail") }>
 						@icons.CopyIcon()
 					</button>
-					// </button>
 				</li>
 			</ul>
 			<div class="flex justify-around gap-3">
@@ -97,7 +96,7 @@ templ ContactModal() {
 						@icons.MailIcon()
 					</span>
 				}
-				@LinkItem(templ.SafeURL("mailto:aslan.staub@pm.me?subject=Contacto&body=Hola, me gustaría ponerme en contacto contigo."), "") {
+				@LinkItem(templ.SafeURL("https://wa.me/34664330610?text=Hola%2C%20me%20gustaría%20ponerme%20en%20contacto%20contigo."), "") {
 					<span class="btn btn-circle btn-ghost w-auto h-auto p-4  cursor-pointer">
 						<img class="w-8 h-auto" src={ string(helpers.RepoURL + "/icons/whatsapp.svg") } alt="whatsapp green icon"/>
 					</span>
