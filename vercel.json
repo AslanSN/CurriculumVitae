@@ -1,7 +1,7 @@
 {
 	"builds": [
 		{
-			"src": "/handler.go",
+			"src": "api/handler.go",
 			"use": "@vercel/go@latest",
 			"config": {
 				"runtime": "go1.22.x"
