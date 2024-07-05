@@ -6,7 +6,7 @@ import (
 )
 
 templ NavBar() {
-	<div class="navbar navbar-sticky navbar-glass">
+	<div class="navbar navbar-sticky navbar-glass hidden sm:flex ">
 		<div class="navbar-start">
 			<div class="navbar-item btn cursor-pointer">
 				<div class="dropdwon-container justify-center">
@@ -28,7 +28,7 @@ templ NavBar() {
 				</div>
 			</div>
 		</div>
-		<div class="navbar-center">
+		<div class="navbar-center text-nowrap">
 			<a class="navbar-item" href="#hero">HOME</a>
 			<a class="navbar-item" href="#aboutMe">ABOUT ME</a>
 			<a class="navbar-item" href="#skills">SKILLS</a>
