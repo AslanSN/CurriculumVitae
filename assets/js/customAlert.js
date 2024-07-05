@@ -1,18 +1,12 @@
+
 function copyText(id) {
+	document.getElementById(`${id}-btn`).onclick = copyText
 	const text = document.getElementById(id).innerText;
 	navigator.clipboard.writeText(text).then(() => {
-		switch (id) {
-			case "mobile":
-				showCustomAlert("Mobile added to clipboard!")
-				return
-			default:
-				showCustomAlert(`Email added to clipboard!`)
-				return
-		}
+		showCustomAlert(`${id === "mobile" ? "Mobile" : "Email"} added to clipboard!`)
 	}).catch(err => {
 		console.error(`Failed to copy ${id}: `, err);
 	});
-	document.getElementById(`${id}-btn`).onclick = copyText
 }
 
 function closeCustomAlert() {
