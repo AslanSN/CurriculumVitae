@@ -8,21 +8,27 @@ import (
 templ NavBar() {
 	<div class="navbar navbar-sticky navbar-glass hidden sm:flex ">
 		<div class="navbar-start">
-			<div class="navbar-item btn cursor-pointer">
+			<div class="navbar-item cursor-pointer">
 				<div class="dropdwon-container justify-center">
-					<div class="dropdwon dropdown-hover flex row-auto">
-						<label tabindex="0" class="flex flex-row flex-nowrap items-center align-middle">
+					<div class="dropdown dropdown-hover flex row-auto">
+						<label tabindex="0" class="flex flex-row flex-nowrap items-center align-middle menu-item w-full">
 							<span>
 								DOWNLOAD CV
 							</span>
-							<span>
+							<span class="menu-icon">
 								@icons.DropdownIcon("currentColor")
 							</span>
 						</label>
 						<div class="dropdown-menu dropdown-menu-bottom-right mt-10">
-							@DownloadItem("ENGLISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "", "")
-							@DownloadItem("SPANISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-ES-24.pdf", "-1", "")
-							@DownloadItem("FRENCH", "#", "-1", "")
+							<span class="dropdown-item">
+								@DownloadItem("ENGLISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "", "")
+							</span>
+							<span class="dropdown-item">
+								@DownloadItem("SPANISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-ES-24.pdf", "-1", "")
+							</span>
+							<span class="dropdown-item disabled">
+								@DownloadItem("FRENCH", "", "-1", "")
+							</span>
 						</div>
 					</div>
 				</div>
