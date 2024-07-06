@@ -31,7 +31,7 @@ func NavBar() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"navbar navbar-sticky navbar-glass\"><div class=\"navbar-start\"><div class=\"navbar-item btn cursor-pointer\"><div class=\"dropdwon-container justify-center\"><div class=\"dropdwon dropdown-hover flex row-auto\"><label tabindex=\"0\" class=\"flex flex-row flex-nowrap items-center align-middle\"><span>DOWNLOAD CV</span> <span>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"navbar navbar-sticky navbar-glass hidden sm:flex \"><div class=\"navbar-start\"><div class=\"navbar-item cursor-pointer\"><div class=\"dropdwon-container justify-center\"><div class=\"dropdown dropdown-hover flex row-auto\"><label tabindex=\"0\" class=\"flex flex-row flex-nowrap items-center align-middle menu-item w-full\"><span>DOWNLOAD CV</span> <span class=\"menu-icon\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -39,7 +39,7 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></label><div class=\"dropdown-menu dropdown-menu-bottom-right mt-10\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></label><div class=\"dropdown-menu dropdown-menu-bottom-right mt-10\"><span class=\"dropdown-item\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -47,15 +47,23 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <span class=\"dropdown-item\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
 		templ_7745c5c3_Err = DownloadItem("SPANISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-ES-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("FRENCH", "#", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <span class=\"dropdown-item disabled\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div></div></div><div class=\"navbar-center\"><a class=\"navbar-item\" href=\"#hero\">HOME</a> <a class=\"navbar-item\" href=\"#aboutMe\">ABOUT ME</a> <a class=\"navbar-item\" href=\"#skills\">SKILLS</a> <a class=\"navbar-item\" href=\"#experience\">EXPERIENCE</a></div><div class=\"navbar-end\"><label class=\"btn btn-ghost\" for=\"modal-contact\">CONTACT ME</label></div></div>")
+		templ_7745c5c3_Err = DownloadItem("FRENCH", "", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></div></div></div></div></div><div class=\"navbar-center text-nowrap\"><a class=\"navbar-item\" href=\"#hero\">HOME</a> <a class=\"navbar-item\" href=\"#aboutMe\">ABOUT ME</a> <a class=\"navbar-item\" href=\"#skills\">SKILLS</a> <a class=\"navbar-item\" href=\"#experience\">EXPERIENCE</a></div><div class=\"navbar-end\"><label class=\"btn btn-ghost\" for=\"modal-contact\">CONTACT ME</label></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -1,0 +1,122 @@
+package components
+
+import (
+	icons "github.com/AslanSN/CurriculumVitae/components/iconComponents"
+	"github.com/AslanSN/CurriculumVitae/helpers"
+)
+
+templ Sidebar() {
+	<div class="flex flex-row sm:gap-10">
+		<div class="sm:w-full sm:max-w-[18rem]">
+			<input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state"/>
+			<label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
+			<aside class="sidebar sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full sm:hidden">
+				<section class="sidebar-title items-center p-4">
+					<div class="dropdown z-50 flex h-fit w-full cursor-pointer hover:bg-gray-4">
+						<label class="whites mx-2 flex h-fit w-full cursor-pointer p-0 hover:bg-gray-4" tabindex="0">
+							<div class="flex flex-row gap-4 p-4">
+								<div class="avatar-square avatar avatar-md">
+									<img src={ string(helpers.RepoURL + "/images/FaviconCV.webp") } alt="avatar of AslanSN"/>
+								</div>
+								<div class="flex flex-col">
+									<span>AslanSN CV</span>
+								</div>
+							</div>
+						</label>
+					</div>
+				</section>
+				<section class="sidebar-content">
+					<nav class="menu rounded-md">
+						<section class="menu-section px-4">
+							<span class="menu-title">Sections</span>
+							<ul class="menu-items">
+								<li class="menu-item">
+									<a href="#hero">HOME</a>
+								</li>
+								<li class="menu-item">
+									<a href="#aboutMe">ABOUT ME</a>
+								</li>
+								<li class="menu-item">
+									<a href="#skills">SKILLS</a>
+								</li>
+								<li class="menu-item">
+									<a href="#experience">EXPERIENCE</a>
+								</li>
+							</ul>
+						</section>
+						<div class="divider my-0"></div>
+						<section class="menu-section px-4">
+							<ul class="menu-items">
+								<li>
+									<input type="checkbox" checked class="menu-toggle"/>
+									<label class="menu-item justify-between">
+										<div class="flex gap-2">
+											<span>DOWNLOAD CV</span>
+										</div>
+										<span>
+											@icons.DropdownIcon("currentColor")
+										</span>
+									</label>
+									<div class="menu-item-collapse">
+										<div class="min-h-0">
+											<label class="menu-item ml-6">
+												@DownloadItem("ENGLISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "", "")
+											</label>
+											<label class="menu-item ml-6">
+												@DownloadItem("SPANISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-ES-24.pdf", "-1", "")
+											</label>
+											<label class="menu-item menu-item-disabled ml-6">
+												@DownloadItem("FRENCH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "-1", "")
+											</label>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</section>
+					</nav>
+				</section>
+				<section class="sidebar-footer justify-end bg-gray-2 pt-2">
+					<div class="divider my-0"></div>
+					<div class="menu-section p-4">
+						<div class="menu-title">
+							Contact
+						</div>
+						<ul class="menu-items">
+							<li>
+								@LinkItem(templ.SafeURL("mailto:aslan.staub@pm.me?subject=Contacto&body=Hola, me gustaría ponerme en contacto contigo."), "") {
+									<div class="btn btn-ghost flex justify-start cursor-pointer w-56">
+										<span id="mail-icon">
+											@icons.MailIcon()
+										</span>
+										<label class="ps-4" for="mail-icon">
+											SEND MAIL
+										</label>
+									</div>
+								}
+							</li>
+							<li>
+								@LinkItem(templ.SafeURL("https://wa.me/+34664330610?text=Hola%2C%20me%20gustaría%20ponerme%20en%20contacto%20contigo."), "") {
+									<div class="btn btn-ghost flex justify-start cursor-pointer w-56">
+										<span id="wsp-icon">
+											<img class="w-8 h-auto" src={ string(helpers.RepoURL + "/icons/whatsapp.svg") } alt="whatsapp green icon"/>
+										</span>
+										<label class="ps-4" for="wsp-icon">
+											SEND WHATSAPP
+										</label>
+									</div>
+								}
+							</li>
+						</ul>
+					</div>
+				</section>
+			</aside>
+		</div>
+		<div class="flex w-full flex-col p-4">
+			<div class="w-fit">
+				<label for="sidebar-mobile-fixed" class="btn btn-solid-primary btn-circle sm:hidden fixed z-20 bottom-20 right-8">
+					@icons.MenuIcon()
+				</label>
+			</div>
+		</div>
+	</div>
+}

@@ -12,6 +12,10 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
+// main is the entry point of the application where Echo instance is created, middlewares are added, routes are defined, and the server is started on port ":2340".
+//
+// No parameters.
+// No return.
 func main() {
 
 	// DB
@@ -31,11 +35,11 @@ func main() {
 	// registerStaticRoutes(e)
 	// registerDBRoutes(e)
 
-	/**
-	* ? Unmodulated routes 'cause error:
-	* * cmd\main.go:29:2: undefined: registerStaticRoutes
-	* * cmd\main.go:30:2: undefined: registerDBRoutes
-	 */
+	// /**
+	// * ? Unmodulated routes 'cause error:
+	// * * cmd\main.go:29:2: undefined: registerStaticRoutes
+	// * * cmd\main.go:30:2: undefined: registerDBRoutes
+	//  */
 	homeHandler := handlers.HomeHandler{}
 
 	data := e.Group("/api/v1/data")
