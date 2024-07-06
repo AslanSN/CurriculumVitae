@@ -1,14 +1,11 @@
 package layouts
 
-import (
-	// dropdown "github.com/AslanSN/CurriculumVitae/components"
-	navbar "github.com/AslanSN/CurriculumVitae/components"
-)
+import "github.com/AslanSN/CurriculumVitae/components"
 
 templ StickyLayout() {
 	<div class="w-full relative">
-		@navbar.NavBar()
-		// @dropdown.DropDownButton("", "top-20")
+		@components.NavBar()
+		@components.Sidebar()
 		{ children... }
 	</div>
 }

@@ -76,7 +76,7 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section class=\"w-full mb-10 \"><div class=\"flex flex-col\"><h1 id=\"experience\" class=\"text-5xl mb-6 w-fit font-bold\">EXPERIENCE</h1><section class=\"flex flex-row flex-wrap flow justify-between\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section class=\"w-full mb-10 \"><div class=\"flex flex-col\"><h1 id=\"experience\" class=\"text-5xl mb-6 w-fit font-bold\">EXPERIENCE</h1><section class=\"flex flex-row flex-wrap flow justify-center lg:justify-between\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
