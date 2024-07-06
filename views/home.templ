@@ -9,7 +9,6 @@ import (
 templ home() {
 	<div class="sticky flex h-screen flex-row gap-4 overflow-y-auto rounded-lg sm:overflow-x-hidden">
 		<main class="flex w-full flex-col px-8 sm:px-20">
-	
 			@layouts.StickyLayout() {
 				<div class="flex w-full flex-row flex-wrap gap-4">
 					@components.ContactModal()
@@ -24,7 +23,7 @@ templ home() {
 							<h1 id="experience" class="text-5xl mb-6 w-fit font-bold">
 								EXPERIENCE
 							</h1>
-							<section class="flex flex-row flex-wrap flow justify-between">
+							<section class="flex flex-row flex-wrap flow justify-center lg:justify-between">
 								for _,workplace := range constants.Workplaces {
 									@components.ExperienceCard(workplace)
 								}
