@@ -21,6 +21,15 @@ var SkillsList = []Skill{
 }
 
 var (
+	React = Skill{
+		IconLabelParams: helpers.IconLabelParams{
+			Id:          "react",
+			Label:       "React",
+			Alternative: "React Icon, an atom illustration in blue color",
+			Source:      helpers.RepoURL + "/icons/react.svg",
+		},
+		Link: "https://react.dev/",
+	}
 	JavaScript = Skill{
 		IconLabelParams: helpers.IconLabelParams{
 			Id:          "javaScript",
@@ -38,15 +47,6 @@ var (
 			Source:      helpers.RepoURL + "/icons/typescript.svg",
 		},
 		Link: "https://www.typescriptlang.org/",
-	}
-	React = Skill{
-		IconLabelParams: helpers.IconLabelParams{
-			Id:          "react",
-			Label:       "React",
-			Alternative: "React Icon, an atom illustration in blue color",
-			Source:      helpers.RepoURL + "/icons/react.svg",
-		},
-		Link: "https://react.dev/",
 	}
 	Redux = Skill{
 		IconLabelParams: helpers.IconLabelParams{
@@ -74,6 +74,15 @@ var (
 			Source:      "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
 		},
 		Link: "https://ant.design/",
+	}
+	Node = Skill{
+		IconLabelParams: helpers.IconLabelParams{
+			Id:          "node",
+			Label:       "Node",
+			Alternative: "Node logo, a green hexagon that links with the JavaScript logo",
+			Source:      helpers.RepoURL + "/icons/nodejs.svg",
+		},
+		Link: "https://nodejs.org/en/",
 	}
 	Go = Skill{
 		IconLabelParams: helpers.IconLabelParams{
