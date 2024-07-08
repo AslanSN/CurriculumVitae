@@ -149,7 +149,7 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</li></ul></div></section></aside></div><div class=\"flex w-full flex-col p-4\"><div class=\"w-fit\"><label for=\"sidebar-mobile-fixed\" class=\"btn btn-solid-primary btn-circle sm:hidden fixed z-20 bottom-20 right-8\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</li></ul></div></section></aside></div><div class=\"flex w-full flex-col p-4\"><div class=\"w-fit\"><label for=\"sidebar-mobile-fixed\" class=\"btn btn-solid-primary btn-circle btn-lg w-12 sm:hidden fixed z-20 bottom-14 right-14\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
