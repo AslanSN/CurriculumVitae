@@ -9,7 +9,7 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/AslanSN/CurriculumVitae/components/iconComponents"
+	icons "github.com/AslanSN/CurriculumVitae/components/iconComponents"
 	"github.com/AslanSN/CurriculumVitae/db/constants"
 )
 
@@ -31,7 +31,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"card rounded-2xl flex flex-col items-center pt-8 mb-10\"><img class=\"px-4 h-1/4\" src=\"")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"card rounded-2xl transition-all flex flex-col items-center pt-8 mb-10\"><img class=\"px-4 h-1/4 hover:-skew-y-3 transition ease-linear \" src=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -57,7 +57,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><article class=\"card-body max-sm:py-4 max-sm:px-0 sm:w-96 mx-4 first:ms-0\"><div class=\"flex flex-col\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><article class=\"card-body max-sm:py-4 max-sm:px-0 sm:w-96 mx-4 first:ms-0 transition-all duration-300 hover:scale-125 rounded-xl hover:bg-opacity-20 hover:backdrop-blur-md\"><div class=\"flex flex-col\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
