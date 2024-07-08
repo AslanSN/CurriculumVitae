@@ -1,18 +1,18 @@
 package components
 
 import (
+	icons "github.com/AslanSN/CurriculumVitae/components/iconComponents"
 	"github.com/AslanSN/CurriculumVitae/db/constants"
-	"github.com/AslanSN/CurriculumVitae/components/iconComponents"
 )
 
 templ ExperienceCard(workplace constants.ExperienceStruct) {
-	<div class="card rounded-2xl flex flex-col items-center pt-8 mb-10">
+	<div class="card rounded-2xl transition-all flex flex-col items-center pt-8 mb-10">
 		<img
-			class="px-4 h-1/4"
+			class="px-4 h-1/4 hover:-skew-y-3 transition ease-linear "
 			src={ string(workplace.ImageSource) }
 			alt={ workplace.ImageAlternative }
 		/>
-		<article class="card-body max-sm:py-4 max-sm:px-0 sm:w-96 mx-4 first:ms-0">
+		<article class="card-body max-sm:py-4 max-sm:px-0 sm:w-96 mx-4 first:ms-0 ">
 			<div class="flex flex-col">
 				if workplace.Link != "" {
 					@LinkItem(workplace.Link, "link text-cyan-800 hover:text-cyan-500 dark:text-cyan-600 dark:hover:text-cyan-200 link-underline px-0 md:px-0") {

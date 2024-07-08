@@ -7,13 +7,13 @@ module.exports = {
   /** @type {import('rippleui').Config} */
   rippleui: {
     // You will have all the properties available
-    // themes: [{
-    //   themeName: "light",
-    //   colorScheme: "light",
-    //   colors: {
-    //     primary: "red"
-    //   }
-    // }]
+    themes: [{
+      themeName: "dark",
+      colorScheme: "dark",
+      colors: {
+        backgroundPrimary: "#121b22"
+      }
+    }]
   },
   plugins: [
     require('@tailwindcss/forms'),

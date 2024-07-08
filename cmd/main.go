@@ -74,18 +74,8 @@ func registerStaticRoutes(e *echo.Echo) {
 	e.Static("/icons", "assets/icons")
 	e.Static("/images", "assets/images")
 	e.Static("js", "assets/js")
-	// e.Static("/assets", "static")
-	// e.Static("/assets/icons", "icons")
-	// e.Static("/assets/images", "images")
-	// e.Static("/assets/js", "js")
-}
 
-// func routeLogger(next echo.HandlerFunc) echo.HandlerFunc {
-// 	return func(c echo.Context) error {
-// 		fmt.Printf("Route: %s, Method: %s\n", c.Request().URL.Path, c.Request().Method)
-// 		return next(c)
-// 	}
-// }
+}
 
 func routeLogger(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
@@ -109,3 +99,4 @@ func getMethodColor(method string) string {
 		return white
 	}
 }
+
