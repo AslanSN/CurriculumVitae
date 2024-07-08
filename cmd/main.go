@@ -49,11 +49,11 @@ func main() {
 	data.GET(helpers.Api("/experience"), homeHandler.HandleShowExperience)
 	data.GET(helpers.Api("/skills"), homeHandler.HandleShowSkills)
 
-	e.Static("/static", "assets")
-	e.Static("/icons", "assets/icons")
-	e.Static("/images", "assets/images")
-	e.Static("/assets/js", "assets/js")
-	e.Static("/css", "assets/css")
+	e.Static("/assets", "static")
+	e.Static("/assets/icons", "icons")
+	e.Static("/assets/images", "images")
+	e.Static("/assets/js", "js")
+	e.Static("/assets/css", "css")
 
 	// Vercel Connection
 	http.Handle("/", e)
