@@ -12,7 +12,7 @@ templ ExperienceCard(workplace constants.ExperienceStruct) {
 			src={ string(workplace.ImageSource) }
 			alt={ workplace.ImageAlternative }
 		/>
-		<article class="card-body max-sm:py-4 max-sm:px-0 sm:w-96 mx-4 first:ms-0 transition-all duration-300 hover:scale-125 rounded-xl hover:bg-opacity-20 hover:backdrop-blur-md">
+		<article class="card-body max-sm:py-4 max-sm:px-0 sm:w-96 mx-4 first:ms-0 ">
 			<div class="flex flex-col">
 				if workplace.Link != "" {
 					@LinkItem(workplace.Link, "link text-cyan-800 hover:text-cyan-500 dark:text-cyan-600 dark:hover:text-cyan-200 link-underline px-0 md:px-0") {
