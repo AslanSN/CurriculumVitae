@@ -18,6 +18,8 @@ var SkillsList = []Skill{
 	TanStack,
 	AntDesign,
 	Go,
+	Node,
+	MySQL,
 }
 
 var (
@@ -83,5 +85,23 @@ var (
 			Source:      helpers.RepoURL + "/icons/golang.svg",
 		},
 		Link: "https://go.dev/",
+	}
+	Node = Skill{
+		IconLabelParams: helpers.IconLabelParams{
+			Id:          "node",
+			Label:       "Node",
+			Alternative: "Node.js logo, green hexagon linked to JavaScript logo",
+			Source:      helpers.RepoURL + "/icons/nodejs.svg",
+		},
+		Link: "https://nodejs.org/en/",
+	}
+	MySQL = Skill{
+		IconLabelParams: helpers.IconLabelParams{
+			Id:          "mysql",
+			Label:       "MySQL",
+			Alternative: "MySQL logo, blue 'my' word and orange 'sql' in cappital letters with a dolphin at the top right corner",
+			Source:      helpers.RepoURL + "/icons/mysql.svg",
+		},
+		Link: "https://www.mysql.com/",
 	}
 )
