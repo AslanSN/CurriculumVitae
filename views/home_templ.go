@@ -86,7 +86,7 @@ func home() templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section></div></section></div>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section></div><div><h1 id=\"experience\" class=\"text-5xl mb-6 w-fit font-bold\">Challenges</h1><section class=\"flex flex-row flex-wrap flow justify-center lg:justify-between\"><ul><li><h2>Logitravel - Best technical skills candidate</h2></li><li><h2>Nivimu - Chosen</h2></li><li><h2>Inditex - Candidate process stopped</h2><iframe id=\"inditexMarvelWebChallenge\" title=\"Zara Marvel Web Challenge\" width=\"800\" height=\"400\" src=\"https://zara-marvelous.vercel.app/\"></iframe></li><li><h2>Arup</h2></li></ul></section></div><div><h1 id=\"experience\" class=\"text-5xl mb-6 w-fit font-bold\">Personal Projects</h1></div></section></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
