@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/AslanSN/CurriculumVitae/views"
+	"github.com/AslanSN/CurriculumVitae/app/views"
 	"github.com/a-h/templ"
 )
 

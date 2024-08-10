@@ -1,0 +1,77 @@
+package views
+
+import (
+	"github.com/AslanSN/CurriculumVitae/app/components"
+	"github.com/AslanSN/CurriculumVitae/db/constants"
+	"github.com/AslanSN/CurriculumVitae/app/layouts"
+)
+
+templ home() {
+	<div class="sticky flex h-screen flex-row gap-4 overflow-y-auto rounded-lg sm:overflow-x-hidden">
+		<main class="flex w-full flex-col px-8 sm:px-20">
+			@layouts.StickyLayout() {
+				<div class="flex w-full flex-row flex-wrap gap-4">
+					@components.ContactModal()
+					<div class="absolute z-40 "></div>
+					@components.Hero()
+					<section class="w-full grid grid-flow-row lg:grid-flow-col m-0 mb-8 gap-16 justify-items-start items-center justify-center lg:content-between">
+						@components.AboutMe()
+						@components.Skills()
+					</section>
+					<section class="w-full mb-10 ">
+						<div class="flex flex-col">
+							<h1 id="experience" class="text-5xl mb-6 w-fit font-bold">
+								EXPERIENCE
+							</h1>
+							<section class="flex flex-row flex-wrap flow justify-center lg:justify-between">
+								for _,workplace := range constants.Workplaces {
+									@components.ExperienceCard(workplace)
+								}
+							</section>
+						</div>
+						<div>
+							
+							<h1 id="experience" class="text-5xl mb-6 w-fit font-bold">
+								Challenges
+							</h1>
+							<section class="flex flex-row flex-wrap flow justify-center lg:justify-between">
+							<ul>
+								<li>
+									<h2>
+										Logitravel - Best technical skills candidate
+									</h2> 
+								</li>
+								<li>
+									<h2>
+										Nivimu - Chosen
+									</h2> 
+								</li>
+								<li>
+									<h2>
+										Inditex - Candidate process stopped
+									</h2> 
+									<iframe id="inditexMarvelWebChallenge" title="Zara Marvel Web Challenge" width="800" height="400" src="https://zara-marvelous.vercel.app/">
+										
+									</iframe>
+								</li>
+								<li>
+									<h2>
+										Arup
+									</h2> 
+								</li>
+							</ul>
+							</section>
+						</div>
+						<div>
+							
+							<h1 id="experience" class="text-5xl mb-6 w-fit font-bold">
+								Personal Projects
+							</h1>
+						</div>
+
+					</section>
+				</div>
+			}
+		</main>
+	</div>
+}

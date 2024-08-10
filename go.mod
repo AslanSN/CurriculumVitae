@@ -3,7 +3,7 @@ module github.com/AslanSN/CurriculumVitae
 go 1.22
 
 require (
-	github.com/a-h/templ v0.2.731
+	github.com/a-h/templ v0.2.747
 	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.12.0
 	github.com/stretchr/testify v1.8.4
@@ -34,4 +34,5 @@ require (
 	golang.org/x/sys v0.24.0 // indirect
 	golang.org/x/text v0.17.0 // indirect
 	golang.org/x/time v0.6.0 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

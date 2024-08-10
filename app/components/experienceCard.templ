@@ -1,0 +1,61 @@
+package components
+
+import (
+	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+	"github.com/AslanSN/CurriculumVitae/db/constants"
+)
+
+templ ExperienceCard(workplace constants.ExperienceStruct) {
+	<div class="card rounded-2xl transition-all flex flex-col items-center pt-8 mb-10">
+		<img
+			class="px-4 h-1/4 hover:-skew-y-3 transition ease-linear "
+			src={ string(workplace.ImageSource) }
+			alt={ workplace.ImageAlternative }
+		/>
+		<article class="card-body max-sm:py-4 max-sm:px-0 sm:w-96 mx-4 first:ms-0 ">
+			<div class="flex flex-col">
+				if workplace.Link != "" {
+					@LinkItem(workplace.Link, "link text-cyan-800 hover:text-cyan-500 dark:text-cyan-600 dark:hover:text-cyan-200 link-underline px-0 md:px-0") {
+						<div class="flex items-end justify-between w-1/2">
+							<h3 class="card-header text-2xl">
+								{ 	workplace.Company }
+							</h3>
+							@icons.OpenNewTabIcon()
+						</div>
+					}
+				} else {
+					<h3 class="card-header text-2xl text-cyan-800 dark:text-cyan-600">
+						{ 	workplace.Company }
+					</h3>
+				}
+				<span class="text-xl">
+					{ workplace.CompanyType }
+					<b>
+						{ workplace.Position }
+					</b>
+				</span>
+				<span class="text-lg">
+					<i>
+						{ workplace.Contract },
+					</i>
+					{ workplace.RangeDate }
+				</span>
+			</div>
+			<section class="grid grid-cols-2 w-full text-content2">
+				<div>
+					<div class="px-2">
+						@List("Techs", workplace.Techs)
+					</div>
+				</div>
+				<div>
+					<div class="px-2">
+						@List("Duties", workplace.Responsabilities)
+					</div>
+				</div>
+			</section>
+			<footer class="px-2 card-footer h-full flex flex-col items-start justify-center text-content2">
+				@List("Extra", workplace.Extra)
+			</footer>
+		</article>
+	</div>
+}

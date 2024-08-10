@@ -3,7 +3,7 @@ package handlers
 import (
 	"github.com/AslanSN/CurriculumVitae/db/constants"
 	"github.com/AslanSN/CurriculumVitae/db/models"
-	"github.com/AslanSN/CurriculumVitae/views"
+	"github.com/AslanSN/CurriculumVitae/app/views"
 	"github.com/labstack/echo/v4"
 )
 
