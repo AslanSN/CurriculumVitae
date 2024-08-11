@@ -1,0 +1,63 @@
+package components
+
+import (
+	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+	"github.com/AslanSN/CurriculumVitae/db/constants"
+	"github.com/AslanSN/CurriculumVitae/helpers"
+)
+
+templ ChallengeCard(challenge constants.Challenge) {
+	<li>
+		<article>
+			<header class="w-full flex justify-between">
+				<h2>
+					{ challenge.Title }
+				</h2>
+				<h3>
+					{ challenge.State }
+				</h3>
+				<h3>
+					{ challenge.Dates }
+				</h3>
+			</header>
+			if string(challenge.AppLink) != "" {
+				<main>
+					<iframe id={ challenge.Company } title={ challenge.Title } src={ string(challenge.AppLink) } width="1200" height="800"></iframe>
+				</main>
+			}
+			<footer>
+				<p>
+					{ challenge.Description }
+				</p>
+				@LinkItem(challenge.RepoLink, nil) {
+					<div class="flex">
+						<label
+							for={ helpers.Identity(challenge.Company) }
+							class="cursor-pointer text-xl md:text-2xl me-2"
+						>
+							Visit Repo
+						</label>
+						<span class="w-auto h-8 cursor-pointer">
+							@icons.GithubIcon()
+						</span>
+					</div>
+				}
+				if string(challenge.AppLink) != "" {
+					@LinkItem(challenge.AppLink, nil) {
+						<div class="flex ">
+							<label
+								for={ helpers.Identity(challenge.Company) }
+								class="cursor-pointer text-xl md:text-2xl me-2"
+							>
+								Visit Deploy
+							</label>
+							<span class="w-auto h-8 cursor-pointer">
+								@icons.OpenNewTabIcon()
+							</span>
+						</div>
+					}
+				}
+			</footer>
+		</article>
+	</li>
+}
