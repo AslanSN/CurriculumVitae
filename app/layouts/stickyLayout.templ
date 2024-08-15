@@ -1,0 +1,11 @@
+package layouts
+
+import "github.com/AslanSN/CurriculumVitae/app/components"
+
+templ StickyLayout() {
+	<div class="w-full relative">
+		@components.NavBar()
+		@components.Sidebar()
+		{ children... }
+	</div>
+}

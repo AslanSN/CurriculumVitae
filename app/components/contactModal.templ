@@ -1,0 +1,42 @@
+package components
+
+import icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+
+templ ContactModal() {
+	<input class="modal-state" id="modal-contact" type="checkbox"/>
+	<div class="modal">
+		<div id="alert-container" class="absolute z-40"></div>
+		<label class="modal-overlay" for="modal-contact"></label>
+		<div class="modal-content flex flex-col gap-5">
+			<label for="modal-contact" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
+			<h2 class="text-xl">CONTACT ME</h2>
+			<ul>
+				<li class="flex items-center justify-between">
+					<b class="px-1">
+						Mobile:
+					</b>
+					<span class="px-1" id="mobile">
+						+34 664 33 06 10
+					</span>
+					<button id="mobile-btn" aria-label="Copy Icon Button" class="btn btn-circle btn-sm btn-ghost p-2" onclick="copyText('mobile')">
+						@icons.CopyIcon()
+					</button>
+				</li>
+				<li class="flex items-center justify-between">
+					<b class="px-1">
+						Email:
+					</b>
+					<span class="px-1" id="mail">
+						aslan.staub@pm.me
+					</span>
+					<button id="mail-btn" aria-label="Copy Icon Button" class="btn btn-circle btn-sm btn-ghost p-2" onclick="copyText('mail')">
+						@icons.CopyIcon()
+					</button>
+				</li>
+			</ul>
+			<div class="flex justify-around gap-3">
+				@ContactModalFooter()
+			</div>
+		</div>
+	</div>
+}

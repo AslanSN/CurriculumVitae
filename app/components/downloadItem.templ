@@ -1,0 +1,14 @@
+package components
+
+import icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+
+templ DownloadItem(label string, url templ.SafeURL, tabIndex string, extraClasses string) {
+	<a class={ "flex flex-row dropdown-item text-sm justify-between " + extraClasses } href={ url } type="archives" target="_blank">
+		<label>
+			{ label }
+		</label>
+		<span>
+			@icons.DownloadIcon()
+		</span>
+	</a>
+}
