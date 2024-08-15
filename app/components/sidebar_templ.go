@@ -10,7 +10,7 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import (
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
-	"github.com/AslanSN/CurriculumVitae/internal/helpers"
+	"github.com/AslanSN/CurriculumVitae/helpers"
 )
 
 func Sidebar() templ.Component {

@@ -2,8 +2,8 @@
 templ-generate:
 	templ generate
 
-.PHONY: templ-generate-watch
-templ-generate-watch:
+.PHONY: templ
+templ:
 	templ generate --watch --proxy=http://localhost:2345
 
 .PHONY: tailwind-build
@@ -22,10 +22,11 @@ dev-css:
 go-build:
 	go build -o ./tmp/app.exe ./cmd/main.go
 
-# .PHONY: build
-# build:
-#	go mod tidy && make templ-generate-watch && make dev-css && make go-build
+.PHONY: dev
+dev:
+	make go-build && air
+	
 
 .PHONY: build
 build:
-	go mod tidy && make templ-generate && make go-build && make dev-css
+	go mod tidy && make templ-generate
