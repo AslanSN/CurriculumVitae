@@ -12,8 +12,8 @@ package db
 // // For the main.go:
 // Imports
 
-// "github.com/AslanSN/CurriculumVitae/db"
-// "github.com/AslanSN/CurriculumVitae/db/models"
+// "github.com/AslanSN/CurriculumVitae/internal/db"
+// "github.com/AslanSN/CurriculumVitae/internal/db/models"
 
 // db.DBconnection()
 

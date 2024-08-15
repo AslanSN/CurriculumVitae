@@ -11,7 +11,7 @@ import templruntime "github.com/a-h/templ/runtime"
 import (
 	"github.com/AslanSN/CurriculumVitae/app/components"
 	"github.com/AslanSN/CurriculumVitae/app/layouts"
-	"github.com/AslanSN/CurriculumVitae/db/constants"
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
 )
 
 func home() templ.Component {

@@ -1,23 +1,10 @@
 package components
 
-func formatClasses(classes interface{}) string {
-	defaultClasses := "link cursor-pointer text-2xl rounded-full"
-
-	var deliberatedClasses string
-
-	switch v := classes.(type) {
-	case string:
-		deliberatedClasses = v
-	case nil:
-		deliberatedClasses = "link-ghost md:px-3 p-0"
-	}
-
-	return defaultClasses + " " + deliberatedClasses
-}
+import "github.com/AslanSN/CurriculumVitae/helpers"
 
 templ LinkItem(href templ.SafeURL, classes interface{}) {
 	<a
-		class={ formatClasses(classes) }
+		class={ helpers.FormatClasses(classes)}
 		href={ href }
 		target="_blank"
 		rel="noopener noreferrer"

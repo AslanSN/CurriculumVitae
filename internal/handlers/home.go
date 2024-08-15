@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"github.com/AslanSN/CurriculumVitae/db/constants"
-	"github.com/AslanSN/CurriculumVitae/db/models"
 	"github.com/AslanSN/CurriculumVitae/app/views"
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"github.com/AslanSN/CurriculumVitae/internal/db/models"
 	"github.com/labstack/echo/v4"
 )
 

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	// "github.com/AslanSN/CurriculumVitae/db"
-	"github.com/AslanSN/CurriculumVitae/handlers"
+	// "github.com/AslanSN/CurriculumVitae/internal/db"
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/handlers"
 	handler "github.com/AslanSN/CurriculumVitae/vercel"
 
 	"github.com/labstack/echo/v4"

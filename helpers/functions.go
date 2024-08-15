@@ -15,6 +15,21 @@ func Api(endpoint string) string {
 	return fmt.Sprintf("/api%s", endpoint)
 }
 
+func FormatClasses(classes interface{}) string {
+	defaultClasses := "link cursor-pointer text-2xl rounded-full"
+
+	var deliberatedClasses string
+
+	switch v := classes.(type) {
+	case string:
+		deliberatedClasses = v
+	case nil:
+		deliberatedClasses = "link-ghost md:px-3 p-0"
+	}
+
+	return defaultClasses + " " + deliberatedClasses
+}
+
 func FetchData(endpoint string) (interface{}, error) {
 	formattedEndpoint := fmt.Sprintf("http://localhost:2340/api/%s", endpoint)
 	resp, err := http.Get(formattedEndpoint)

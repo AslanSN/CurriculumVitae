@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	models "github.com/AslanSN/CurriculumVitae/db/models"
-	storage "github.com/AslanSN/CurriculumVitae/db/storage"
+	models "github.com/AslanSN/CurriculumVitae/internal/db/models"
+	storage "github.com/AslanSN/CurriculumVitae/internal/db/storage"
 	"github.com/joho/godotenv"
 	"gorm.io/gorm"
 )

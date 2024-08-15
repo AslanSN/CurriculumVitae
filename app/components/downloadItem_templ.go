@@ -8,7 +8,7 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+import icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
 
 func DownloadItem(label string, url templ.SafeURL, tabIndex string, extraClasses string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {

@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/AslanSN/CurriculumVitae/db"
+	"github.com/AslanSN/CurriculumVitae/internal/db"
 	"github.com/a-h/templ"
 	"github.com/labstack/echo/v4"
 )
