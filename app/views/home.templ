@@ -1,0 +1,37 @@
+package views
+
+import (
+	"github.com/AslanSN/CurriculumVitae/app/components"
+	"github.com/AslanSN/CurriculumVitae/app/layouts"
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+)
+
+templ home() {
+	<div class="sticky flex h-screen flex-row gap-4 overflow-y-auto rounded-lg sm:overflow-x-hidden">
+		<main class="flex w-full flex-col px-8 sm:px-20">
+			@layouts.StickyLayout() {
+				<div class="flex w-full flex-row flex-wrap gap-4">
+					@components.ContactModal()
+					<div class="absolute z-40 "></div>
+					@components.Hero()
+					<section class="w-full grid grid-flow-row lg:grid-flow-col m-0 mb-8 gap-16 justify-items-start items-center justify-center lg:content-between">
+						@components.AboutMe()
+						@components.Skills()
+					</section>
+					<section class="w-full mb-10 ">
+						<div class="flex flex-col">
+							<h1 id="experience" class="text-5xl mb-6 w-fit font-bold">
+								EXPERIENCE
+							</h1>
+							<section class="flex flex-row flex-wrap flow justify-center lg:justify-between">
+								for _,workplace := range constants.Workplaces {
+									@components.ExperienceCard(workplace)
+								}
+							</section>
+						</div>
+					</section>
+				</div>
+			}
+		</main>
+	</div>
+}

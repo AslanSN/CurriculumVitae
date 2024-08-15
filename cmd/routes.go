@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/AslanSN/CurriculumVitae/handlers"
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/handlers"
 	"github.com/labstack/echo/v4"
 )
 
