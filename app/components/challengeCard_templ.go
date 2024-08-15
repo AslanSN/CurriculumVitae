@@ -10,8 +10,8 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import (
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
-	"github.com/AslanSN/CurriculumVitae/db/constants"
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
 )
 
 func ChallengeCard(challenge constants.Challenge) templ.Component {
