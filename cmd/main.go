@@ -12,6 +12,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
+
 const (
 	reset   = "\033[0m"
 	red     = "\033[31m"
@@ -22,6 +23,7 @@ const (
 	cyan    = "\033[36m"
 	white   = "\033[37m"
 )
+
 
 /* main is the entry point of the application where Echo instance is created, middlewares are added, routes are defined, and the server is started on port ":2340".
  */
@@ -41,6 +43,7 @@ func setupRouter() *echo.Echo {
 	// Echo instance
 	e := echo.New()
 
+	var homeHandler = echo.WrapHandler(http.HandlerFunc(handler.Handler))
 	// Middlewares
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
@@ -49,8 +52,7 @@ func setupRouter() *echo.Echo {
 	e.Use(routeLogger)
 
 	// Vercel connection
-	e.GET("", echo.WrapHandler(http.HandlerFunc(handler.Handler)))
-
+	e.GET("", homeHandler)
 	// Routes
 	registerStaticRoutes(e)
 	registerDBRoutes(e)
@@ -99,4 +101,3 @@ func getMethodColor(method string) string {
 		return white
 	}
 }
-

@@ -29,20 +29,46 @@ templ home() {
 								}
 							</section>
 						</div>
+						// <div>
+						// 	<h1 id="challenges" class="text-5xl mb-6 w-fit font-bold ">
+						// 		Challenges
+						// 	</h1>
+						// 	<section class="carousel relative w-full max-w-lg overlfow-hidden">
+						// 		// <ul class="carousel-inner relative flex flex-row flex-wrap  gap-10 flow justify-center lg:justify-between">
+						// 		<ul class="carousel-inner relative overflow-hidden w-full" hx-swap="innerHTML">
+						// 			for _,challenge := range constants.Challenges {
+						// 				@components.ChallengeCard(challenge)
+						// 			}
+						// 			<button class="prev absolute left-0 inset-y-0 flex items-center justify-center px-4" hx-trigger="click" hx-get="/prev" hx-target=".carousel-inner">
+						// 				&#10094;
+						// 			</button>
+						// 			<button class="next absolute right-0 inset-y-0 flex items-center justify-center px-4" hx-trigger="click" hx-get="/next" hx-target=".carousel-inner">
+						// 				&#10095;
+						// 			</button>
+						// 		</ul>
+						// 	</section>
+						// </div>
 						<div>
-							<h1 id="experience" class="text-5xl mb-6 w-fit font-bold">
+							<h1 id="challenges" class="text-5xl mb-6 w-fit font-bold ">
 								Challenges
 							</h1>
-							<section class="flex flex-row flex-wrap flow justify-center lg:justify-between">
-								<ul>
-								for _,challenge := range constants.Challenges{
-									@components.ChallengeCard(challenge)
-								}
-								</ul>
+							<section class="carousel relative w-full h-1/2 overflow-hidden">
+								// <ul class="carousel-inner relative overflow-hidden w-full">
+								// 	for _, challenge := range constants.Challenges {
+								// 		@components.ChallengeCard(challenge)
+								// 	}
+								// </ul>
+								@components.ChallengeCard(constants.InditexChallenge)
+								<button class="prev bg-black absolute -left-10 inset-y-0 flex items-center justify-center px-4" hx-trigger="click" hx-get="/change-slide?direction=prev" hx-target=".carousel-inner" hx-swap="innerHTML">
+									&#10094;
+								</button>
+								<button class="next bg-black absolute -right-10 inset-y-0 flex items-center justify-center px-4" hx-trigger="click" hx-get="/change-slide?direction=next" hx-target=".carousel-inner" hx-swap="innerHTML">
+									&#10095;
+								</button>
 							</section>
 						</div>
 						<div>
-							<h1 id="experience" class="text-5xl mb-6 w-fit font-bold">
+							<h1 id="personal-projects" class="text-5xl mb-6 w-fit font-bold">
 								Personal Projects
 							</h1>
 						</div>

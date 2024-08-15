@@ -2,6 +2,10 @@
 templ-generate:
 	templ generate
 
+.PHONY: templ-generate-watch
+templ-generate-watch:
+	templ generate --watch --proxy=http://localhost:2345
+
 .PHONY: tailwind-build
 tailwind-build:
 	tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch
@@ -14,10 +18,14 @@ tailwind-minify:
 dev-css:
 	make tailwind-minify && make tailwind-build
 
-.PHONY: dev
-dev:
-	go build -o ./tmp/app.exe ./cmd/main.go && air
+.PHONY: go-build
+go-build:
+	go build -o ./tmp/app.exe ./cmd/main.go
+
+# .PHONY: build
+# build:
+#	go mod tidy && make templ-generate-watch && make dev-css && make go-build
 
 .PHONY: build
 build:
-	go mod tidy && make templ-generate && go build -o ./tmp/app.exe ./cmd/main.go
+	go mod tidy && make templ-generate && make go-build && make dev-css

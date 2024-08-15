@@ -10,7 +10,7 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import (
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
-	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/helpers"
 )
 
 func IconLabel(params helpers.IconLabelParams) templ.Component {

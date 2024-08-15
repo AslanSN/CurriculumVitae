@@ -7,7 +7,7 @@ import (
 )
 
 templ ChallengeCard(challenge constants.Challenge) {
-	<li>
+	<li class="carousel-item w-full {{ if ne i 0 }}hidden{{ end }}" id="slide{{ i }}">
 		<article>
 			<header class="w-full flex justify-between">
 				<h2>
@@ -30,7 +30,7 @@ templ ChallengeCard(challenge constants.Challenge) {
 					{ challenge.Description }
 				</p>
 				@LinkItem(challenge.RepoLink, nil) {
-					<div class="flex">
+					<div class="flex p-3">
 						<label
 							for={ helpers.Identity(challenge.Company) }
 							class="cursor-pointer text-xl md:text-2xl me-2"
@@ -44,7 +44,7 @@ templ ChallengeCard(challenge constants.Challenge) {
 				}
 				if string(challenge.AppLink) != "" {
 					@LinkItem(challenge.AppLink, nil) {
-						<div class="flex ">
+						<div class="flex p-3">
 							<label
 								for={ helpers.Identity(challenge.Company) }
 								class="cursor-pointer text-xl md:text-2xl me-2"
