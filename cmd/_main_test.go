@@ -18,17 +18,18 @@ func TestStaticFiles(t *testing.T) {
 		url          string
 		expectedCode int
 	}{
-		{"/static", http.StatusOK},
-		{"/icons", http.StatusOK},
-		{"/images", http.StatusOK},
-		{"/js", http.StatusOK},
-		{"/css", http.StatusOK},
+		{"/static/cv/AslanSN-CV-EN-24.pdf", http.StatusOK},
+		{"/icons/github.svg", http.StatusOK},
+		{"/images/AslanSNPhoto.webp", http.StatusOK},
+		{"/js/htmx.min.js", http.StatusOK},
+		{"/css/input.css", http.StatusOK},
 	}
 
 	for _, tc := range testCases {
 		req := httptest.NewRequest(http.MethodGet, tc.url, nil)
 		rec := httptest.NewRecorder()
 		e.ServeHTTP(rec, req)
+		println(rec)
 		assert.Equal(t, tc.expectedCode, rec.Code)
 	}
 }
