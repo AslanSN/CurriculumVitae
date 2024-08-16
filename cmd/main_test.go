@@ -1,5 +1,3 @@
-// main_test.go
-
 package main
 
 import (
@@ -7,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/AslanSN/CurriculumVitae/handlers"
+	"github.com/AslanSN/CurriculumVitae/internal/handlers"
 	"github.com/AslanSN/CurriculumVitae/helpers"
 	"github.com/labstack/echo/v4"
 	"github.com/stretchr/testify/assert"
