@@ -86,7 +86,15 @@ func home() templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section></div></section></div>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section></div><div><h1 id=\"challenges\" class=\"text-5xl mb-6 w-fit font-bold \">Challenges</h1><section class=\"carousel relative w-full h-1/2 overflow-hidden\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = components.ChallengeCard(constants.InditexChallenge).Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button class=\"prev bg-black absolute -left-10 inset-y-0 flex items-center justify-center px-4\" hx-trigger=\"click\" hx-get=\"/change-slide?direction=prev\" hx-target=\".carousel-inner\" hx-swap=\"innerHTML\">&#10094;</button> <button class=\"next bg-black absolute -right-10 inset-y-0 flex items-center justify-center px-4\" hx-trigger=\"click\" hx-get=\"/change-slide?direction=next\" hx-target=\".carousel-inner\" hx-swap=\"innerHTML\">&#10095;</button></section></div><div><h1 id=\"personal-projects\" class=\"text-5xl mb-6 w-fit font-bold\">Personal Projects</h1></div></section></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
