@@ -86,7 +86,7 @@ func home() templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section></div></section><section class=\"w-full mb-10\"><h1 id=\"experience\" class=\"text-5xl mb-6 w-fit font-bold\">Challenges</h1><section class=\"flex flex-row flex-wrap flow justify-center lg:justify-between\"><ul>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section></div></section><section class=\"w-full mb-10\"><h1 id=\"experience\" class=\"text-5xl mb-6 w-fit font-bold\">Challenges</h1><section><ul class=\"flex flex-wrap gap-8 xl:gap-16 flow justify-center lg:justify-between\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
