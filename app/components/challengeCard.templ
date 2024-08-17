@@ -1,0 +1,76 @@
+package components
+
+import (
+	"fmt"
+	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+)
+
+func dayNumber(numberDays int) string {
+	if numberDays > 1 {
+		return "days"
+	}
+	return "day"
+}
+
+templ ChallengeCard(challenge constants.Challenge) {
+	<li class="flex flex-col items-center xl:flex-row w-full justify-between gap-4 p-10 rounded-2xl bg-gray-500/10">
+		<article class="flex flex-col gap-4 w-full h-full  md:max-w-lg xl:max-w-96 justify-between">
+			<header class="flex flex-col gap-4">
+				<h2 class="text-3xl font-bold">
+					{ challenge.Title }
+				</h2>
+				<ul class="flex flex-col gap-1">
+					<li>
+						<b>Date range:{ " " } </b>{ challenge.Dates }
+					</li>
+					<li>
+						<b>Duration:{ " " } </b>{ fmt.Sprintf(`%d %s`, challenge.Duration, dayNumber(challenge.Duration)) }
+					</li>
+					<li>
+						<b>Conclusion:{ " " }</b>{ challenge.State }.
+					</li>
+				</ul>
+			</header>
+			<main>
+				{ challenge.Description }
+			</main>
+			<footer class="flex flex-col gap-2">
+				if string(challenge.RepoLink) != "" {
+					@LinkItem(challenge.RepoLink, "w-full link-ghost md:px-3 p-3") {
+						<div class="flex justify-between ">
+							<label
+								for={ helpers.Identity(challenge.Company) }
+								class="cursor-pointer text-xl md:text-2xl me-2"
+							>
+								Visit Repo
+							</label>
+							<span class="w-auto h-8 cursor-pointer">
+								@icons.GithubIcon()
+							</span>
+						</div>
+					}
+					if string(challenge.AppLink) != "" {
+						@LinkItem(challenge.AppLink, "w-full link-ghost md:px-3 p-3") {
+							<div class="flex justify-between">
+								<label
+									for={ helpers.Identity(challenge.Company) }
+									class="cursor-pointer text-xl md:text-2xl me-2"
+								>
+									Visit Deploy
+								</label>
+								<span class="w-auto h-8 cursor-pointer content-center">
+									@icons.OpenNewTabIcon()
+								</span>
+							</div>
+						}
+					}
+				}
+			</footer>
+		</article>
+		<main class="w-full relative pt-[211%] md:pt-[70%] xl:pt-[43.25%]">
+			<iframe class="absolute w-full h-full top-0 bottom-0 left-0 right-0" id={ challenge.Company } title={ challenge.Title } src={ string(challenge.AppLink) }></iframe>
+		</main>
+	</li>
+}

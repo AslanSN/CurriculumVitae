@@ -8,7 +8,7 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+import "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
 
 func menuOrientationHandler(menuOrientation string) string {
 	if menuOrientation != "" {

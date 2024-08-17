@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"net/http"
 
-	// "github.com/AslanSN/CurriculumVitae/internal/db"
 	"github.com/AslanSN/CurriculumVitae/helpers"
 	"github.com/AslanSN/CurriculumVitae/internal/handlers"
 	handler "github.com/AslanSN/CurriculumVitae/vercel"
@@ -12,7 +11,6 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
-
 const (
 	reset   = "\033[0m"
 	red     = "\033[31m"
@@ -24,15 +22,21 @@ const (
 	white   = "\033[37m"
 )
 
-// main is the entry point of the application where Echo instance is created, middlewares are added, routes are defined, and the server is started on port ":2340".
-//
-// No parameters.
-// No return.
+/* main is the entry point of the application where Echo instance is created, middlewares are added, routes are defined, and the server is started on port ":2340".
+ */
 func main() {
-
+	e := setupRouter()
 	// DB
 	// db.DBconnection()
 
+	// Vercel Connection
+	http.Handle("/", e)
+
+	// Setup localhost port
+	e.Logger.Fatal(e.Start(":2340"))
+}
+
+func setupRouter() *echo.Echo {
 	// Echo instance
 	e := echo.New()
 
@@ -40,18 +44,20 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
+	// Custom Middleware to log routes
+	e.Use(routeLogger)
+
 	// Vercel connection
 	e.GET("", echo.WrapHandler(http.HandlerFunc(handler.Handler)))
 
 	// Routes
-	// registerStaticRoutes(e)
-	// registerDBRoutes(e)
+	registerStaticRoutes(e)
+	registerDBRoutes(e)
 
-	// /**
-	// * ? Unmodulated routes 'cause error:
-	// * * cmd\main.go:29:2: undefined: registerStaticRoutes
-	// * * cmd\main.go:30:2: undefined: registerDBRoutes
-	//  */
+	return e
+}
+
+func registerDBRoutes(e *echo.Echo) {
 	homeHandler := handlers.HomeHandler{}
 
 	data := e.Group("/api/v1/data")
@@ -60,19 +66,16 @@ func main() {
 	data.GET(helpers.Api("/aboutMe"), homeHandler.HandleShowAboutMe)
 	data.GET(helpers.Api("/experience"), homeHandler.HandleShowExperience)
 	data.GET(helpers.Api("/skills"), homeHandler.HandleShowSkills)
+}
 
+func registerStaticRoutes(e *echo.Echo) {
 	e.Static("/static", "assets")
 	e.Static("/icons", "assets/icons")
 	e.Static("/images", "assets/images")
-	e.Static("/assets/js", "assets/js")
-	e.Static("/css", "assets/css")
-
-	// Vercel Connection
-	http.Handle("/", e)
-
-	// Setup localhost port
-	e.Logger.Fatal(e.Start(":2340"))
+	e.Static("js", "assets/js")
 }
+
+
 
 func routeLogger(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
