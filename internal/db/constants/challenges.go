@@ -23,7 +23,7 @@ var (
 		State:       "Candidate with best technical skills",
 		Dates:       "From 1 to 4 July 2022",
 		RepoLink:    "https://github.com/AslanSN/Logitravel-Technical-Proof",
-		AppLink:     templ.SafeURL(""),
+		AppLink:     "https://logitravel-technical-proof.vercel.app/",
 	}
 	ArupChallenge = Challenge{
 		Company:     "Arup",
@@ -31,8 +31,8 @@ var (
 		State:       "Not enough experience",
 		Description: "",
 		Dates:       "From 7 to 14 June 2022",
-		RepoLink:    "https://github.com/AslanSN/Logitravel-Technical-Proof",
-		AppLink:     templ.SafeURL(""),
+		RepoLink:    "https://github.com/AslanSN/arup-technicalTest",
+		AppLink:     "https://arup-technical-test-deploy.vercel.app/",
 	}
 	NivimuChallenge = Challenge{
 		Company:     "Nivimu",
@@ -40,7 +40,7 @@ var (
 		State:       "HIRED",
 		Description: "",
 		Dates:       "From 20 to 21 March 2023",
-		RepoLink:    "https://github.com/AslanSN/Logitravel-Technical-Proof",
+		RepoLink:    "https://github.com/AslanSN/nivimu-front-codetest",
 		AppLink:     "https://aslansn.github.io/nivimu-front-codetest/",
 	}
 	InditexChallenge = Challenge{
@@ -49,7 +49,7 @@ var (
 		State:       "Process stopped prior to review of my technical proof",
 		Description: "",
 		Dates:       "From 1 to 8 August 2024",
-		RepoLink:    "https://github.com/AslanSN/Logitravel-Technical-Proof",
+		RepoLink:    "https://github.com/AslanSN/zara-web-challenge",
 		AppLink:     "https://zara-marvelous.vercel.app/",
 	}
 )
