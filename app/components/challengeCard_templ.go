@@ -40,7 +40,7 @@ func ChallengeCard(challenge constants.Challenge) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"flex flex-col items-center xl:flex-row w-full justify-between gap-4 p-10 rounded-2xl bg-gray-500/10\"><article class=\"flex flex-col gap-4 w-full h-full  md:max-w-lg lg:max-w-96justify-between\"><header class=\"flex flex-col gap-4\"><h2 class=\"text-3xl font-bold\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"flex flex-col items-center xl:flex-row w-full justify-between gap-4 p-10 rounded-2xl bg-gray-500/10\"><article class=\"flex flex-col gap-4 w-full h-full  md:max-w-lg xl:max-w-96 justify-between\"><header class=\"flex flex-col gap-4\"><h2 class=\"text-3xl font-bold\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

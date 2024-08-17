@@ -82,7 +82,7 @@ var (
 			Id:          "node",
 			Label:       "Node",
 			Alternative: "Node logo, a green hexagon that links with the JavaScript logo",
-			Source:      helpers.RepoURL + "/icons/nodejs.svg",
+			Source:      helpers.RepoURL + "/icons/node.svg",
 		},
 		Link: "https://nodejs.org/en/",
 	}
