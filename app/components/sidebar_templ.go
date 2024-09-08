@@ -44,7 +44,7 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" alt=\"avatar of AslanSN\"></div><div class=\"flex flex-col\"><span>AslanSN CV</span></div></div></label></div></section><section class=\"sidebar-content\"><nav class=\"menu rounded-md\"><section class=\"menu-section px-4\"><span class=\"menu-title\">Sections</span><ul class=\"menu-items\"><li class=\"menu-item\"><a href=\"#hero\">HOME</a></li><li class=\"menu-item\"><a href=\"#aboutMe\">ABOUT ME</a></li><li class=\"menu-item\"><a href=\"#skills\">SKILLS</a></li><li class=\"menu-item\"><a href=\"#experience\">EXPERIENCE</a></li></ul></section><div class=\"divider my-0\"></div><section class=\"menu-section px-4\"><ul class=\"menu-items\"><li><input type=\"checkbox\" checked class=\"menu-toggle\"> <label class=\"menu-item justify-between\"><div class=\"flex gap-2\"><span>DOWNLOAD CV</span></div><span>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" alt=\"avatar of AslanSN\"></div><div class=\"flex flex-col\"><span>AslanSN CV</span></div></div></label></div></section><section class=\"sidebar-content\"><nav class=\"menu rounded-md\"><section class=\"menu-section px-4\"><span class=\"menu-title\">Sections</span><ul class=\"menu-items\"><li class=\"menu-item\"><a href=\"#hero\">HOME</a></li><li class=\"menu-item\"><a href=\"#aboutMe\">ABOUT ME</a></li><li class=\"menu-item\"><a href=\"#skills\">SKILLS</a></li><li class=\"menu-item\"><a href=\"#experience\">EXPERIENCE</a></li><li class=\"menu-item\"><a href=\"#challenges\">CHALLENGES</a></li></ul></section><div class=\"divider my-0\"></div><section class=\"menu-section px-4\"><ul class=\"menu-items\"><li><input type=\"checkbox\" checked class=\"menu-toggle\"> <label class=\"menu-item justify-between\"><div class=\"flex gap-2\"><span>DOWNLOAD CV</span></div><span>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -133,7 +133,7 @@ func Sidebar() templ.Component {
 			var templ_7745c5c3_Var5 string
 			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(string(helpers.RepoURL + "/icons/whatsapp.svg"))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/sidebar.templ`, Line: 101, Col: 88}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/sidebar.templ`, Line: 104, Col: 88}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 			if templ_7745c5c3_Err != nil {

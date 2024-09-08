@@ -40,7 +40,7 @@ func ChallengeCard(challenge constants.Challenge) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"flex flex-col items-center xl:flex-row w-full justify-between gap-4 p-10 rounded-2xl bg-gray-500/10\"><article class=\"flex flex-col gap-4 w-full h-full  md:max-w-lg xl:max-w-96 justify-between\"><header class=\"flex flex-col gap-4\"><h2 class=\"text-3xl font-bold\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"card flex flex-col items-center xl:flex-row w-full justify-between gap-4 p-10 rounded-2xl  max-w-full\"><article class=\"flex flex-col gap-4 w-full h-full  md:max-w-lg xl:max-w-96 justify-between\"><header class=\"flex flex-col gap-4\"><h2 class=\"text-3xl font-bold\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -112,7 +112,7 @@ func ChallengeCard(challenge constants.Challenge) templ.Component {
 		var templ_7745c5c3_Var7 string
 		templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(challenge.Description)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 37, Col: 27}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 38, Col: 27}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 		if templ_7745c5c3_Err != nil {
@@ -142,7 +142,7 @@ func ChallengeCard(challenge constants.Challenge) templ.Component {
 				var templ_7745c5c3_Var9 string
 				templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(helpers.Identity(challenge.Company))
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 44, Col: 49}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 45, Col: 49}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 				if templ_7745c5c3_Err != nil {
@@ -190,7 +190,7 @@ func ChallengeCard(challenge constants.Challenge) templ.Component {
 					var templ_7745c5c3_Var11 string
 					templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(helpers.Identity(challenge.Company))
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 58, Col: 50}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 59, Col: 50}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 					if templ_7745c5c3_Err != nil {
@@ -223,7 +223,7 @@ func ChallengeCard(challenge constants.Challenge) templ.Component {
 		var templ_7745c5c3_Var12 string
 		templ_7745c5c3_Var12, templ_7745c5c3_Err = templ.JoinStringErrs(challenge.Company)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 73, Col: 94}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 74, Col: 94}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var12))
 		if templ_7745c5c3_Err != nil {
@@ -236,7 +236,7 @@ func ChallengeCard(challenge constants.Challenge) templ.Component {
 		var templ_7745c5c3_Var13 string
 		templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinStringErrs(challenge.Title)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 73, Col: 120}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 74, Col: 120}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
 		if templ_7745c5c3_Err != nil {
@@ -249,7 +249,7 @@ func ChallengeCard(challenge constants.Challenge) templ.Component {
 		var templ_7745c5c3_Var14 string
 		templ_7745c5c3_Var14, templ_7745c5c3_Err = templ.JoinStringErrs(string(challenge.AppLink))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 73, Col: 154}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/challengeCard.templ`, Line: 74, Col: 154}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var14))
 		if templ_7745c5c3_Err != nil {
