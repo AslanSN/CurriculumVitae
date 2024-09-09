@@ -22,7 +22,7 @@ var (
 	LinkedIn = SocialMediaData{
 		IconLabelParams: helpers.IconLabelParams{
 			Id:          "linkedIn",
-			Label:       "LinkedIn",
+			Label:       "",
 			Source:      helpers.RepoURL + "/icons/linkedin.svg",
 			Alternative: "LinkedIn Icon",
 		},
@@ -31,7 +31,7 @@ var (
 	Github = SocialMediaData{
 		IconLabelParams: helpers.IconLabelParams{
 			Id:          "github",
-			Label:       "GitHub",
+			Label:       "",
 			Source:      helpers.RepoURL + "/icons/github.svg",
 			Alternative: "Github Icon",
 		},
@@ -40,8 +40,8 @@ var (
 	X = SocialMediaData{
 		IconLabelParams: helpers.IconLabelParams{
 			Id:          "x",
-			Label:       "X",
-			Source:      helpers.RepoURL + "/icons/x-social-media-round-icon.svg",
+			Label:       "",
+			Source:      helpers.RepoURL + "/icons/x.svg",
 			Alternative: "X, before twitter, icon",
 		},
 		SocialMediaLink: "https://x.com/AslanSN_",
