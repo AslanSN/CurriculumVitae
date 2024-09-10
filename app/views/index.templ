@@ -1,6 +1,9 @@
 package views
 
-import "github.com/AslanSN/CurriculumVitae/helpers"
+import (
+	"github.com/AslanSN/CurriculumVitae/app/components"
+	"github.com/AslanSN/CurriculumVitae/helpers"
+)
 
 templ Index() {
 	<!DOCTYPE html>
@@ -18,8 +21,9 @@ templ Index() {
 			<script src={ string(helpers.RepoURL + "/js/customAlert.js") }></script>
 			<script src={ string(helpers.RepoURL + "assets/js/customAlert.js") }></script>
 		</head>
-		<body>
+		<body class="relative">
 			@home()
+			@components.ShareButton()
 		</body>
 	</html>
 }
