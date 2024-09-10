@@ -1,0 +1,14 @@
+package components
+
+import icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+
+templ ShareButton() {
+	<div class="absolute hidden sm:block bottom-10 left-10">
+		<label class="btn flex h-full gap-4 justify-between btn-xl text-2xl btn-solid-secondary" for="modal-share">
+			<span>Share</span>
+			<span class="h-8 w-auto">
+				@icons.ShareIcon()
+			</span>
+		</label>
+	</div>
+}

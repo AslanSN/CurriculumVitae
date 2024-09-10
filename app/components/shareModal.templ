@@ -1,0 +1,26 @@
+package components
+
+import (
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"strings"
+)
+
+func formatSafeURL(baseURL string) templ.SafeURL {
+	stringURL := strings.Replace(baseURL, "{message}", constants.Message, 1)
+	return templ.SafeURL(stringURL)
+}
+
+templ ShareModal() {
+	<input class="modal-state" id="modal-share" type="checkbox"/>
+	<div class="modal">
+		<div id="alert-container" class="absolute z-40"></div>
+		<label class="modal-overlay" for="modal-share"></label>
+		<div class="modal-content flex flex-row gap-5">
+			for _, socialMediaShare := range constants.SocialShareButtons {
+				@LinkItem(formatSafeURL(socialMediaShare.URL), "") {
+					@IconLabel(socialMediaShare.Icon, false, 10)
+				}
+			}
+		</div>
+	</div>
+}
