@@ -2,22 +2,9 @@ package components
 
 import (
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+	iconHelpers "github.com/AslanSN/CurriculumVitae/app/components/iconComponents/helpers"
 	"github.com/AslanSN/CurriculumVitae/helpers"
-	"strings"
-	"fmt"
 )
-
-func iconClassesFormatter(iconSize int8) string {
-	defaultClasses := "w-auto h-8 cursor-pointer"
-
-	if iconSize == 0 {
-		return defaultClasses
-	}
-	stringifiedIconSize := fmt.Sprintf("%d", iconSize)
-	println(stringifiedIconSize)
-
-	return strings.Replace(defaultClasses, "8", stringifiedIconSize, 1)
-}
 
 templ IconLabel(params helpers.IconLabelParams, hasLabel bool, iconSize int8) {
 	<span class="flex flex-row items-center px-2 py-3">
@@ -31,10 +18,10 @@ templ IconLabel(params helpers.IconLabelParams, hasLabel bool, iconSize int8) {
 		}
 		<span class="w-auto h-8 cursor-pointer">
 			if params.Id == "github" {
-				@icons.GithubIcon()
+				@icons.GithubIcon(iconSize)
 			} else {
 				<img
-					class={ iconClassesFormatter(iconSize) }
+					class={ iconHelpers.SizeParamHandler("w-auto h-8 cursor-pointer", iconSize) }
 					id={ params.Id }
 					src={ string(params.Source) }
 					alt={ params.Alternative }

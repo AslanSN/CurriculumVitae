@@ -3,6 +3,7 @@ package components
 import (
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
 )
 
 templ Sidebar() {
@@ -80,6 +81,20 @@ templ Sidebar() {
 				</section>
 				<section class="sidebar-footer justify-end bg-gray-2 pt-2">
 					<div class="divider my-0"></div>
+					<div class="menu-section p-4">
+						<div class="menu-title">
+							Share
+						</div>
+						<ul class="menu-items flex flex-row justify-between">
+							for _, socialMediaShare := range constants.SocialShareButtons {
+								<li id={ socialMediaShare.Icon.Label + "Sidebar" }>
+									@LinkItem(formatSafeURL(socialMediaShare.URL), "") {
+										@IconLabel(socialMediaShare.Icon, false, 0)
+									}
+								</li>
+							}
+						</ul>
+					</div>
 					<div class="menu-section p-4">
 						<div class="menu-title">
 							Contact
