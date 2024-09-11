@@ -26,7 +26,9 @@ templ home() {
 							</h1>
 							<section class="flex flex-row flex-wrap flow justify-center lg:justify-between">
 								for _,workplace := range constants.Workplaces {
-									@components.ExperienceCard(workplace)
+									<span id={ workplace.Company + "Workplaces" }>
+										@components.ExperienceCard(workplace)
+									</span>
 								}
 							</section>
 						</div>
@@ -38,7 +40,9 @@ templ home() {
 						<section>
 							<ul class="flex flex-wrap gap-8 xl:gap-16 flow justify-center lg:justify-between">
 								for _,challenge := range constants.Challenges {
-									@components.ChallengeCard(challenge)
+									<span id={ challenge.Title + "Challenge" }>
+										@components.ChallengeCard(challenge)
+									</span>
 								}
 							</ul>
 						</section>
@@ -46,7 +50,6 @@ templ home() {
 				</div>
 			}
 		</main>
-		<footer>
-		</footer>
+		<footer></footer>
 	</div>
 }

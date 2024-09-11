@@ -17,9 +17,11 @@ templ ShareModal() {
 		<label class="modal-overlay" for="modal-share"></label>
 		<div class="modal-content flex flex-row gap-5">
 			for _, socialMediaShare := range constants.SocialShareButtons {
-				@LinkItem(formatSafeURL(socialMediaShare.URL), "") {
-					@IconLabel(socialMediaShare.Icon, false, 10)
-				}
+				<span id={ socialMediaShare.Icon.Id + "ShareModal" }>
+					@LinkItem(formatSafeURL(socialMediaShare.URL), "") {
+						@IconLabel(socialMediaShare.Icon, false, 10)
+					}
+				</span>
 			}
 		</div>
 	</div>
