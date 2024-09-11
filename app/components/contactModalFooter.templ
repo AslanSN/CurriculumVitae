@@ -1,19 +1,75 @@
 package components
 
 import (
-	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	"net/url"
+	"strings"
 )
 
+const (
+	contactMessage string = "Hi, I'm [my name], I would like to contact you..."
+	subject        string = "First contact"
+
+	myLinkedIn      string = "alanstaubnegro"
+	linkedinBaseUrl string = "https://www.linkedin.com/messaging/compose?recipientId={recipientId}&body={message}&subject={subject}"
+	whatsappBaseUrl string = "https://wa.me/+34664330610?text={message}."
+)
+
+type formatMessageURLParams struct {
+	baseUrl, contactMessage, subject, recipientId string
+	isUriMessage                                  bool
+}
+
+func formatMessageURL(params formatMessageURLParams) templ.SafeURL {
+	var urlStr string
+
+	if params.isUriMessage {
+		message := url.QueryEscape(params.contactMessage)
+		urlStr = strings.Replace(params.baseUrl, "{message}", message, 1)
+
+		if params.subject != "" {
+			subject := url.QueryEscape(params.subject)
+			urlStr = strings.Replace(urlStr, "{subject}", subject, 1)
+		}
+	}
+
+	if params.subject != "" {
+		subject := url.PathEscape(params.subject)
+		urlStr = strings.Replace(urlStr, "{subject}", subject, 1)
+	}
+
+	if params.recipientId != "" {
+		recipient := url.PathEscape(params.recipientId)
+		urlStr = strings.Replace(urlStr, "{recipientId}", recipient, 1)
+	}
+
+	message := url.PathEscape(params.contactMessage)
+	urlStr = strings.Replace(urlStr, "{message}", message, 1)
+
+	return templ.SafeURL(urlStr)
+}
+
 templ ContactModalFooter() {
-	@LinkItem(templ.SafeURL("mailto:aslan.staub@pm.me?subject=Contacto&body=Hola, me gustaría ponerme en contacto contigo."), "") {
+	@LinkItem(formatMessageURL(formatMessageURLParams{
+		linkedinBaseUrl,
+		contactMessage,
+		subject,
+		myLinkedIn,
+		true,
+	}), "") {
 		<span class="btn btn-circle btn-ghost w-auto h-auto p-4  cursor-pointer">
-			@icons.MailIcon()
+			<img class="w-10 h-auto" src={ string(helpers.RepoURL + "/icons/linkedin.svg") } alt="linkedin icon for contacting me by its web"/>
 		</span>
 	}
-	@LinkItem(templ.SafeURL("https://wa.me/+34664330610?text=Hola%2C%20me%20gustaría%20ponerme%20en%20contacto%20contigo."), "") {
+	@LinkItem(formatMessageURL(formatMessageURLParams{
+		whatsappBaseUrl,
+		contactMessage,
+		"",
+		"",
+		false,
+	}), "") {
 		<span class="btn btn-circle btn-ghost w-auto h-auto p-4  cursor-pointer">
-			<img class="w-8 h-auto" src={ string(helpers.RepoURL + "/icons/whatsapp.svg") } alt="whatsapp green icon"/>
+			<img class="w-10 h-auto" src={ string(helpers.RepoURL + "/icons/whatsapp.svg") } alt="whatsapp green icon"/>
 		</span>
 	}
 }

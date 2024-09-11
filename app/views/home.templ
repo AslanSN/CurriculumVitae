@@ -24,12 +24,14 @@ templ home() {
 							<h1 id="experience" class="text-5xl mb-6 w-fit font-bold">
 								EXPERIENCE
 							</h1>
-							<section class="flex flex-row flex-wrap flow justify-center lg:justify-between">
-								for _,workplace := range constants.Workplaces {
-									<span id={ workplace.Company + "Workplaces" }>
-										@components.ExperienceCard(workplace)
-									</span>
-								}
+							<section class="">
+								<ul class="flex flex-row flex-wrap flow justify-center lg:justify-between">
+									for _,workplace := range constants.Workplaces {
+										// <li id={ workplace.Company + "Workplaces" }>
+											@components.ExperienceCard(workplace)
+										// </li>
+									}
+								</ul>
 							</section>
 						</div>
 					</section>
@@ -40,9 +42,9 @@ templ home() {
 						<section>
 							<ul class="flex flex-wrap gap-8 xl:gap-16 flow justify-center lg:justify-between">
 								for _,challenge := range constants.Challenges {
-									<span id={ challenge.Title + "Challenge" }>
+									<li id={ challenge.Company + "Challenge" }>
 										@components.ChallengeCard(challenge)
-									</span>
+									</li>
 								}
 							</ul>
 						</section>

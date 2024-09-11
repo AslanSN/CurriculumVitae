@@ -6,7 +6,7 @@ import (
 )
 
 templ ExperienceCard(workplace constants.ExperienceStruct) {
-	<div class="card rounded-2xl transition-all flex flex-col items-center pt-8 mb-10">
+	<li id={workplace.Company + "Experience"} class="card rounded-2xl transition-all flex flex-col items-center pt-8 mb-10">
 		<img
 			class="px-4 h-1/4 hover:-skew-y-3 transition ease-linear "
 			src={ string(workplace.ImageSource) }
@@ -57,5 +57,5 @@ templ ExperienceCard(workplace constants.ExperienceStruct) {
 				@List("Extra", workplace.Extra)
 			</footer>
 		</article>
-	</div>
+	</li>
 }

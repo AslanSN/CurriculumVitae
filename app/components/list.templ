@@ -6,9 +6,7 @@ templ List(label string, slice []string) {
 	<label class="text-xl underline underline-offset-2 decoration-cyan-200 text-slate-600 dark:decoration-cyan-800 dark:text-slate-400" for={ helpers.Identity(label) }>{ label }</label>
 	<ul class="list-disc list-inside">
 		for _, item := range slice {
-			<span id={ item + label }>
 			@ListItem(item)
-			</span>
 		}
 	</ul>
 }
