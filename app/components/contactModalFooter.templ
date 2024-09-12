@@ -56,10 +56,8 @@ templ ContactModalFooter() {
 		subject,
 		myLinkedIn,
 		true,
-	}), "") {
-		<span class="btn btn-circle btn-ghost w-auto h-auto p-4  cursor-pointer">
-			<img class="w-10 h-auto" src={ string(helpers.RepoURL + "/icons/linkedin.svg") } alt="linkedin icon for contacting me by its web"/>
-		</span>
+	}), "btn btn-circle btn-ghost w-auto h-auto p-4 cursor-pointer") {
+		<img class="w-10 h-10" src={ string(helpers.RepoURL + "/icons/linkedin.svg") } alt="linkedin icon for contacting me by its web"/>
 	}
 	@LinkItem(formatMessageURL(formatMessageURLParams{
 		whatsappBaseUrl,
@@ -67,9 +65,7 @@ templ ContactModalFooter() {
 		"",
 		"",
 		false,
-	}), "") {
-		<span class="btn btn-circle btn-ghost w-auto h-auto p-4  cursor-pointer">
-			<img class="w-10 h-auto" src={ string(helpers.RepoURL + "/icons/whatsapp.svg") } alt="whatsapp green icon"/>
-		</span>
+	}), "btn btn-circle btn-ghost w-auto h-auto p-4 cursor-pointer") {
+		<img class="w-10 h-10" src={ string(helpers.RepoURL + "/icons/whatsapp.svg") } alt="whatsapp green icon"/>
 	}
 }

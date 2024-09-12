@@ -79,7 +79,7 @@ templ Sidebar() {
 						</section>
 					</nav>
 				</section>
-				<section class="sidebar-footer justify-end bg-gray-2 pt-2">
+				<section class="sidebar-footer justify-start bg-gray-2 pt-2">
 					<div class="divider my-0"></div>
 					<div class="menu-section p-4">
 						<div class="menu-title">
@@ -88,7 +88,7 @@ templ Sidebar() {
 						<ul class="menu-items flex flex-row justify-between">
 							for _, socialMediaShare := range constants.SocialShareButtons {
 								<li id={ socialMediaShare.Icon.Label + "Sidebar" }>
-									@LinkItem(formatSafeURL(socialMediaShare.URL), "") {
+									@LinkItem(formatSafeURL(socialMediaShare.URL), "btn btn-circle btn-ghost w-auto h-auto cursor-pointer") {
 										@IconLabel(socialMediaShare.Icon, false, 0)
 									}
 								</li>

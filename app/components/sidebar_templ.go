@@ -80,7 +80,7 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</label></div></div></li></ul></section></nav></section><section class=\"sidebar-footer justify-end bg-gray-2 pt-2\"><div class=\"divider my-0\"></div><div class=\"menu-section p-4\"><div class=\"menu-title\">Share</div><ul class=\"menu-items flex flex-row justify-between\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</label></div></div></li></ul></section></nav></section><section class=\"sidebar-footer justify-start bg-gray-2 pt-2\"><div class=\"divider my-0\"></div><div class=\"menu-section p-4\"><div class=\"menu-title\">Share</div><ul class=\"menu-items flex flex-row justify-between\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -120,7 +120,7 @@ func Sidebar() templ.Component {
 				}
 				return templ_7745c5c3_Err
 			})
-			templ_7745c5c3_Err = LinkItem(formatSafeURL(socialMediaShare.URL), "").Render(templ.WithChildren(ctx, templ_7745c5c3_Var4), templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = LinkItem(formatSafeURL(socialMediaShare.URL), "btn btn-circle btn-ghost w-auto h-auto cursor-pointer").Render(templ.WithChildren(ctx, templ_7745c5c3_Var4), templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

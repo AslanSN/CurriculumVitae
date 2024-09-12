@@ -1,16 +1,19 @@
 package components
 
-import "github.com/AslanSN/CurriculumVitae/helpers"
+func classesHandler(classes string) string {
+	if classes == "" {
+		return "link-ghost md:px-3 p-0"
+	}
+	return classes
+}
 
-templ LinkItem(href templ.SafeURL, classes interface{}) {
+templ LinkItem(href templ.SafeURL, classes string) {
 	<a
-		class={ helpers.FormatClasses(classes) }
+		class={ "cursor-pointer text-2xl rounded-full", classesHandler(classes) }
 		href={ href }
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<span class="cursor-pointer w-full">
-			{ children... }
-		</span>
+		{ children... }
 	</a>
 }

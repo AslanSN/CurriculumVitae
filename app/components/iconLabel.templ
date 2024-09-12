@@ -6,9 +6,23 @@ import (
 	"github.com/AslanSN/CurriculumVitae/helpers"
 )
 
+func labelValidation(labelParam string, hasLabel bool) bool {
+	return labelParam != "" || hasLabel
+}
+
+func paddingHandler(labelParam string, hasLabel bool) string {
+	isLabelled := labelValidation(labelParam, hasLabel)
+
+	if isLabelled {
+		return "px-2 py-3"
+	}
+
+	return "p-3 md:p-4"
+}
+
 templ IconLabel(params helpers.IconLabelParams, hasLabel bool, iconSize int8) {
-	<span class="flex flex-row items-center px-2 py-3">
-		if hasLabel || params.Label != "" {
+	<span class={ "flex flex-row items-center", paddingHandler(params.Label, hasLabel) }>
+		if labelValidation(params.Label, hasLabel) {
 			<label
 				for={ helpers.Identity(params.Id) }
 				class="cursor-pointer text-xl md:text-2xl me-2"
@@ -16,17 +30,15 @@ templ IconLabel(params helpers.IconLabelParams, hasLabel bool, iconSize int8) {
 				{ params.Label }
 			</label>
 		}
-		<span class="w-auto h-8 cursor-pointer">
-			if params.Id == "github" {
-				@icons.GithubIcon(iconSize)
-			} else {
-				<img
-					class={ iconHelpers.SizeParamHandler("w-auto h-8 cursor-pointer", iconSize) }
-					id={ params.Id }
-					src={ string(params.Source) }
-					alt={ params.Alternative }
-				/>
-			}
-		</span>
+		if params.Id == "github" {
+			@icons.GithubIcon(iconSize)
+		} else {
+			<img
+				class={ iconHelpers.SizeParamHandler("w-8 h-8 cursor-pointer", iconSize) }
+				id={ params.Id }
+				src={ string(params.Source) }
+				alt={ params.Alternative }
+			/>
+		}
 	</span>
 }

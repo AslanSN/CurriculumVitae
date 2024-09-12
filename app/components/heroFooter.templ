@@ -8,9 +8,9 @@ templ HeroFooter() {
 			class="flex flex-row flex-wrap h-min w-full  items-baseline"
 		>
 			for _, socialMedia := range constants.SocialMediaList {
-				<li class="mx-2" id={socialMedia.IconLabelParams.Id + "HeroFooter"} key={ socialMedia.IconLabelParams.Id }>
-					@LinkItem(socialMedia.SocialMediaLink, "") {
-						@IconLabel(socialMedia.IconLabelParams,  false, 10)
+				<li class="mx-2" id={ socialMedia.IconLabelParams.Id + "HeroFooter" } key={ socialMedia.IconLabelParams.Id }>
+					@LinkItem(socialMedia.SocialMediaLink, "btn btn-circle btn-ghost w-fit h-fit") {
+						@IconLabel(socialMedia.IconLabelParams, false, 10)
 					}
 				</li>
 			}

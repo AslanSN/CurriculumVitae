@@ -20,7 +20,7 @@ templ ShareModal() {
 			<ul class="flex flex-row gap-5 justify-center">
 				for _, socialMediaShare := range constants.SocialShareButtons {
 					<li id={ socialMediaShare.Icon.Id + "ShareModal" }>
-						@LinkItem(formatSafeURL(socialMediaShare.URL), "") {
+						@LinkItem(formatSafeURL(socialMediaShare.URL), "btn btn-circle btn-ghost w-auto h-auto cursor-pointer") {
 							@IconLabel(socialMediaShare.Icon, false, 10)
 						}
 					</li>

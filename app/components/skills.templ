@@ -10,7 +10,7 @@ templ Skills() {
 		<ul class="xl:grid xl:auto-cols-min xl:grid-cols-3 xl:items-center flex flex-row flex-wrap w-fit items-baseline h-fit ">
 			for _, skill := range constants.SkillsList {
 				<li key={ skill.IconLabelParams.Id } id={ skill.IconLabelParams.Id + "Skills" } class="m-2 sm:mx-0">
-					@LinkItem(skill.Link, nil) {
+					@LinkItem(skill.Link, "link link-ghost") {
 						@IconLabel(skill.IconLabelParams, true, 0)
 					}
 				</li>
