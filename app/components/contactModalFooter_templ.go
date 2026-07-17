@@ -115,7 +115,7 @@ func ContactModalFooter() templ.Component {
 			subject,
 			myLinkedIn,
 			true,
-		}), "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-colors hover:bg-white/5").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
+		}), "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-transform duration-200 hover:scale-110").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -156,7 +156,7 @@ func ContactModalFooter() templ.Component {
 			"",
 			"",
 			false,
-		}), "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-colors hover:bg-white/5").Render(templ.WithChildren(ctx, templ_7745c5c3_Var4), templ_7745c5c3_Buffer)
+		}), "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-transform duration-200 hover:scale-110").Render(templ.WithChildren(ctx, templ_7745c5c3_Var4), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
