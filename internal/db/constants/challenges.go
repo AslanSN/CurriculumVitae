@@ -27,7 +27,7 @@ var (
 		Highlight:   true,
 		RepoLink:    "https://github.com/AslanSN/Logitravel-Technical-Proof",
 		AppLink:     "https://logitravel-technical-proof.vercel.app/",
-		Description: "",
+		Description: "Text-list manager with add / select / delete and full undo–redo. React + Redux Toolkit + styled-components, a centralized design-token system and SOLID structure — built in a 3-day proof.",
 	}
 	ArupChallenge = Challenge{
 		Company:     "Arup",
@@ -37,7 +37,7 @@ var (
 		Duration:    7,
 		RepoLink:    "https://github.com/AslanSN/arup-technicalTest",
 		AppLink:     "https://arup-technical-test-deploy.vercel.app/",
-		Description: "",
+		Description: "Construction-site communications manager: a three-panel UI — discipline/status filter sidebar, sortable questions list and detail view. React (Flux) + SASS, SOLID and documented components.",
 	}
 	NivimuChallenge = Challenge{
 		Company:     "Nivimu",
@@ -48,7 +48,7 @@ var (
 		Highlight:   true,
 		RepoLink:    "https://github.com/AslanSN/nivimu-front-codetest",
 		AppLink:     "https://aslansn.github.io/nivimu-front-codetest/",
-		Description: "",
+		Description: "Filterable, sortable user-data table with a live summary card that re-syncs to the top row as sorting and filtering change. React + TypeScript + Redux Toolkit + Ant Design — delivered in a single day.",
 	}
 	InditexChallenge = Challenge{
 		Company:     "Inditex",
@@ -58,6 +58,6 @@ var (
 		Duration:    7,
 		RepoLink:    "https://github.com/AslanSN/zara-web-challenge",
 		AppLink:     "",
-		Description: "",
+		Description: "Marvel character explorer (list, search, detail, favorites) in Next.js + TypeScript. State via Context + useReducer (no Redux), favorites persisted to localStorage, Vitest tests and Husky pre-commit hooks.",
 	}
 )
