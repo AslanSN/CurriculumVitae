@@ -34,7 +34,7 @@ func NavBar() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"sticky top-0 z-30 hidden border-b border-white/10 bg-base-950/80 backdrop-blur-md sm:block\"><nav class=\"mx-auto flex max-w-6xl items-center justify-between gap-6 px-10 py-3\"><details class=\"group relative\"><summary class=\"btn-ghost-e cursor-pointer font-mono text-sm uppercase tracking-wider\"><span>Download CV</span>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"sticky top-0 z-30 hidden border-b border-white/10 bg-base-950/80 backdrop-blur-md sm:block\"><nav class=\"mx-auto flex max-w-6xl items-center justify-between gap-6 px-10 py-3\"><div x-data=\"{ open: false }\" x-on:click.outside=\"open = false\" x-on:keydown.escape.window=\"open = false\" class=\"relative\"><button type=\"button\" x-on:click=\"open = !open\" x-bind:aria-expanded=\"open\" aria-haspopup=\"true\" class=\"btn-ghost-e cursor-pointer font-mono text-sm uppercase tracking-wider\"><span>Download CV</span> <span class=\"transition-transform\" x-bind:class=\"open &amp;&amp; &#39;rotate-180&#39;\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -42,7 +42,7 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</summary><div class=\"absolute left-0 z-40 mt-2 w-52 rounded-xl border border-white/10 bg-base-900 p-1 shadow-xl\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></button><div x-show=\"open\" x-transition x-cloak class=\"absolute left-0 z-40 mt-2 w-52 rounded-xl border border-white/10 bg-base-900 p-1 shadow-xl\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -58,7 +58,7 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></details><ul class=\"flex items-center gap-6\"><li><a class=\"navlink\" href=\"#hero\">Home</a></li><li><a class=\"navlink\" href=\"#aboutMe\">About</a></li><li><a class=\"navlink\" href=\"#skills\">Skills</a></li><li><a class=\"navlink\" href=\"#experience\">Experience</a></li><li><a class=\"navlink\" href=\"#challenges\">Challenges</a></li></ul><div class=\"flex items-center gap-2\"><button type=\"button\" class=\"btn-ghost-e font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;shareDlg&#39;).showModal()\">Share</button> <button type=\"button\" class=\"btn-editorial font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;contactDlg&#39;).showModal()\">Contact</button></div></nav></header>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><ul class=\"flex items-center gap-6\"><li><a class=\"navlink\" href=\"#hero\">Home</a></li><li><a class=\"navlink\" href=\"#aboutMe\">About</a></li><li><a class=\"navlink\" href=\"#skills\">Skills</a></li><li><a class=\"navlink\" href=\"#experience\">Experience</a></li><li><a class=\"navlink\" href=\"#challenges\">Challenges</a></li></ul><div class=\"flex items-center gap-2\"><button type=\"button\" class=\"btn-ghost-e font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;shareDlg&#39;).showModal()\">Share</button> <button type=\"button\" class=\"btn-editorial font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;contactDlg&#39;).showModal()\">Contact</button></div></nav></header>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

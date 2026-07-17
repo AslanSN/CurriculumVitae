@@ -39,6 +39,9 @@
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-accent;
   }
+  [x-cloak] {
+    display: none !important;
+  }
   @media (prefers-reduced-motion: reduce) {
     * {
       animation-duration: 0.01ms !important;

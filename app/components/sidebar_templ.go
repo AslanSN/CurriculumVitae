@@ -13,7 +13,8 @@ import (
 	"github.com/AslanSN/CurriculumVitae/helpers"
 )
 
-// Sidebar is the mobile navigation drawer (CSS-only via a peer checkbox).
+// Sidebar is the mobile navigation drawer (CSS-only open/close via a peer
+// checkbox; tapping a link or the overlay closes it).
 func Sidebar() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -50,13 +51,13 @@ func Sidebar() templ.Component {
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(string(helpers.RepoURL + "/images/FaviconCV.webp"))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/sidebar.templ`, Line: 21, Col: 93}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/sidebar.templ`, Line: 22, Col: 93}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" alt=\"\"> <span class=\"font-mono text-sm\">Alan Staub Negro</span></div><nav class=\"flex flex-col gap-1\"><a class=\"navlink py-1\" href=\"#hero\">Home</a> <a class=\"navlink py-1\" href=\"#aboutMe\">About</a> <a class=\"navlink py-1\" href=\"#skills\">Skills</a> <a class=\"navlink py-1\" href=\"#experience\">Experience</a> <a class=\"navlink py-1\" href=\"#challenges\">Challenges</a></nav><hr class=\"border-white/10\"><details class=\"group\"><summary class=\"navlink flex cursor-pointer items-center justify-between py-1\"><span>Download CV</span>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" alt=\"\"> <span class=\"font-mono text-sm\">Alan Staub Negro</span></div><nav class=\"flex flex-col gap-1\"><a class=\"navlink py-1\" href=\"#hero\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false\">Home</a> <a class=\"navlink py-1\" href=\"#aboutMe\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false\">About</a> <a class=\"navlink py-1\" href=\"#skills\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false\">Skills</a> <a class=\"navlink py-1\" href=\"#experience\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false\">Experience</a> <a class=\"navlink py-1\" href=\"#challenges\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false\">Challenges</a></nav><hr class=\"border-white/10\"><div x-data=\"{ open: false }\" x-on:keydown.escape.window=\"open = false\"><button type=\"button\" x-on:click=\"open = !open\" x-bind:aria-expanded=\"open\" class=\"navlink flex w-full cursor-pointer items-center justify-between py-1\"><span>Download CV</span> <span class=\"transition-transform\" x-bind:class=\"open &amp;&amp; &#39;rotate-180&#39;\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -64,7 +65,7 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</summary><div class=\"mt-1 flex flex-col gap-1 pl-2\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></button><div x-show=\"open\" x-transition x-cloak class=\"mt-1 flex flex-col gap-1 pl-2\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -80,7 +81,7 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></details><hr class=\"border-white/10\"><div class=\"mt-auto flex flex-col gap-2\"><button type=\"button\" class=\"btn-editorial w-full\" onclick=\"document.getElementById(&#39;contactDlg&#39;).showModal()\">Contact me</button> <button type=\"button\" class=\"btn-ghost-e w-full\" onclick=\"document.getElementById(&#39;shareDlg&#39;).showModal()\">Share</button></div></aside>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><hr class=\"border-white/10\"><div class=\"mt-auto flex flex-col gap-2\"><button type=\"button\" class=\"btn-editorial w-full\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false;document.getElementById(&#39;contactDlg&#39;).showModal()\">Contact me</button> <button type=\"button\" class=\"btn-ghost-e w-full\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false;document.getElementById(&#39;shareDlg&#39;).showModal()\">Share</button></div></aside>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
