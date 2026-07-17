@@ -1,8 +1,10 @@
 {
 	"builds": [
-		{ "src": "vercel/handler.go", "use": "@vercel/go@latest" }
+		{ "src": "vercel/handler.go", "use": "@vercel/go@latest" },
+		{ "src": "assets/**", "use": "@vercel/static" }
 	],
 	"routes": [
+		{ "handle": "filesystem" },
 		{ "src": "/(.*)", "dest": "vercel/handler.go" }
 	]
 }
