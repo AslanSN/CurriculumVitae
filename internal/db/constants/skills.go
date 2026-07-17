@@ -22,6 +22,34 @@ var SkillsList = []Skill{
 	MySQL,
 }
 
+type SkillGroup struct {
+	Name  string
+	Items []string
+}
+
+var SkillGroups = []SkillGroup{
+	{
+		Name:  "AI & agentic dev",
+		Items: []string{"Claude Code", "LLM agents (Claude, GPT/Codex)", "MCP", "AI-assisted code review", "Team AI conventions (CLAUDE.md)"},
+	},
+	{
+		Name:  "Frontend",
+		Items: []string{"React 19", "Next.js (App Router)", "TypeScript", "TanStack Query", "React Hook Form", "Zod", "Zustand", "Tailwind CSS", "Radix UI"},
+	},
+	{
+		Name:  "Backend & platform",
+		Items: []string{".NET (C#)", "EF Core", "Node.js", "PostgreSQL", "REST APIs", "CI/CD (GitHub Actions)", "Vercel", "Sentry", "Amplitude", "Playwright", "Vitest"},
+	},
+	{
+		Name:  "Also",
+		Items: []string{"Go", "Svelte / SvelteKit", "React Native / Expo", "Python / Flask", "Figma (UX/UI)"},
+	},
+	{
+		Name:  "Languages",
+		Items: []string{"Spanish (native)", "French (bilingual)", "English (professional)"},
+	},
+}
+
 var (
 	React = Skill{
 		IconLabelParams: helpers.IconLabelParams{

@@ -60,7 +60,7 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("ENGLISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("ENGLISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-EN.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -68,15 +68,15 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("SPANISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-ES-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("SPANISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-ES.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</label> <label class=\"menu-item menu-item-disabled ml-6\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</label> <label class=\"menu-item ml-6\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("FRENCH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("FRENCH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-FR.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

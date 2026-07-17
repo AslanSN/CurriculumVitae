@@ -29,7 +29,7 @@ func Hero() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section id=\"hero\" class=\"flex flex-col md:flex-row align-middle w-full text-6xl items-center sm:mt-16 md:ms-8 md:me-8 md:p-8 md:mb-4 pb-0 backdrop-blur-sm rounded-lg justify-evenly\"><div class=\"flex flex-col items-end\"><h1 class=\"pb-4 md:pb-8\"><b class=\"text-4xl sm:text-7xl lg:text-8xl\">Alan Staub Negro</b><h2 class=\"text-2xl sm:text-5xl lg:text-7xl font-mono p-0 m-0\">Full Stack Developer</h2></h1>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section id=\"hero\" class=\"flex flex-col md:flex-row align-middle w-full text-6xl items-center sm:mt-16 md:ms-8 md:me-8 md:p-8 md:mb-4 pb-0 backdrop-blur-sm rounded-lg justify-evenly\"><div class=\"flex flex-col items-end\"><h1 class=\"text-4xl sm:text-7xl lg:text-8xl font-bold pb-2\">Alan Staub Negro</h1><p class=\"text-2xl sm:text-5xl lg:text-6xl font-mono p-0 m-0\">Senior Full-Stack Engineer</p><p class=\"text-base sm:text-xl lg:text-2xl font-mono text-cyan-400 pt-1 pb-4 md:pb-8\">AI-native · React / Next.js + .NET · platform</p>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

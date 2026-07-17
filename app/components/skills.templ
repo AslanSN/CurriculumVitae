@@ -3,18 +3,25 @@ package components
 import "github.com/AslanSN/CurriculumVitae/internal/db/constants"
 
 templ Skills() {
-	<div id="skills" class="flex flex-col items-start h-full">
+	<div id="skills" class="flex flex-col items-start h-full w-full">
 		<h1 class="text-5xl mb-6 w-fit font-bold">
 			SKILLS
 		</h1>
-		<ul class="xl:grid xl:auto-cols-min xl:grid-cols-3 xl:items-center flex flex-row flex-wrap w-fit items-baseline h-fit ">
-			for _, skill := range constants.SkillsList {
-				<li key={ skill.IconLabelParams.Id } id={ skill.IconLabelParams.Id + "Skills" } class="m-2 sm:mx-0">
-					@LinkItem(skill.Link, "link link-ghost") {
-						@IconLabel(skill.IconLabelParams, true, 0)
-					}
-				</li>
+		<div class="flex flex-col gap-5 w-full">
+			for _, group := range constants.SkillGroups {
+				<div class="flex flex-col gap-2">
+					<h3 class="text-sm font-mono uppercase tracking-wider text-cyan-400">
+						{ group.Name }
+					</h3>
+					<ul class="flex flex-row flex-wrap gap-2">
+						for _, item := range group.Items {
+							<li class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm">
+								{ item }
+							</li>
+						}
+					</ul>
+				</div>
 			}
-		</ul>
+		</div>
 	</div>
 }
