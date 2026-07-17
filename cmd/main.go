@@ -11,6 +11,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
+
 const (
 	reset   = "\033[0m"
 	red     = "\033[31m"
@@ -69,13 +70,11 @@ func registerDBRoutes(e *echo.Echo) {
 }
 
 func registerStaticRoutes(e *echo.Echo) {
-	e.Static("/static", "assets")
-	e.Static("/icons", "assets/icons")
-	e.Static("/images", "assets/images")
-	e.Static("js", "assets/js")
+	// Serve everything under /assets from disk (local dev). In production the
+	// Vercel handler serves the same paths from an embedded FS. Reading from
+	// disk locally means a recompiled output.css shows up on refresh.
+	e.Static("/assets", "assets")
 }
-
-
 
 func routeLogger(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {

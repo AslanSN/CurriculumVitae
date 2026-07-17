@@ -8,11 +8,6 @@ package views
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import (
-	"github.com/AslanSN/CurriculumVitae/app/components"
-	"github.com/AslanSN/CurriculumVitae/helpers"
-)
-
 func Index() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -34,41 +29,11 @@ func Index() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\" class=\"scroll-smooth focus:scroll-auto\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>AslanSN CurriculumVitae</title><link rel=\"shortcut icon\" type=\"image/webp\" href=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(string(helpers.RepoURL + "/images/FaviconCV.webp"))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/index.templ`, Line: 15, Col: 104}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/rippleui@1.12.1/dist/css/styles.css\"><script src=\"https://cdn.tailwindcss.com\"></script><script src=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var3 string
-		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(string(helpers.RepoURL + "/js/customAlert.js"))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/index.templ`, Line: 18, Col: 63}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"></script></head><body class=\"relative\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Alan Staub Negro — Senior Full-Stack Engineer (AI-native)</title><meta name=\"description\" content=\"Senior full-stack engineer (~4.5y): React 19 / Next.js + TypeScript on the front, real .NET / PostgreSQL on the back, AI-native (Claude Code, MCP). Trilingual, remote-first.\"><link rel=\"canonical\" href=\"https://aslansn-cv.vercel.app/\"><meta name=\"theme-color\" content=\"#0b0c0f\"><meta property=\"og:type\" content=\"profile\"><meta property=\"og:title\" content=\"Alan Staub Negro — Senior Full-Stack Engineer (AI-native)\"><meta property=\"og:description\" content=\"React 19 / Next.js + TypeScript front, real .NET / PostgreSQL back, AI-native (Claude Code, MCP). Trilingual, remote-first.\"><meta property=\"og:url\" content=\"https://aslansn-cv.vercel.app/\"><meta property=\"og:image\" content=\"https://aslansn-cv.vercel.app/assets/images/AslanSNPhoto.webp\"><meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"Alan Staub Negro — Senior Full-Stack Engineer (AI-native)\"><meta name=\"twitter:description\" content=\"React 19 / Next.js + TypeScript front, real .NET / PostgreSQL back, AI-native. Trilingual, remote-first.\"><meta name=\"twitter:image\" content=\"https://aslansn-cv.vercel.app/assets/images/AslanSNPhoto.webp\"><link rel=\"shortcut icon\" type=\"image/webp\" href=\"/assets/images/FaviconCV.webp\"><link rel=\"stylesheet\" href=\"/assets/css/output.css\"><script src=\"/assets/js/customAlert.js\" defer></script><script type=\"application/ld+json\">\n\t\t\t\t@templ.Raw(personLDJSON)\n\t\t\t</script></head><body><a href=\"#main\" class=\"sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:font-medium focus:text-base-950\">Skip to content</a>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = home().Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = components.ShareButton().Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

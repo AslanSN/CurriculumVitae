@@ -1,5 +1,7 @@
 package components
 
 templ ListItem(item string) {
-	<li id={ item }>{ item }</li>
+	<li class="relative pl-4 before:absolute before:left-0 before:text-accent before:content-['–']">
+		{ item }
+	</li>
 }

@@ -3,12 +3,13 @@ package components
 import icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
 
 templ DownloadItem(label string, url templ.SafeURL, tabIndex string, extraClasses string) {
-	<a class={ "flex flex-row dropdown-item text-sm justify-between " + extraClasses } href={ url } type="archives" target="_blank">
-		<label>
-			{ label }
-		</label>
-		<span>
-			@icons.DownloadIcon()
-		</span>
+	<a
+		class={ "flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm text-zinc-200 transition-colors hover:bg-white/5", extraClasses }
+		href={ url }
+		download
+		rel="noopener noreferrer"
+	>
+		<span>{ label }</span>
+		@icons.DownloadIcon()
 	</a>
 }

@@ -7,51 +7,36 @@ import (
 )
 
 templ home() {
-	<div class="sticky flex h-screen flex-row gap-4 overflow-y-auto rounded-lg sm:overflow-x-hidden sm:flex-col">
-		<main class="flex w-full flex-col px-8 sm:px-20">
-			@layouts.StickyLayout() {
-				<div class="flex w-full flex-row flex-wrap gap-4">
-					@components.ContactModal()
-					@components.ShareModal()
-					<div class="absolute z-40 "></div>
-					@components.Hero()
-					<section class="w-full grid grid-flow-row lg:grid-flow-col m-0 mb-8 gap-16 justify-items-start items-center justify-center lg:content-between">
-						@components.AboutMe()
-						@components.Skills()
-					</section>
-					<section class="w-full mb-10 ">
-						<div class="flex flex-col">
-							<h1 id="experience" class="text-5xl mb-6 w-fit font-bold">
-								EXPERIENCE
-							</h1>
-							<section class="">
-								<ul class="flex flex-row flex-wrap flow justify-center lg:justify-between">
-									for _,workplace := range constants.Workplaces {
-										// <li id={ workplace.Company + "Workplaces" }>
-											@components.ExperienceCard(workplace)
-										// </li>
-									}
-								</ul>
-							</section>
-						</div>
-					</section>
-					<section class="w-full mb-10">
-						<h1 id="challenges" class="text-5xl mb-6 w-fit font-bold">
-							CHALLENGES
-						</h1>
-						<section>
-							<ul class="flex flex-wrap gap-8 xl:gap-16 flow justify-center lg:justify-between">
-								for _,challenge := range constants.Challenges {
-									<li id={ challenge.Company + "Challenge" }>
-										@components.ChallengeCard(challenge)
-									</li>
-								}
-							</ul>
-						</section>
-					</section>
-				</div>
-			}
+	@layouts.StickyLayout() {
+		<main id="main" class="mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 py-10 sm:px-10 md:gap-28 md:py-16">
+			@components.ContactModal()
+			@components.ShareModal()
+			@components.Hero()
+			<section class="grid w-full grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+				@components.AboutMe()
+				@components.Skills()
+			</section>
+			<section id="experience" class="w-full scroll-mt-24">
+				<h2 class="mb-8 text-3xl font-bold sm:text-4xl">Experience</h2>
+				<ul class="flex flex-col gap-6">
+					for _, workplace := range constants.Workplaces {
+						@components.ExperienceCard(workplace)
+					}
+				</ul>
+			</section>
+			<section id="challenges" class="w-full scroll-mt-24">
+				<h2 class="mb-3 text-3xl font-bold sm:text-4xl">Challenges</h2>
+				<p class="mb-8 max-w-2xl text-zinc-400">
+					Company technical tests — how I approach an unfamiliar problem under a deadline, and how each one landed.
+				</p>
+				<ul class="flex flex-col gap-8">
+					for _, challenge := range constants.Challenges {
+						<li id={ challenge.Company + "Challenge" }>
+							@components.ChallengeCard(challenge)
+						</li>
+					}
+				</ul>
+			</section>
 		</main>
-		<footer></footer>
-	</div>
+	}
 }

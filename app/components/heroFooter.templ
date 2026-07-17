@@ -3,17 +3,13 @@ package components
 import "github.com/AslanSN/CurriculumVitae/internal/db/constants"
 
 templ HeroFooter() {
-	<footer>
-		<ul
-			class="flex flex-row flex-wrap h-min w-full  items-baseline"
-		>
-			for _, socialMedia := range constants.SocialMediaList {
-				<li class="mx-2" id={ socialMedia.IconLabelParams.Id + "HeroFooter" } key={ socialMedia.IconLabelParams.Id }>
-					@LinkItem(socialMedia.SocialMediaLink, "btn btn-circle btn-ghost w-fit h-fit") {
-						@IconLabel(socialMedia.IconLabelParams, false, 10)
-					}
-				</li>
-			}
-		</ul>
-	</footer>
+	<ul class="mt-6 flex flex-row flex-wrap items-center gap-1">
+		for _, socialMedia := range constants.SocialMediaList {
+			<li id={ socialMedia.IconLabelParams.Id + "HeroFooter" } key={ socialMedia.IconLabelParams.Id }>
+				@LinkItem(socialMedia.SocialMediaLink, "inline-flex h-11 w-11 items-center justify-center rounded-full text-zinc-300 transition-colors hover:bg-white/5 hover:text-zinc-100") {
+					@IconLabel(socialMedia.IconLabelParams, false, 0)
+				}
+			</li>
+		}
+	</ul>
 }

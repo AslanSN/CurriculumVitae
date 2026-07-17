@@ -31,19 +31,19 @@ func Skills() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"skills\" class=\"flex flex-col items-start h-full w-full\"><h1 class=\"text-5xl mb-6 w-fit font-bold\">SKILLS</h1><div class=\"flex flex-col gap-5 w-full\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"skills\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-6 text-3xl font-bold sm:text-4xl\">Skills</h2><div class=\"flex flex-col gap-5\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, group := range constants.SkillGroups {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"flex flex-col gap-2\"><h3 class=\"text-sm font-mono uppercase tracking-wider text-cyan-400\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"flex flex-col gap-2\"><h3 class=\"eyebrow\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(group.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/skills.templ`, Line: 14, Col: 18}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/skills.templ`, Line: 11, Col: 37}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {
@@ -54,14 +54,14 @@ func Skills() templ.Component {
 				return templ_7745c5c3_Err
 			}
 			for _, item := range group.Items {
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm\">")
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"chip\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var3 string
 				templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(item)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/skills.templ`, Line: 19, Col: 14}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/skills.templ`, Line: 14, Col: 30}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 				if templ_7745c5c3_Err != nil {

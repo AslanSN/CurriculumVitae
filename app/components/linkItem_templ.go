@@ -10,7 +10,7 @@ import templruntime "github.com/a-h/templ/runtime"
 
 func classesHandler(classes string) string {
 	if classes == "" {
-		return "link-ghost md:px-3 p-0"
+		return "link-e"
 	}
 	return classes
 }
@@ -36,7 +36,7 @@ func LinkItem(href templ.SafeURL, classes string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var2 = []any{"cursor-pointer text-2xl rounded-full", classesHandler(classes)}
+		var templ_7745c5c3_Var2 = []any{"cursor-pointer", classesHandler(classes)}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var2...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err

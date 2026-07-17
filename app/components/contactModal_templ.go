@@ -31,7 +31,7 @@ func ContactModal() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<input class=\"modal-state\" id=\"modal-contact\" type=\"checkbox\"><div class=\"modal\"><div id=\"alert-container\" class=\"absolute z-40\"></div><label class=\"modal-overlay\" for=\"modal-contact\"></label><div class=\"modal-content w-fit flex flex-col gap-10\"><h2 class=\"text-4xl text-center\">CONTACT ME 📲</h2><ul class=\"text-xl\"><li class=\"flex items-center justify-between\"><span class=\"w-full\" id=\"mobile\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<dialog id=\"contactDlg\" class=\"relative m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl border border-white/10 bg-base-900 p-8 text-zinc-100 backdrop:bg-black/70 backdrop:backdrop-blur-sm\"><div id=\"alert-container\" class=\"absolute inset-x-0 top-0 z-50\"></div><form method=\"dialog\"><button aria-label=\"Close\" class=\"absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100\">✕</button></form><h2 class=\"mb-6 text-2xl font-bold\">Contact me</h2><ul class=\"flex flex-col gap-4 text-lg\"><li class=\"flex items-center justify-between gap-3\"><span id=\"mobile\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -53,11 +53,11 @@ func ContactModal() templ.Component {
 			}
 			return templ_7745c5c3_Err
 		})
-		templ_7745c5c3_Err = LinkItem(templ.SafeURL("tel:+34664330610"), "link link-primary").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = LinkItem(templ.SafeURL("tel:+34664330610"), "link-e").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <button id=\"mobile-btn\" aria-label=\"Copy Icon Button\" class=\"btn btn-circle btn-sm btn-ghost p-2\" onclick=\"copyText(&#39;mobile&#39;)\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <button type=\"button\" id=\"mobile-btn\" aria-label=\"Copy phone number\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100\" onclick=\"copyText(&#39;mobile&#39;)\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -65,7 +65,7 @@ func ContactModal() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button></li><li class=\"flex items-center justify-between\"><span class=\"w-full\" id=\"mail\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button></li><li class=\"flex items-center justify-between gap-3\"><span id=\"mail\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -87,11 +87,11 @@ func ContactModal() templ.Component {
 			}
 			return templ_7745c5c3_Err
 		})
-		templ_7745c5c3_Err = LinkItem(templ.SafeURL("mailto:aslan.staub@pm.me?subject=Contacto&body=Hi, I would like to contact you..."), "link link-primary").Render(templ.WithChildren(ctx, templ_7745c5c3_Var3), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = LinkItem(templ.SafeURL("mailto:aslan.staub@pm.me?subject=Contact&body=Hi, I would like to contact you..."), "link-e").Render(templ.WithChildren(ctx, templ_7745c5c3_Var3), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <button id=\"mail-btn\" aria-label=\"Copy Icon Button\" class=\"btn btn-circle btn-sm btn-ghost p-2\" onclick=\"copyText(&#39;mail&#39;)\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <button type=\"button\" id=\"mail-btn\" aria-label=\"Copy email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100\" onclick=\"copyText(&#39;mail&#39;)\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -99,7 +99,7 @@ func ContactModal() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button></li></ul><div class=\"flex justify-around gap-3\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button></li></ul><div class=\"mt-6 flex justify-center gap-3\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -107,7 +107,7 @@ func ContactModal() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></dialog>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -1,61 +1,47 @@
 package components
 
-import (
-	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
-	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
-)
+import "github.com/AslanSN/CurriculumVitae/internal/db/constants"
 
 templ ExperienceCard(workplace constants.ExperienceStruct) {
-	<li id={workplace.Company + "Experience"} class="card rounded-2xl transition-all flex flex-col items-center pt-8 mb-10">
-		<img
-			class="px-4 h-1/4 hover:-skew-y-3 transition ease-linear "
-			src={ string(workplace.ImageSource) }
-			alt={ workplace.ImageAlternative }
-		/>
-		<article class="card-body max-sm:py-4 max-sm:px-0 sm:w-96 mx-4 first:ms-0 ">
-			<div class="flex flex-col">
-				if workplace.Link != "" {
-					@LinkItem(workplace.Link, "link text-cyan-800 hover:text-cyan-500 dark:text-cyan-600 dark:hover:text-cyan-200 link-underline px-0 md:px-0") {
-						<div class="flex items-end justify-between w-1/2">
-							<h3 class="card-header text-2xl">
-								{ 	workplace.Company }
-							</h3>
-							@icons.OpenNewTabIcon()
-						</div>
+	<li id={ workplace.Company + "Experience" } class="card-e">
+		<div class="flex flex-col gap-5">
+			<div class="flex flex-wrap items-start justify-between gap-4">
+				<div class="flex items-center gap-4">
+					if workplace.ImageSource != "" {
+						<img
+							class="h-12 w-12 shrink-0 rounded-lg bg-white/5 object-contain p-1"
+							src={ string(workplace.ImageSource) }
+							alt={ workplace.ImageAlternative }
+						/>
 					}
-				} else {
-					<h3 class="card-header text-2xl text-cyan-800 dark:text-cyan-600">
-						{ 	workplace.Company }
-					</h3>
-				}
-				<span class="text-xl">
-					{ workplace.CompanyType }
-					<b>
-						{ workplace.Position }
-					</b>
-				</span>
-				<span class="text-lg">
-					<i>
-						{ workplace.Contract },
-					</i>
-					{ workplace.RangeDate }
-				</span>
+					<div>
+						<h3 class="text-xl font-semibold">
+							if workplace.Link != "" {
+								@LinkItem(workplace.Link, "link-e") {
+									{ workplace.Company }
+								}
+							} else {
+								{ workplace.Company }
+							}
+						</h3>
+						<p class="text-sm text-zinc-400">{ workplace.CompanyType } · { workplace.Position }</p>
+					</div>
+				</div>
+				<p class="font-mono text-sm text-zinc-500">{ workplace.Contract } · { workplace.RangeDate }</p>
 			</div>
-			<section class="grid grid-cols-2 w-full text-content2">
+			<div class="grid gap-6 sm:grid-cols-2">
 				<div>
-					<div class="px-2">
-						@List("Techs", workplace.Techs)
-					</div>
+					@List("Stack", workplace.Techs)
 				</div>
 				<div>
-					<div class="px-2">
-						@List("Duties", workplace.Responsabilities)
-					</div>
+					@List("What I did", workplace.Responsabilities)
 				</div>
-			</section>
-			<footer class="px-2 card-footer h-full flex flex-col items-start justify-center text-content2">
-				@List("Extra", workplace.Extra)
-			</footer>
-		</article>
+			</div>
+			if len(workplace.Extra) > 0 {
+				<div class="border-t border-white/10 pt-4">
+					@List("Highlights", workplace.Extra)
+				</div>
+			}
+		</div>
 	</li>
 }

@@ -1,10 +1,8 @@
 package components
 
-import "github.com/AslanSN/CurriculumVitae/helpers"
-
 templ List(label string, slice []string) {
-	<label class="text-xl underline underline-offset-2 decoration-cyan-200 text-slate-600 dark:decoration-cyan-800 dark:text-slate-400" for={ helpers.Identity(label) }>{ label }</label>
-	<ul class="list-disc list-inside">
+	<p class="eyebrow mb-2">{ label }</p>
+	<ul class="space-y-1.5 text-sm text-zinc-300">
 		for _, item := range slice {
 			@ListItem(item)
 		}

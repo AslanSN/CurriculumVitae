@@ -1,3 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* templ sources (.templ) + generated Go both live under app/ */
+@source "../../app";
+
+/* Dark-only site: make any `dark:` utility always apply. */
+@custom-variant dark (&);
+
+@theme {
+  /* Layered near-black surfaces (engineered-editorial) */
+  --color-base-950: #0b0c0f; /* page background */
+  --color-base-900: #15171c; /* elevated cards */
+  --color-base-800: #1c1f26; /* hover / inset */
+
+  /* Single signal accent — cyan (AAA contrast on base surfaces) */
+  --color-accent: #22d3ee;
+
+  /* Type: system stacks (zero external fetch); mono is the engineer tell */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-base-950 text-zinc-100 font-sans antialiased;
+  }
+  /* native <details> as dropdown: hide the default marker */
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  /* visible keyboard focus everywhere */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .btn-editorial {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 font-medium text-base-950 transition-colors hover:bg-accent/90;
+  }
+  .btn-ghost-e {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-zinc-300 transition-colors hover:bg-white/5;
+  }
+  .card-e {
+    @apply rounded-2xl border border-white/10 bg-base-900 p-6 md:p-8;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-zinc-200;
+  }
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-widest text-accent;
+  }
+  .link-e {
+    @apply text-accent underline-offset-4 transition-colors hover:underline;
+  }
+  .navlink {
+    @apply font-mono text-sm uppercase tracking-wider text-zinc-400 transition-colors hover:text-zinc-100;
+  }
+}

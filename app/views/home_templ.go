@@ -35,10 +35,6 @@ func home() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"sticky flex h-screen flex-row gap-4 overflow-y-auto rounded-lg sm:overflow-x-hidden sm:flex-col\"><main class=\"flex w-full flex-col px-8 sm:px-20\">")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
 		templ_7745c5c3_Var2 := templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 			templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 			templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
@@ -51,7 +47,7 @@ func home() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"flex w-full flex-row flex-wrap gap-4\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<main id=\"main\" class=\"mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 py-10 sm:px-10 md:gap-28 md:py-16\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -63,15 +59,11 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"absolute z-40 \"></div>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
 			templ_7745c5c3_Err = components.Hero().Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"w-full grid grid-flow-row lg:grid-flow-col m-0 mb-8 gap-16 justify-items-start items-center justify-center lg:content-between\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"grid w-full grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -83,25 +75,17 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section class=\"w-full mb-10 \"><div class=\"flex flex-col\"><h1 id=\"experience\" class=\"text-5xl mb-6 w-fit font-bold\">EXPERIENCE</h1><section class=\"\"><ul class=\"flex flex-row flex-wrap flow justify-center lg:justify-between\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section id=\"experience\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-8 text-3xl font-bold sm:text-4xl\">Experience</h2><ul class=\"flex flex-col gap-6\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			for _, workplace := range constants.Workplaces {
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" ")
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
 				templ_7745c5c3_Err = components.ExperienceCard(workplace).Render(ctx, templ_7745c5c3_Buffer)
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" ")
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section></div></section><section class=\"w-full mb-10\"><h1 id=\"challenges\" class=\"text-5xl mb-6 w-fit font-bold\">CHALLENGES</h1><section><ul class=\"flex flex-wrap gap-8 xl:gap-16 flow justify-center lg:justify-between\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section><section id=\"challenges\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">Challenges</h2><p class=\"mb-8 max-w-2xl text-zinc-400\">Company technical tests — how I approach an unfamiliar problem under a deadline, and how each one landed.</p><ul class=\"flex flex-col gap-8\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -113,7 +97,7 @@ func home() templ.Component {
 				var templ_7745c5c3_Var3 string
 				templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(challenge.Company + "Challenge")
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 45, Col: 49}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 34, Col: 46}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 				if templ_7745c5c3_Err != nil {
@@ -132,17 +116,13 @@ func home() templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section></section></div>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section></main>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			return templ_7745c5c3_Err
 		})
 		templ_7745c5c3_Err = layouts.StickyLayout().Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</main><footer></footer></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

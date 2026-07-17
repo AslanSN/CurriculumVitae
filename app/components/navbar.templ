@@ -6,43 +6,30 @@ import (
 )
 
 templ NavBar() {
-	<div class="navbar navbar-sticky navbar-glass hidden sm:flex ">
-		<div class="navbar-start">
-			<div class="navbar-item cursor-pointer">
-				<div class="dropdwon-container justify-center">
-					<div class="dropdown dropdown-hover flex row-auto">
-						<label tabindex="0" class="flex flex-row flex-nowrap items-center align-middle menu-item w-full">
-							<span>
-								DOWNLOAD CV
-							</span>
-							<span class="menu-icon">
-								@icons.DropdownIcon("currentColor")
-							</span>
-						</label>
-						<div class="dropdown-menu dropdown-menu-bottom-right mt-10">
-							<span class="dropdown-item">
-								@DownloadItem("ENGLISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-EN.pdf", "", "")
-							</span>
-							<span class="dropdown-item">
-								@DownloadItem("SPANISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-ES.pdf", "-1", "")
-							</span>
-							<span class="dropdown-item">
-								@DownloadItem("FRENCH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-FR.pdf", "-1", "")
-							</span>
-						</div>
-					</div>
+	<header class="sticky top-0 z-30 hidden border-b border-white/10 bg-base-950/80 backdrop-blur-md sm:block">
+		<nav class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-10 py-3">
+			<details class="group relative">
+				<summary class="btn-ghost-e cursor-pointer font-mono text-sm uppercase tracking-wider">
+					<span>Download CV</span>
+					@icons.DropdownIcon("currentColor")
+				</summary>
+				<div class="absolute left-0 z-40 mt-2 w-52 rounded-xl border border-white/10 bg-base-900 p-1 shadow-xl">
+					@DownloadItem("English", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-EN.pdf", "", "")
+					@DownloadItem("Español", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-ES.pdf", "", "")
+					@DownloadItem("Français", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-FR.pdf", "", "")
 				</div>
+			</details>
+			<ul class="flex items-center gap-6">
+				<li><a class="navlink" href="#hero">Home</a></li>
+				<li><a class="navlink" href="#aboutMe">About</a></li>
+				<li><a class="navlink" href="#skills">Skills</a></li>
+				<li><a class="navlink" href="#experience">Experience</a></li>
+				<li><a class="navlink" href="#challenges">Challenges</a></li>
+			</ul>
+			<div class="flex items-center gap-2">
+				<button type="button" class="btn-ghost-e font-mono text-sm uppercase tracking-wider" onclick="document.getElementById('shareDlg').showModal()">Share</button>
+				<button type="button" class="btn-editorial font-mono text-sm uppercase tracking-wider" onclick="document.getElementById('contactDlg').showModal()">Contact</button>
 			</div>
-		</div>
-		<div class="navbar-center text-nowrap">
-			<a class="navbar-item" href="#hero">HOME</a>
-			<a class="navbar-item" href="#aboutMe">ABOUT ME</a>
-			<a class="navbar-item" href="#skills">SKILLS</a>
-			<a class="navbar-item" href="#experience">EXPERIENCE</a>
-			<a class="navbar-item" href="#challenges">CHALLENGES</a>
-		</div>
-		<div class="navbar-end">
-			<label class="btn btn-ghost" for="modal-contact">CONTACT ME</label>
-		</div>
-	</div>
+		</nav>
+	</header>
 }

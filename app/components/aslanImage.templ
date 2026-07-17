@@ -1,11 +1,15 @@
 package components
 
-import "github.com/AslanSN/CurriculumVitae/helpers"
+import (
+	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+)
 
 templ AslanImage() {
 	<img
-		class="w-80 h-auto m-4"
-		src={string(helpers.RepoURL + "/images/AslanSNPhoto.webp")}
-		alt="Placeholder AslanImageAlt"
+		class="h-auto w-52 shrink-0 rounded-2xl border border-white/10 sm:w-60 md:w-72"
+		src={ string(helpers.RepoURL + "/images/AslanSNPhoto.webp") }
+		alt={ constants.AslanImageAlt }
+		loading="eager"
 	/>
 }

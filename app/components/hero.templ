@@ -1,11 +1,17 @@
 package components
 
 templ Hero() {
-	<section id="hero" class="flex flex-col md:flex-row align-middle w-full text-6xl items-center sm:mt-16 md:ms-8 md:me-8 md:p-8 md:mb-4 pb-0 backdrop-blur-sm rounded-lg justify-evenly">
-		<div class="flex flex-col items-end">
-			<h1 class="text-4xl sm:text-7xl lg:text-8xl font-bold pb-2">Alan Staub Negro</h1>
-			<p class="text-2xl sm:text-5xl lg:text-6xl font-mono p-0 m-0">Senior Full-Stack Engineer</p>
-			<p class="text-base sm:text-xl lg:text-2xl font-mono text-cyan-400 pt-1 pb-4 md:pb-8">AI-native · React / Next.js + .NET · platform</p>
+	<section id="hero" class="flex scroll-mt-24 flex-col items-start gap-8 pt-6 md:flex-row md:items-center md:justify-between md:gap-12">
+		<div class="flex w-full flex-col items-start">
+			<h1 class="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+				Alan Staub Negro
+			</h1>
+			<p class="mt-3 font-mono text-xl text-zinc-300 sm:text-3xl lg:text-4xl">
+				Senior Full-Stack Engineer
+			</p>
+			<p class="mt-2 font-mono text-sm text-accent sm:text-base">
+				AI-native · React / Next.js + .NET · platform
+			</p>
 			@HeroFooter()
 		</div>
 		@AslanImage()
