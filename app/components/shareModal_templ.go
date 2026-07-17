@@ -79,7 +79,7 @@ func ShareModal() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" class=\"inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition-colors hover:bg-white/5 hover:text-zinc-100\"><img class=\"h-6 w-6\" src=\"")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" class=\"inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-transform duration-200 hover:scale-110\"><img class=\"h-6 w-6\" src=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
