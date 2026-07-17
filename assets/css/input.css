@@ -73,4 +73,13 @@
   .navlink {
     @apply font-mono text-sm uppercase tracking-wider text-zinc-400 transition-colors hover:text-zinc-100;
   }
+  /* Ambient glow fixed to the viewport; on its own GPU layer so content
+     composites over it without repainting (smooth scroll, no filter). */
+  .ambient-glow {
+    background:
+      radial-gradient(55rem 55rem at 12% -8%, rgba(34, 211, 238, 0.14), transparent 55%),
+      radial-gradient(45rem 45rem at 92% -12%, rgba(124, 92, 255, 0.1), transparent 55%);
+    transform: translateZ(0);
+    will-change: transform;
+  }
 }

@@ -29,7 +29,7 @@ func Hero() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section id=\"hero\" class=\"relative isolate flex scroll-mt-24 flex-col items-start gap-8 pt-6 md:flex-row md:items-center md:justify-between md:gap-12\"><div aria-hidden=\"true\" class=\"pointer-events-none absolute -left-24 -top-24 -z-10 h-80 w-80 rounded-full bg-cyan-500/20 blur-[100px]\"></div><div aria-hidden=\"true\" class=\"pointer-events-none absolute -right-8 top-8 -z-10 h-72 w-72 rounded-full bg-violet-600/15 blur-[100px]\"></div><div class=\"flex w-full flex-col items-start\"><h1 class=\"text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl\">Alan Staub Negro</h1><p class=\"mt-3 font-mono text-xl text-zinc-300 sm:text-3xl lg:text-4xl\">Senior Full-Stack Engineer</p><p class=\"mt-2 font-mono text-sm text-accent sm:text-base\">AI-native · React / Next.js + .NET · platform</p>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section id=\"hero\" class=\"flex scroll-mt-24 flex-col items-start gap-8 pt-6 md:flex-row md:items-center md:justify-between md:gap-12\"><div class=\"flex w-full flex-col items-start\"><h1 class=\"text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl\">Alan Staub Negro</h1><p class=\"mt-3 font-mono text-xl text-zinc-300 sm:text-3xl lg:text-4xl\">Senior Full-Stack Engineer</p><p class=\"mt-2 font-mono text-sm text-accent sm:text-base\">AI-native · React / Next.js + .NET · platform</p>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
