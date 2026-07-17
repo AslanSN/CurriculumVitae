@@ -19,9 +19,15 @@ templ ShareModal() {
 		<ul class="flex flex-row flex-wrap justify-center gap-3">
 			for _, socialMediaShare := range constants.SocialShareButtons {
 				<li id={ socialMediaShare.Icon.Id + "ShareModal" }>
-					@LinkItem(formatSafeURL(socialMediaShare.URL), "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-colors hover:bg-white/5") {
-						@IconLabel(socialMediaShare.Icon, false, 0)
-					}
+					<a
+						href={ formatSafeURL(socialMediaShare.URL) }
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={ socialMediaShare.Icon.Alternative }
+						class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition-colors hover:bg-white/5 hover:text-zinc-100"
+					>
+						<img class="h-6 w-6" src={ string(socialMediaShare.Icon.Source) } alt=""/>
+					</a>
 				</li>
 			}
 		</ul>

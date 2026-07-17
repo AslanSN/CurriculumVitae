@@ -5,10 +5,16 @@ import "github.com/AslanSN/CurriculumVitae/internal/db/constants"
 templ HeroFooter() {
 	<ul class="mt-6 flex flex-row flex-wrap items-center gap-1">
 		for _, socialMedia := range constants.SocialMediaList {
-			<li id={ socialMedia.IconLabelParams.Id + "HeroFooter" } key={ socialMedia.IconLabelParams.Id }>
-				@LinkItem(socialMedia.SocialMediaLink, "inline-flex h-11 w-11 items-center justify-center rounded-full text-zinc-300 transition-colors hover:bg-white/5 hover:text-zinc-100") {
-					@IconLabel(socialMedia.IconLabelParams, false, 0)
-				}
+			<li id={ socialMedia.IconLabelParams.Id + "HeroFooter" }>
+				<a
+					href={ socialMedia.SocialMediaLink }
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={ socialMedia.IconLabelParams.Alternative }
+					class="inline-flex h-11 w-11 items-center justify-center rounded-full text-zinc-300 transition-colors hover:bg-white/5 hover:text-zinc-100"
+				>
+					<img class="h-6 w-6" src={ string(socialMedia.IconLabelParams.Source) } alt=""/>
+				</a>
 			</li>
 		}
 	</ul>
