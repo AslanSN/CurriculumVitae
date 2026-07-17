@@ -5,6 +5,7 @@ import "github.com/a-h/templ"
 type Challenge struct {
 	Company, Title, State, Dates, Description string
 	Duration                                  int
+	Highlight                                 bool
 	RepoLink                                  templ.SafeURL
 	AppLink                                   templ.SafeURL
 }
@@ -23,6 +24,7 @@ var (
 		State:       "Candidate with best technical skills",
 		Dates:       "From 1 to 4 July 2022",
 		Duration:    3,
+		Highlight:   true,
 		RepoLink:    "https://github.com/AslanSN/Logitravel-Technical-Proof",
 		AppLink:     "https://logitravel-technical-proof.vercel.app/",
 		Description: "",
@@ -43,6 +45,7 @@ var (
 		State:       "HIRED",
 		Dates:       "From 20 to 21 March 2023",
 		Duration:    1,
+		Highlight:   true,
 		RepoLink:    "https://github.com/AslanSN/nivimu-front-codetest",
 		AppLink:     "https://aslansn.github.io/nivimu-front-codetest/",
 		Description: "",
@@ -54,7 +57,7 @@ var (
 		Dates:       "From 1 to 8 August 2024",
 		Duration:    7,
 		RepoLink:    "https://github.com/AslanSN/zara-web-challenge",
-		AppLink:     "https://zara-marvelous.vercel.app/",
+		AppLink:     "",
 		Description: "",
 	}
 )

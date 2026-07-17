@@ -21,6 +21,11 @@ templ ChallengeCard(challenge constants.Challenge) {
 				<h2 class="text-3xl font-bold">
 					{ challenge.Title }
 				</h2>
+				if challenge.Highlight && challenge.State != "" {
+					<span class="inline-flex w-fit items-center gap-1.5 rounded-full bg-green-500/15 px-3 py-1 text-sm font-semibold text-green-400">
+						{ challenge.State }
+					</span>
+				}
 				<ul class="flex flex-col gap-1">
 					<li>
 						<b>Date range:{ " " } </b>{ challenge.Dates }
@@ -69,8 +74,10 @@ templ ChallengeCard(challenge constants.Challenge) {
 				}
 			</footer>
 		</article>
-		<main class="w-full relative pt-[211%] md:pt-[70%] xl:pt-[43.25%]">
-			<iframe class="absolute w-full h-full top-0 bottom-0 left-0 right-0" id={ challenge.Company } title={ challenge.Title } src={ string(challenge.AppLink) }></iframe>
-		</main>
+		if string(challenge.AppLink) != "" {
+			<main class="w-full relative pt-[211%] md:pt-[70%] xl:pt-[43.25%]">
+				<iframe class="absolute w-full h-full top-0 bottom-0 left-0 right-0" id={ challenge.Company } title={ challenge.Title } src={ string(challenge.AppLink) }></iframe>
+			</main>
+		}
 	</li>
 }

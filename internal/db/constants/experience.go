@@ -12,6 +12,7 @@ type ExperienceStruct struct {
 }
 
 var Workplaces = []ExperienceStruct{
+	Debos,
 	Nivimu,
 	Memorizame,
 	Integro,
@@ -19,13 +20,42 @@ var Workplaces = []ExperienceStruct{
 }
 
 var (
+	Debos = ExperienceStruct{
+		Company:          "Debos",
+		CompanyType:      "AI Startup",
+		Contract:         "Employee",
+		Position:         "Frontend Engineer",
+		RangeDate:        "10/24 - 07/26",
+		ImageSource:      helpers.RepoURL + "/images/debos.svg",
+		ImageAlternative: "Debos logo, the word debos in white on a dark tile",
+		Link:             "https://debos.ai/",
+		Techs: []string{
+			"React",
+			"Next.js",
+			"TypeScript",
+			".NET",
+			"PostgreSQL",
+			"Playwright",
+			"Claude Code / MCP",
+		},
+		Responsabilities: []string{
+			"Sole technical owner of the web-manager frontend",
+			"Cross-department delivery coordination (delegated by the CTO)",
+			"End-to-end test suite (Playwright)",
+			"AI-native team conventions (CLAUDE.md)",
+		},
+		Extra: []string{
+			"AI-native full-stack: agentic flows, MCP, AI-assisted review",
+			"First backend contribution: server-side search (Postgres trigram / GIN indexes)",
+		},
+	}
 	Nivimu = ExperienceStruct{
 		Company:          "Nivimu",
 		CompanyType:      "Startup",
 		Contract:         "Worker",
 		Position:         "Frontend",
 		RangeDate:        "04/23 - 04/24",
-		ImageSource:      "https://nivimu.com/wp-content/uploads/2021/05/logo-nivimu.svg",
+		ImageSource:      helpers.RepoURL + "/images/nivimu.svg",
 		ImageAlternative: "nivimu logo consists in a blue capital n with its name bellow",
 		Link:             "https://nivimu.com/",
 		Techs: []string{
@@ -120,7 +150,7 @@ var (
 		Position:         "Front End",
 		RangeDate:        "12/21 - 07/22",
 		ImageSource:      helpers.RepoURL + "/images/attlos.webp",
-		ImageAlternative: "nivimu logo consists in a blue capital n with its name bellow",
+		ImageAlternative: "Attlos logo",
 
 		Link: "https://www.youtube.com/channel/UC7hs7M2NfwWizyRIZkkOXVA",
 		Techs: []string{
