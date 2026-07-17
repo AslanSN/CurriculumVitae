@@ -1,24 +1,15 @@
 package handler
 
 import (
-	"log"
 	"net/http"
-	"strings"
 
 	"github.com/AslanSN/CurriculumVitae/app/views"
 	"github.com/a-h/templ"
 )
 
+// Handler is the Vercel (@vercel/go) entrypoint. Static assets under /assets are
+// served by Vercel's CDN (a @vercel/static build + the "filesystem" route in
+// vercel.json), so this only needs to render the page for non-asset paths.
 func Handler(w http.ResponseWriter, r *http.Request) {
-
-	log.Printf("Handler Awakened")
-	if strings.HasPrefix(r.URL.Path, "/static/") {
-		// Servir el archivo estático
-		log.Printf("Serving static file: %s", r.URL.Path)
-
-		http.FileServer(http.Dir("./assets")).ServeHTTP(w, r)
-		return
-	}
-	h := templ.Handler(views.Index())
-	h.ServeHTTP(w, r)
+	templ.Handler(views.Index()).ServeHTTP(w, r)
 }

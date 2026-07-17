@@ -22,31 +22,33 @@ var Workplaces = []ExperienceStruct{
 var (
 	Debos = ExperienceStruct{
 		Company:          "Debos",
-		CompanyType:      "AI Startup",
+		CompanyType:      "Smart-building SaaS",
 		Contract:         "Employee",
-		Position:         "Frontend Engineer",
-		RangeDate:        "10/24 - 07/26",
+		Position:         "Full-Stack Engineer",
+		RangeDate:        "10/24 - 08/26",
 		ImageSource:      helpers.RepoURL + "/images/debos.svg",
 		ImageAlternative: "Debos logo, the word debos in white on a dark tile",
 		Link:             "https://debos.ai/",
 		Techs: []string{
-			"React",
+			"React 19",
 			"Next.js",
 			"TypeScript",
 			".NET",
 			"PostgreSQL",
 			"Playwright",
+			"Sentry",
 			"Claude Code / MCP",
 		},
 		Responsabilities: []string{
-			"Sole technical owner of the web-manager frontend",
-			"Cross-department delivery coordination (delegated by the CTO)",
-			"End-to-end test suite (Playwright)",
-			"AI-native team conventions (CLAUDE.md)",
+			"Owned frontend delivery; sustained it solo for ~8 months (3 large features to production, zero critical reverts)",
+			"Took over the tech department's delivery coordination — deadlines, unblocking, comms — a function the CTO handed over; the team's delivery benchmark",
+			"Built 6+ product modules end to end + a full-stack device search (React UI + .NET endpoint + PostgreSQL trigram indexes)",
+			"Cross-cutting architectural refactors adopted as team conventions; built the design system and type-safe i18n across the app",
+			"Built the end-to-end test suite (Playwright) from a dormant setup; added feature flags (Amplitude) + observability (Sentry)",
 		},
 		Extra: []string{
-			"AI-native full-stack: agentic flows, MCP, AI-assisted review",
-			"First backend contribution: server-side search (Postgres trigram / GIN indexes)",
+			"Authored the team's AI-engineering conventions (CLAUDE.md + versioned code-review skills)",
+			"AI-augmented workflow: Claude Code, LLM agents, MCP",
 		},
 	}
 	Nivimu = ExperienceStruct{

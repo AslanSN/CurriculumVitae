@@ -2,14 +2,14 @@ package components
 
 func classesHandler(classes string) string {
 	if classes == "" {
-		return "link-ghost md:px-3 p-0"
+		return "link-e"
 	}
 	return classes
 }
 
 templ LinkItem(href templ.SafeURL, classes string) {
 	<a
-		class={ "cursor-pointer text-2xl rounded-full", classesHandler(classes) }
+		class={ "cursor-pointer", classesHandler(classes) }
 		href={ href }
 		target="_blank"
 		rel="noopener noreferrer"

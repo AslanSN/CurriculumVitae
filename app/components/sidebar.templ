@@ -3,138 +3,50 @@ package components
 import (
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
 	"github.com/AslanSN/CurriculumVitae/helpers"
-	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
 )
 
+// Sidebar is the mobile navigation drawer (CSS-only open/close via a peer
+// checkbox; tapping a link or the overlay closes it).
 templ Sidebar() {
-	<div class="flex flex-row sm:gap-10">
-		<div class="sm:w-full sm:max-w-[18rem]">
-			<input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state"/>
-			<label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
-			<aside class="sidebar sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full sm:hidden">
-				<section class="sidebar-title items-center p-4">
-					<div class="dropdown z-50 flex h-fit w-full cursor-pointer hover:bg-gray-4">
-						<label class="whites mx-2 flex h-fit w-full cursor-pointer p-0 hover:bg-gray-4" tabindex="0">
-							<div class="flex flex-row gap-4 p-4">
-								<div class="avatar-square avatar avatar-md">
-									<img src={ string(helpers.RepoURL + "/images/FaviconCV.webp") } alt="avatar of AslanSN"/>
-								</div>
-								<div class="flex flex-col">
-									<span>AslanSN CV</span>
-								</div>
-							</div>
-						</label>
-					</div>
-				</section>
-				<section class="sidebar-content">
-					<nav class="menu rounded-md">
-						<section class="menu-section px-4">
-							<span class="menu-title">Sections</span>
-							<ul class="menu-items">
-								<li class="menu-item">
-									<a href="#hero">HOME</a>
-								</li>
-								<li class="menu-item">
-									<a href="#aboutMe">ABOUT ME</a>
-								</li>
-								<li class="menu-item">
-									<a href="#skills">SKILLS</a>
-								</li>
-								<li class="menu-item">
-									<a href="#experience">EXPERIENCE</a>
-								</li>
-								<li class="menu-item">
-									<a href="#challenges">CHALLENGES</a>
-								</li>
-							</ul>
-						</section>
-						<div class="divider my-0"></div>
-						<section class="menu-section px-4">
-							<ul class="menu-items">
-								<li>
-									<input type="checkbox" checked class="menu-toggle"/>
-									<label class="menu-item justify-between">
-										<div class="flex gap-2">
-											<span>DOWNLOAD CV</span>
-										</div>
-										<span>
-											@icons.DropdownIcon("currentColor")
-										</span>
-									</label>
-									<div class="menu-item-collapse">
-										<div class="min-h-0">
-											<label class="menu-item ml-6">
-												@DownloadItem("ENGLISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "", "")
-											</label>
-											<label class="menu-item ml-6">
-												@DownloadItem("SPANISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-ES-24.pdf", "-1", "")
-											</label>
-											<label class="menu-item menu-item-disabled ml-6">
-												@DownloadItem("FRENCH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "-1", "")
-											</label>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</section>
-					</nav>
-				</section>
-				<section class="sidebar-footer justify-start bg-gray-2 pt-2">
-					<div class="divider my-0"></div>
-					<div class="menu-section p-4">
-						<div class="menu-title">
-							Share
-						</div>
-						<ul class="menu-items flex flex-row justify-between">
-							for _, socialMediaShare := range constants.SocialShareButtons {
-								<li id={ socialMediaShare.Icon.Label + "Sidebar" }>
-									@LinkItem(formatSafeURL(socialMediaShare.URL), "btn btn-circle btn-ghost w-auto h-auto cursor-pointer") {
-										@IconLabel(socialMediaShare.Icon, false, 0)
-									}
-								</li>
-							}
-						</ul>
-					</div>
-					<div class="menu-section p-4">
-						<div class="menu-title">
-							Contact
-						</div>
-						<ul class="menu-items">
-							<li>
-								@LinkItem(templ.SafeURL("mailto:aslan.staub@pm.me?subject=Contacto&body=Hola, me gustaría ponerme en contacto contigo."), "") {
-									<div class="btn btn-ghost flex justify-start cursor-pointer w-56">
-										<span id="mail-icon">
-											@icons.MailIcon()
-										</span>
-										<label class="ps-4" for="mail-icon">
-											SEND MAIL
-										</label>
-									</div>
-								}
-							</li>
-							<li>
-								@LinkItem(templ.SafeURL("https://wa.me/+34664330610?text=Hola%2C%20me%20gustaría%20ponerme%20en%20contacto%20contigo."), "") {
-									<div class="btn btn-ghost flex justify-start cursor-pointer w-56">
-										<span id="wsp-icon">
-											<img class="w-8 h-auto" src={ string(helpers.RepoURL + "/icons/whatsapp.svg") } alt="whatsapp green icon"/>
-										</span>
-										<label class="ps-4" for="wsp-icon">
-											SEND WHATSAPP
-										</label>
-									</div>
-								}
-							</li>
-						</ul>
-					</div>
-				</section>
-			</aside>
+	<input id="drawer" type="checkbox" class="peer sr-only" aria-label="Toggle menu"/>
+	<label
+		for="drawer"
+		aria-label="Open menu"
+		class="fixed bottom-6 right-6 z-30 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-base-900 text-zinc-100 shadow-lg sm:hidden"
+	>
+		@icons.MenuIcon()
+	</label>
+	<label for="drawer" class="fixed inset-0 z-30 hidden bg-black/60 peer-checked:block sm:hidden"></label>
+	<aside class="fixed inset-y-0 left-0 z-40 flex w-72 -translate-x-full flex-col gap-6 overflow-y-auto border-r border-white/10 bg-base-900 p-6 transition-transform duration-300 peer-checked:translate-x-0 motion-reduce:transition-none sm:hidden">
+		<div class="flex items-center gap-3">
+			<img class="h-10 w-10 rounded-lg" src={ string(helpers.RepoURL + "/images/FaviconCV.webp") } alt=""/>
+			<span class="font-mono text-sm">Alan Staub Negro</span>
 		</div>
-		<div class="flex w-full flex-col p-4">
-			<div class="w-fit">
-				<label for="sidebar-mobile-fixed" class="btn btn-solid-primary btn-circle btn-lg w-12 sm:hidden fixed z-20 bottom-14 right-14">
-					@icons.MenuIcon()
-				</label>
+		<nav class="flex flex-col gap-1">
+			<a class="navlink py-1" href="#hero" onclick="document.getElementById('drawer').checked=false">Home</a>
+			<a class="navlink py-1" href="#aboutMe" onclick="document.getElementById('drawer').checked=false">About</a>
+			<a class="navlink py-1" href="#skills" onclick="document.getElementById('drawer').checked=false">Skills</a>
+			<a class="navlink py-1" href="#experience" onclick="document.getElementById('drawer').checked=false">Experience</a>
+			<a class="navlink py-1" href="#challenges" onclick="document.getElementById('drawer').checked=false">Challenges</a>
+		</nav>
+		<hr class="border-white/10"/>
+		<div x-data="{ open: false }" x-on:keydown.escape.window="open = false">
+			<button type="button" x-on:click="open = !open" x-bind:aria-expanded="open" class="navlink flex w-full cursor-pointer items-center justify-between py-1">
+				<span>Download CV</span>
+				<span class="transition-transform" x-bind:class="open && 'rotate-180'">
+					@icons.DropdownIcon("currentColor")
+				</span>
+			</button>
+			<div x-show="open" x-transition x-cloak class="mt-1 flex flex-col gap-1 pl-2">
+				@DownloadItem("English", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-EN.pdf", "", "")
+				@DownloadItem("Español", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-ES.pdf", "", "")
+				@DownloadItem("Français", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-FR.pdf", "", "")
 			</div>
 		</div>
-	</div>
+		<hr class="border-white/10"/>
+		<div class="mt-auto flex flex-col gap-2">
+			<button type="button" class="btn-editorial w-full" onclick="document.getElementById('drawer').checked=false;document.getElementById('contactDlg').showModal()">Contact me</button>
+			<button type="button" class="btn-ghost-e w-full" onclick="document.getElementById('drawer').checked=false;document.getElementById('shareDlg').showModal()">Share</button>
+		</div>
+	</aside>
 }

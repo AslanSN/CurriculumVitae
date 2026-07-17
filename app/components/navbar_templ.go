@@ -34,7 +34,7 @@ func NavBar() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"navbar navbar-sticky navbar-glass hidden sm:flex \"><div class=\"navbar-start\"><div class=\"navbar-item cursor-pointer\"><div class=\"dropdwon-container justify-center\"><div class=\"dropdown dropdown-hover flex row-auto\"><label tabindex=\"0\" class=\"flex flex-row flex-nowrap items-center align-middle menu-item w-full\"><span>DOWNLOAD CV</span> <span class=\"menu-icon\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"sticky top-0 z-30 hidden border-b border-white/10 bg-base-950/80 backdrop-blur-md sm:block\"><nav class=\"mx-auto flex max-w-6xl items-center justify-between gap-6 px-10 py-3\"><div x-data=\"{ open: false }\" x-on:click.outside=\"open = false\" x-on:keydown.escape.window=\"open = false\" class=\"relative\"><button type=\"button\" x-on:click=\"open = !open\" x-bind:aria-expanded=\"open\" aria-haspopup=\"true\" class=\"btn-ghost-e cursor-pointer font-mono text-sm uppercase tracking-wider\"><span>Download CV</span> <span class=\"transition-transform\" x-bind:class=\"open &amp;&amp; &#39;rotate-180&#39;\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -42,31 +42,23 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></label><div class=\"dropdown-menu dropdown-menu-bottom-right mt-10\"><span class=\"dropdown-item\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></button><div x-show=\"open\" x-transition x-cloak class=\"absolute left-0 z-40 mt-2 w-52 rounded-xl border border-white/10 bg-base-900 p-1 shadow-xl\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("ENGLISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-EN-24.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("English", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-EN.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <span class=\"dropdown-item\">")
+		templ_7745c5c3_Err = DownloadItem("Español", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-ES.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = DownloadItem("SPANISH", helpers.RepoURL+"/CV/AlanStaubNegro-CV-ES-24.pdf", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = DownloadItem("Français", helpers.RepoURL+"/CV/AlanStaubNegro-CV-2026-FR.pdf", "", "").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <span class=\"dropdown-item disabled\">")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = DownloadItem("FRENCH", "", "-1", "").Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></div></div></div></div></div><div class=\"navbar-center text-nowrap\"><a class=\"navbar-item\" href=\"#hero\">HOME</a> <a class=\"navbar-item\" href=\"#aboutMe\">ABOUT ME</a> <a class=\"navbar-item\" href=\"#skills\">SKILLS</a> <a class=\"navbar-item\" href=\"#experience\">EXPERIENCE</a> <a class=\"navbar-item\" href=\"#challenges\">CHALLENGES</a></div><div class=\"navbar-end\"><label class=\"btn btn-ghost\" for=\"modal-contact\">CONTACT ME</label></div></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><ul class=\"flex items-center gap-6\"><li><a class=\"navlink\" href=\"#hero\">Home</a></li><li><a class=\"navlink\" href=\"#aboutMe\">About</a></li><li><a class=\"navlink\" href=\"#skills\">Skills</a></li><li><a class=\"navlink\" href=\"#experience\">Experience</a></li><li><a class=\"navlink\" href=\"#challenges\">Challenges</a></li></ul><div class=\"flex items-center gap-2\"><button type=\"button\" class=\"btn-ghost-e font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;shareDlg&#39;).showModal()\">Share</button> <button type=\"button\" class=\"btn-editorial font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;contactDlg&#39;).showModal()\">Contact</button></div></nav></header>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -39,7 +39,7 @@ func ShareModal() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<input class=\"modal-state\" id=\"modal-share\" type=\"checkbox\"><div class=\"modal\"><div id=\"alert-container\" class=\"absolute z-40\"></div><label class=\"modal-overlay\" for=\"modal-share\"></label><div class=\"modal-content flex flex-col gap-10\"><h2 class=\"text-4xl bold text-center\">Share this portfolio! 😍</h2><ul class=\"flex flex-row gap-5 justify-center\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<dialog id=\"shareDlg\" class=\"relative m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl border border-white/10 bg-base-900 p-8 text-zinc-100 backdrop:bg-black/70 backdrop:backdrop-blur-sm\"><form method=\"dialog\"><button aria-label=\"Close\" class=\"absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100\">✕</button></form><h2 class=\"mb-6 text-2xl font-bold\">Share this portfolio</h2><ul class=\"flex flex-row flex-wrap justify-center gap-3\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -51,7 +51,7 @@ func ShareModal() templ.Component {
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(socialMediaShare.Icon.Id + "ShareModal")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/shareModal.templ`, Line: 22, Col: 53}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/shareModal.templ`, Line: 21, Col: 52}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {
@@ -73,13 +73,13 @@ func ShareModal() templ.Component {
 					}()
 				}
 				ctx = templ.InitializeContext(ctx)
-				templ_7745c5c3_Err = IconLabel(socialMediaShare.Icon, false, 10).Render(ctx, templ_7745c5c3_Buffer)
+				templ_7745c5c3_Err = IconLabel(socialMediaShare.Icon, false, 0).Render(ctx, templ_7745c5c3_Buffer)
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				return templ_7745c5c3_Err
 			})
-			templ_7745c5c3_Err = LinkItem(formatSafeURL(socialMediaShare.URL), "btn btn-circle btn-ghost w-auto h-auto cursor-pointer").Render(templ.WithChildren(ctx, templ_7745c5c3_Var3), templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = LinkItem(formatSafeURL(socialMediaShare.URL), "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-colors hover:bg-white/5").Render(templ.WithChildren(ctx, templ_7745c5c3_Var3), templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -88,7 +88,7 @@ func ShareModal() templ.Component {
 				return templ_7745c5c3_Err
 			}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></div></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></dialog>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
