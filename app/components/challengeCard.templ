@@ -21,7 +21,11 @@ templ ChallengeCard(challenge constants.Challenge) {
 			<div>
 				<h3 class="text-xl font-semibold">{ challenge.Title }</h3>
 				<p class="mt-1 font-mono text-sm text-zinc-500">
-					{ challenge.Dates } · { fmt.Sprintf("%d %s", challenge.Duration, dayWord(i18n.T(ctx), challenge.Duration)) }
+					if challenge.Duration > 0 {
+						{ challenge.Dates } · { fmt.Sprintf("%d %s", challenge.Duration, dayWord(i18n.T(ctx), challenge.Duration)) }
+					} else {
+						{ challenge.Dates }
+					}
 				</p>
 			</div>
 			if challenge.Highlight && challenge.State != "" {
@@ -33,19 +37,21 @@ templ ChallengeCard(challenge constants.Challenge) {
 		if challenge.Description != "" {
 			<p class="max-w-prose text-zinc-300">{ challenge.Description }</p>
 		}
-		<footer class="flex flex-wrap gap-3 pt-1">
-			if string(challenge.RepoLink) != "" {
-				@LinkItem(challenge.RepoLink, "inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/5") {
-					<span>{ i18n.T(ctx).ChallengeRepository }</span>
-					@icons.GithubIcon(4)
+		if string(challenge.RepoLink) != "" || string(challenge.AppLink) != "" {
+			<footer class="flex flex-wrap gap-3 pt-1">
+				if string(challenge.RepoLink) != "" {
+					@LinkItem(challenge.RepoLink, "inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/5") {
+						<span>{ i18n.T(ctx).ChallengeRepository }</span>
+						@icons.GithubIcon(4)
+					}
 				}
-			}
-			if string(challenge.AppLink) != "" {
-				@LinkItem(challenge.AppLink, "inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/5") {
-					<span>{ i18n.T(ctx).ChallengeLiveDemo }</span>
-					@icons.OpenNewTabIcon()
+				if string(challenge.AppLink) != "" {
+					@LinkItem(challenge.AppLink, "inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/5") {
+						<span>{ i18n.T(ctx).ChallengeLiveDemo }</span>
+						@icons.OpenNewTabIcon()
+					}
 				}
-			}
-		</footer>
+			</footer>
+		}
 	</article>
 }
