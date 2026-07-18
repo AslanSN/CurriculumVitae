@@ -1,6 +1,8 @@
 package components
 
 import (
+	"strings"
+
 	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
 	"github.com/AslanSN/CurriculumVitae/i18n"
 )
@@ -32,18 +34,29 @@ templ ExperienceCard(workplace constants.ExperienceStruct) {
 				</div>
 				<p class="font-mono text-sm text-zinc-500">{ workplace.Contract } · { workplace.RangeDate }</p>
 			</div>
-			<div class="grid gap-6 sm:grid-cols-2">
+			if workplace.Compact {
 				<div>
-					@List(i18n.T(ctx).Stack, workplace.Techs)
+					if len(workplace.Responsabilities) > 0 {
+						<p class="text-sm leading-relaxed text-zinc-300">{ workplace.Responsabilities[0] }</p>
+					}
+					if len(workplace.Techs) > 0 {
+						<p class="mt-2 font-mono text-xs text-zinc-500">{ strings.Join(workplace.Techs, " · ") }</p>
+					}
 				</div>
-				<div>
-					@List(i18n.T(ctx).WhatIDid, workplace.Responsabilities)
+			} else {
+				<div class="grid gap-6 sm:grid-cols-2">
+					<div>
+						@List(i18n.T(ctx).Stack, workplace.Techs)
+					</div>
+					<div>
+						@List(i18n.T(ctx).WhatIDid, workplace.Responsabilities)
+					</div>
 				</div>
-			</div>
-			if len(workplace.Extra) > 0 {
-				<div class="border-t border-white/10 pt-4">
-					@List(i18n.T(ctx).Highlights, workplace.Extra)
-				</div>
+				if len(workplace.Extra) > 0 {
+					<div class="border-t border-white/10 pt-4">
+						@List(i18n.T(ctx).Highlights, workplace.Extra)
+					</div>
+				}
 			}
 		</div>
 	</li>
