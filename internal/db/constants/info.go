@@ -16,8 +16,6 @@ var SocialMediaList = []SocialMediaData{
 	X,
 }
 
-var AslanImageAlt string = "Foto en primer plano de Alan Staub Negro sonriendo"
-
 var (
 	LinkedIn = SocialMediaData{
 		IconLabelParams: helpers.IconLabelParams{

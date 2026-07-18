@@ -1,6 +1,9 @@
 package components
 
-import "github.com/AslanSN/CurriculumVitae/internal/db/constants"
+import (
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
+)
 
 templ ExperienceCard(workplace constants.ExperienceStruct) {
 	<li id={ workplace.Company + "Experience" } class="card-e">
@@ -31,15 +34,15 @@ templ ExperienceCard(workplace constants.ExperienceStruct) {
 			</div>
 			<div class="grid gap-6 sm:grid-cols-2">
 				<div>
-					@List("Stack", workplace.Techs)
+					@List(i18n.T(ctx).Stack, workplace.Techs)
 				</div>
 				<div>
-					@List("What I did", workplace.Responsabilities)
+					@List(i18n.T(ctx).WhatIDid, workplace.Responsabilities)
 				</div>
 			</div>
 			if len(workplace.Extra) > 0 {
 				<div class="border-t border-white/10 pt-4">
-					@List("Highlights", workplace.Extra)
+					@List(i18n.T(ctx).Highlights, workplace.Extra)
 				</div>
 			}
 		</div>

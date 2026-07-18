@@ -1,12 +1,15 @@
 package components
 
-import "github.com/AslanSN/CurriculumVitae/internal/db/constants"
+import (
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
+)
 
 templ Skills() {
 	<div id="skills" class="w-full scroll-mt-24">
-		<h2 class="mb-6 text-3xl font-bold sm:text-4xl">Skills</h2>
+		<h2 class="mb-6 text-3xl font-bold sm:text-4xl">{ i18n.T(ctx).SectionSkills }</h2>
 		<div class="flex flex-col gap-5">
-			for _, group := range constants.SkillGroups {
+			for _, group := range constants.SkillGroups[i18n.FromContext(ctx)] {
 				<div class="flex flex-col gap-2">
 					<h3 class="eyebrow">{ group.Name }</h3>
 					<ul class="flex flex-row flex-wrap gap-2">

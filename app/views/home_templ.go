@@ -12,6 +12,7 @@ import (
 	"github.com/AslanSN/CurriculumVitae/app/components"
 	"github.com/AslanSN/CurriculumVitae/app/layouts"
 	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
 )
 
 func home() templ.Component {
@@ -75,31 +76,70 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section id=\"experience\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-8 text-3xl font-bold sm:text-4xl\">Experience</h2><ul class=\"flex flex-col gap-6\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section id=\"experience\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-8 text-3xl font-bold sm:text-4xl\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			for _, workplace := range constants.Workplaces {
+			var templ_7745c5c3_Var3 string
+			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).SectionExperience)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 21, Col: 83}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h2><ul class=\"flex flex-col gap-6\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			for _, workplace := range constants.Workplaces[i18n.FromContext(ctx)] {
 				templ_7745c5c3_Err = components.ExperienceCard(workplace).Render(ctx, templ_7745c5c3_Buffer)
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section><section id=\"challenges\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">Challenges</h2><p class=\"mb-8 max-w-2xl text-zinc-400\">Company technical tests — how I approach an unfamiliar problem under a deadline, and how each one landed.</p><ul class=\"flex flex-col gap-8\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section><section id=\"challenges\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			for _, challenge := range constants.Challenges {
+			var templ_7745c5c3_Var4 string
+			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).SectionChallenges)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 29, Col: 83}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h2><p class=\"mb-8 max-w-2xl text-zinc-400\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var5 string
+			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).ChallengesIntro)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 31, Col: 34}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><ul class=\"flex flex-col gap-8\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			for _, challenge := range constants.Challenges[i18n.FromContext(ctx)] {
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li id=\"")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				var templ_7745c5c3_Var3 string
-				templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(challenge.Company + "Challenge")
+				var templ_7745c5c3_Var6 string
+				templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(challenge.Company + "Challenge")
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 34, Col: 46}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 35, Col: 46}
 				}
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -116,7 +156,46 @@ func home() templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section><section id=\"colophon\" class=\"w-full scroll-mt-24 border-t border-white/10 pt-10\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">How this site is built</h2><p class=\"max-w-prose text-zinc-300\">Go + <a class=\"link-e\" href=\"https://templ.guide\" target=\"_blank\" rel=\"noopener noreferrer\">templ</a> + Tailwind CSS, server-rendered and deployed on Vercel — no client-side framework, just fast HTML. Rebuilt with an AI-native workflow (Claude Code), the way I ship day to day.</p><a class=\"mt-4 inline-flex w-fit items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/5\" href=\"https://github.com/AslanSN/CurriculumVitae\" target=\"_blank\" rel=\"noopener noreferrer\">Source on GitHub</a></section></main>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section><section id=\"colophon\" class=\"w-full scroll-mt-24 border-t border-white/10 pt-10\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var7 string
+			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).ColophonHeading)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 42, Col: 81}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h2><p class=\"max-w-prose text-zinc-300\">Go + <a class=\"link-e\" href=\"https://templ.guide\" target=\"_blank\" rel=\"noopener noreferrer\">templ</a> + Tailwind CSS, ")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var8 string
+			templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).ColophonBody)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 44, Col: 149}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><a class=\"mt-4 inline-flex w-fit items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/5\" href=\"https://github.com/AslanSN/CurriculumVitae\" target=\"_blank\" rel=\"noopener noreferrer\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var9 string
+			templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).SourceOnGitHub)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 52, Col: 33}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></section></main>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

@@ -8,7 +8,10 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/AslanSN/CurriculumVitae/internal/db/constants"
+import (
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
+)
 
 func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
@@ -38,7 +41,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(workplace.Company + "Experience")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 6, Col: 42}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 9, Col: 42}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
@@ -56,7 +59,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(string(workplace.ImageSource))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 13, Col: 42}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 16, Col: 42}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
@@ -69,7 +72,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(workplace.ImageAlternative)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 14, Col: 39}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 17, Col: 39}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {
@@ -100,7 +103,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 				var templ_7745c5c3_Var6 string
 				templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(workplace.Company)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 21, Col: 28}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 24, Col: 28}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 				if templ_7745c5c3_Err != nil {
@@ -116,7 +119,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 			var templ_7745c5c3_Var7 string
 			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(workplace.Company)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 24, Col: 27}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 27, Col: 27}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 			if templ_7745c5c3_Err != nil {
@@ -130,7 +133,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 		var templ_7745c5c3_Var8 string
 		templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(workplace.CompanyType)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 27, Col: 62}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 30, Col: 62}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 		if templ_7745c5c3_Err != nil {
@@ -143,7 +146,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 		var templ_7745c5c3_Var9 string
 		templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(workplace.Position)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 27, Col: 88}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 30, Col: 88}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 		if templ_7745c5c3_Err != nil {
@@ -156,7 +159,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 		var templ_7745c5c3_Var10 string
 		templ_7745c5c3_Var10, templ_7745c5c3_Err = templ.JoinStringErrs(workplace.Contract)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 30, Col: 67}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 33, Col: 67}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var10))
 		if templ_7745c5c3_Err != nil {
@@ -169,7 +172,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 		var templ_7745c5c3_Var11 string
 		templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(workplace.RangeDate)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 30, Col: 94}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/experienceCard.templ`, Line: 33, Col: 94}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 		if templ_7745c5c3_Err != nil {
@@ -179,7 +182,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = List("Stack", workplace.Techs).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = List(i18n.T(ctx).Stack, workplace.Techs).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -187,7 +190,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = List("What I did", workplace.Responsabilities).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = List(i18n.T(ctx).WhatIDid, workplace.Responsabilities).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -200,7 +203,7 @@ func ExperienceCard(workplace constants.ExperienceStruct) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = List("Highlights", workplace.Extra).Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = List(i18n.T(ctx).Highlights, workplace.Extra).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
