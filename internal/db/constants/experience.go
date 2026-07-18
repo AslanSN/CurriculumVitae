@@ -141,7 +141,7 @@ var (
 
 	nivimuEN = expProse{
 		CompanyType:      "Startup",
-		Contract:         "Worker",
+		Contract:         "Employee",
 		Position:         "Frontend",
 		Responsabilities: []string{"Code review", "Branch self-approval", "QA of UX", "Freedom of choice of tasks", "Deadlines"},
 		Extra: []string{
@@ -155,7 +155,7 @@ var (
 	}
 	nivimuES = expProse{
 		CompanyType:      "Startup",
-		Contract:         "Trabajador",
+		Contract:         "Empleado",
 		Position:         "Frontend",
 		Responsabilities: []string{"Code review", "Autoaprobación de ramas", "QA de la UX", "Libertad para elegir tareas", "Plazos"},
 		Extra: []string{
@@ -228,21 +228,21 @@ var (
 
 	attlosEN = expProse{
 		CompanyType:      "Startup",
-		Contract:         "Worker",
+		Contract:         "Intern",
 		Position:         "Front End",
 		Responsabilities: []string{"Team Lead", "Deadlines", "Architecture"},
 		Extra:            []string{"Implementing Tokenizations", "Agile Scrum"},
 	}
 	attlosES = expProse{
 		CompanyType:      "Startup",
-		Contract:         "Trabajador",
+		Contract:         "Becario",
 		Position:         "Front End",
 		Responsabilities: []string{"Team Lead", "Plazos", "Arquitectura"},
 		Extra:            []string{"Implementación de tokenizaciones", "Agile Scrum"},
 	}
 	attlosFR = expProse{
 		CompanyType:      "Startup",
-		Contract:         "Salarié",
+		Contract:         "Stagiaire",
 		Position:         "Front End",
 		Responsabilities: []string{"Team Lead", "Délais", "Architecture"},
 		Extra:            []string{"Implémentation de tokenisations", "Agile Scrum"},
