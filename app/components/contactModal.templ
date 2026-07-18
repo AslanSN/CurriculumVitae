@@ -1,14 +1,17 @@
 package components
 
-import icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+import (
+	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
+)
 
 templ ContactModal() {
 	<dialog id="contactDlg" class="relative m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl border border-white/10 bg-base-900 p-8 text-zinc-100 backdrop:bg-black/70 backdrop:backdrop-blur-sm">
 		<div id="alert-container" class="absolute inset-x-0 top-0 z-50"></div>
 		<form method="dialog">
-			<button aria-label="Close" class="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100">✕</button>
+			<button aria-label={ i18n.T(ctx).Close } class="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100">✕</button>
 		</form>
-		<h2 class="mb-6 text-2xl font-bold">Contact me</h2>
+		<h2 class="mb-6 text-2xl font-bold">{ i18n.T(ctx).ContactMe }</h2>
 		<ul class="flex flex-col gap-4 text-lg">
 			<li class="flex items-center justify-between gap-3">
 				<span id="mobile">
@@ -16,17 +19,17 @@ templ ContactModal() {
 						+34 664 33 06 10
 					}
 				</span>
-				<button type="button" id="mobile-btn" aria-label="Copy phone number" class="inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100" onclick="copyText('mobile')">
+				<button type="button" id="mobile-btn" aria-label={ i18n.T(ctx).CopyPhone } class="inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100" onclick="copyText('mobile')">
 					@icons.CopyIcon()
 				</button>
 			</li>
 			<li class="flex items-center justify-between gap-3">
 				<span id="mail">
-					@LinkItem(templ.SafeURL("mailto:aslan.staub@pm.me?subject=Contact&body=Hi, I would like to contact you..."), "link-e") {
+					@LinkItem(mailtoURL(i18n.T(ctx)), "link-e") {
 						aslan.staub@pm.me
 					}
 				</span>
-				<button type="button" id="mail-btn" aria-label="Copy email" class="inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100" onclick="copyText('mail')">
+				<button type="button" id="mail-btn" aria-label={ i18n.T(ctx).CopyEmail } class="inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100" onclick="copyText('mail')">
 					@icons.CopyIcon()
 				</button>
 			</li>

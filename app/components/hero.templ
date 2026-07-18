@@ -1,5 +1,7 @@
 package components
 
+import "github.com/AslanSN/CurriculumVitae/internal/i18n"
+
 templ Hero() {
 	<section id="hero" class="flex scroll-mt-24 flex-col items-start gap-8 pt-6 md:flex-row md:items-center md:justify-between md:gap-12">
 		<div class="flex w-full flex-col items-start">
@@ -7,10 +9,10 @@ templ Hero() {
 				Alan Staub Negro
 			</h1>
 			<p class="mt-3 font-mono text-xl text-zinc-300 sm:text-3xl lg:text-4xl">
-				Senior Full-Stack Engineer
+				{ i18n.T(ctx).HeroRole }
 			</p>
 			<p class="mt-2 font-mono text-sm text-accent sm:text-base">
-				AI-native · React / Next.js + .NET · platform
+				{ i18n.T(ctx).HeroTagline }
 			</p>
 			@HeroFooter()
 		</div>

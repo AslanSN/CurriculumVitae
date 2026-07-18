@@ -4,13 +4,15 @@ import (
 	"fmt"
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
 	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
 )
 
-func dayNumber(numberDays int) string {
-	if numberDays > 1 {
-		return "days"
+// dayWord returns the singular/plural "day" label for the active locale.
+func dayWord(d i18n.Dict, numberDays int) string {
+	if numberDays == 1 {
+		return d.Day
 	}
-	return "day"
+	return d.Days
 }
 
 templ ChallengeCard(challenge constants.Challenge) {
@@ -19,7 +21,7 @@ templ ChallengeCard(challenge constants.Challenge) {
 			<div>
 				<h3 class="text-xl font-semibold">{ challenge.Title }</h3>
 				<p class="mt-1 font-mono text-sm text-zinc-500">
-					{ challenge.Dates } · { fmt.Sprintf("%d %s", challenge.Duration, dayNumber(challenge.Duration)) }
+					{ challenge.Dates } · { fmt.Sprintf("%d %s", challenge.Duration, dayWord(i18n.T(ctx), challenge.Duration)) }
 				</p>
 			</div>
 			if challenge.Highlight && challenge.State != "" {
@@ -34,13 +36,13 @@ templ ChallengeCard(challenge constants.Challenge) {
 		<footer class="flex flex-wrap gap-3 pt-1">
 			if string(challenge.RepoLink) != "" {
 				@LinkItem(challenge.RepoLink, "inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/5") {
-					<span>Repository</span>
+					<span>{ i18n.T(ctx).ChallengeRepository }</span>
 					@icons.GithubIcon(4)
 				}
 			}
 			if string(challenge.AppLink) != "" {
 				@LinkItem(challenge.AppLink, "inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/5") {
-					<span>Live demo</span>
+					<span>{ i18n.T(ctx).ChallengeLiveDemo }</span>
 					@icons.OpenNewTabIcon()
 				}
 			}

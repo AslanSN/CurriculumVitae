@@ -10,14 +10,12 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import (
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
 	"net/url"
 	"strings"
 )
 
 const (
-	contactMessage string = "Hi, I'm [my name], I would like to contact you..."
-	subject        string = "First contact"
-
 	myLinkedIn      string = "alanstaubnegro"
 	linkedinBaseUrl string = "https://www.linkedin.com/messaging/compose?recipientId={recipientId}&body={message}&subject={subject}"
 	whatsappBaseUrl string = "https://wa.me/+34664330610?text={message}."
@@ -55,6 +53,12 @@ func formatMessageURL(params formatMessageURLParams) templ.SafeURL {
 	urlStr = strings.Replace(urlStr, "{message}", message, 1)
 
 	return templ.SafeURL(urlStr)
+}
+
+// mailtoURL builds a localized mailto: link with a pre-filled subject and body.
+func mailtoURL(d i18n.Dict) templ.SafeURL {
+	return templ.SafeURL("mailto:aslan.staub@pm.me?subject=" +
+		url.QueryEscape(d.ContactSubject) + "&body=" + url.QueryEscape(d.ContactMessage))
 }
 
 func ContactModalFooter() templ.Component {
@@ -97,13 +101,13 @@ func ContactModalFooter() templ.Component {
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(string(helpers.RepoURL + "/icons/linkedin.svg"))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/contactModalFooter.templ`, Line: 60, Col: 76}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/contactModalFooter.templ`, Line: 64, Col: 76}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" alt=\"linkedin icon for contacting me by its web\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" alt=\"LinkedIn\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -111,8 +115,8 @@ func ContactModalFooter() templ.Component {
 		})
 		templ_7745c5c3_Err = LinkItem(formatMessageURL(formatMessageURLParams{
 			linkedinBaseUrl,
-			contactMessage,
-			subject,
+			i18n.T(ctx).ContactMessage,
+			i18n.T(ctx).ContactSubject,
 			myLinkedIn,
 			true,
 		}), "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-transform duration-200 hover:scale-110").Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
@@ -138,13 +142,13 @@ func ContactModalFooter() templ.Component {
 			var templ_7745c5c3_Var5 string
 			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(string(helpers.RepoURL + "/icons/whatsapp.svg"))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/contactModalFooter.templ`, Line: 69, Col: 76}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/contactModalFooter.templ`, Line: 73, Col: 76}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" alt=\"whatsapp green icon\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" alt=\"WhatsApp\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -152,7 +156,7 @@ func ContactModalFooter() templ.Component {
 		})
 		templ_7745c5c3_Err = LinkItem(formatMessageURL(formatMessageURLParams{
 			whatsappBaseUrl,
-			contactMessage,
+			i18n.T(ctx).ContactMessage,
 			"",
 			"",
 			false,

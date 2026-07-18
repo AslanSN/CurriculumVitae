@@ -2,25 +2,26 @@ package components
 
 import (
 	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
 	"strings"
 )
 
-func formatSafeURL(baseURL string) templ.SafeURL {
-	stringURL := strings.Replace(baseURL, "{message}", constants.Message, 1)
+func formatSafeURL(baseURL string, message string) templ.SafeURL {
+	stringURL := strings.Replace(baseURL, "{message}", message, 1)
 	return templ.SafeURL(stringURL)
 }
 
 templ ShareModal() {
 	<dialog id="shareDlg" class="relative m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl border border-white/10 bg-base-900 p-8 text-zinc-100 backdrop:bg-black/70 backdrop:backdrop-blur-sm">
 		<form method="dialog">
-			<button aria-label="Close" class="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100">✕</button>
+			<button aria-label={ i18n.T(ctx).Close } class="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/5 hover:text-zinc-100">✕</button>
 		</form>
-		<h2 class="mb-6 text-2xl font-bold">Share this portfolio</h2>
+		<h2 class="mb-6 text-2xl font-bold">{ i18n.T(ctx).ShareTitle }</h2>
 		<ul class="flex flex-row flex-wrap justify-center gap-3">
 			for _, socialMediaShare := range constants.SocialShareButtons {
 				<li id={ socialMediaShare.Icon.Id + "ShareModal" }>
 					<a
-						href={ formatSafeURL(socialMediaShare.URL) }
+						href={ formatSafeURL(socialMediaShare.URL, constants.Message[i18n.FromContext(ctx)]) }
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label={ socialMediaShare.Icon.Alternative }

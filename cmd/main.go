@@ -48,14 +48,24 @@ func setupRouter() *echo.Echo {
 	// Custom Middleware to log routes
 	e.Use(routeLogger)
 
-	// Vercel connection
-	e.GET("", echo.WrapHandler(http.HandlerFunc(handler.Handler)))
-
 	// Routes
 	registerStaticRoutes(e)
 	registerDBRoutes(e)
+	registerPageRoutes(e)
 
 	return e
+}
+
+// registerPageRoutes wires each locale's page URL to the Vercel handler, which
+// resolves the locale from the path/cookie/Accept-Language. Production routes
+// every path here via vercel.json; locally we list them explicitly.
+func registerPageRoutes(e *echo.Echo) {
+	page := echo.WrapHandler(http.HandlerFunc(handler.Handler))
+	e.GET("/", page)
+	e.GET("/es", page)
+	e.GET("/fr", page)
+	e.GET("/sitemap.xml", page)
+	e.GET("/robots.txt", page)
 }
 
 func registerDBRoutes(e *echo.Echo) {

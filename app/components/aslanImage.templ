@@ -3,13 +3,14 @@ package components
 import (
 	"github.com/AslanSN/CurriculumVitae/helpers"
 	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
 )
 
 templ AslanImage() {
 	<img
 		class="h-auto w-52 shrink-0 rounded-2xl border border-white/10 sm:w-60 md:w-72"
 		src={ string(helpers.RepoURL + "/images/AslanSNPhoto.webp") }
-		alt={ constants.AslanImageAlt }
+		alt={ constants.AslanImageAlt[i18n.FromContext(ctx)] }
 		loading="eager"
 	/>
 }

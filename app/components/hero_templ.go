@@ -8,6 +8,8 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
+import "github.com/AslanSN/CurriculumVitae/internal/i18n"
+
 func Hero() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -29,7 +31,33 @@ func Hero() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section id=\"hero\" class=\"flex scroll-mt-24 flex-col items-start gap-8 pt-6 md:flex-row md:items-center md:justify-between md:gap-12\"><div class=\"flex w-full flex-col items-start\"><h1 class=\"text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl\">Alan Staub Negro</h1><p class=\"mt-3 font-mono text-xl text-zinc-300 sm:text-3xl lg:text-4xl\">Senior Full-Stack Engineer</p><p class=\"mt-2 font-mono text-sm text-accent sm:text-base\">AI-native · React / Next.js + .NET · platform</p>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section id=\"hero\" class=\"flex scroll-mt-24 flex-col items-start gap-8 pt-6 md:flex-row md:items-center md:justify-between md:gap-12\"><div class=\"flex w-full flex-col items-start\"><h1 class=\"text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl\">Alan Staub Negro</h1><p class=\"mt-3 font-mono text-xl text-zinc-300 sm:text-3xl lg:text-4xl\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var2 string
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).HeroRole)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/hero.templ`, Line: 12, Col: 26}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><p class=\"mt-2 font-mono text-sm text-accent sm:text-base\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var3 string
+		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).HeroTagline)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/hero.templ`, Line: 15, Col: 29}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

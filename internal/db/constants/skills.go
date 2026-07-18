@@ -2,6 +2,7 @@ package constants
 
 import (
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
 	"github.com/a-h/templ"
 )
 
@@ -27,26 +28,36 @@ type SkillGroup struct {
 	Items []string
 }
 
-var SkillGroups = []SkillGroup{
-	{
-		Name:  "AI & agentic dev",
-		Items: []string{"Claude Code", "LLM agents (Claude, GPT/Codex)", "MCP", "AI-assisted code review", "Team AI conventions (CLAUDE.md)"},
+// frontendItems and alsoItems are pure tech names — identical across locales,
+// so they're shared to avoid drift.
+var (
+	frontendItems = []string{"React 19", "Next.js (App Router)", "TypeScript", "TanStack Query", "React Hook Form", "Zod", "Zustand", "Tailwind CSS", "Radix UI"}
+	alsoItems     = []string{"Go", "Svelte / SvelteKit", "React Native / Expo", "Python / Flask", "Figma (UX/UI)"}
+)
+
+// SkillGroups is the grouped skill list per locale. Group names, the AI-related
+// phrasings and the spoken languages are translated; tool/library names are not.
+var SkillGroups = map[i18n.Locale][]SkillGroup{
+	i18n.EN: {
+		{Name: "AI & agentic dev", Items: []string{"Claude Code", "LLM agents (Claude, GPT/Codex)", "MCP", "AI-assisted code review", "Team AI conventions (CLAUDE.md)"}},
+		{Name: "Frontend", Items: frontendItems},
+		{Name: "Backend & platform", Items: []string{".NET (C#)", "EF Core", "Node.js", "PostgreSQL", "REST APIs", "CI/CD (GitHub Actions)", "Vercel", "Sentry", "Amplitude", "Playwright", "Vitest"}},
+		{Name: "Also", Items: alsoItems},
+		{Name: "Languages", Items: []string{"Spanish (native)", "French (bilingual)", "English (professional)"}},
 	},
-	{
-		Name:  "Frontend",
-		Items: []string{"React 19", "Next.js (App Router)", "TypeScript", "TanStack Query", "React Hook Form", "Zod", "Zustand", "Tailwind CSS", "Radix UI"},
+	i18n.ES: {
+		{Name: "IA y desarrollo agéntico", Items: []string{"Claude Code", "Agentes LLM (Claude, GPT/Codex)", "MCP", "Code review asistido por IA", "Convenciones de IA de equipo (CLAUDE.md)"}},
+		{Name: "Frontend", Items: frontendItems},
+		{Name: "Backend y plataforma", Items: []string{".NET (C#)", "EF Core", "Node.js", "PostgreSQL", "APIs REST", "CI/CD (GitHub Actions)", "Vercel", "Sentry", "Amplitude", "Playwright", "Vitest"}},
+		{Name: "También", Items: alsoItems},
+		{Name: "Idiomas", Items: []string{"Español (nativo)", "Francés (bilingüe)", "Inglés (profesional)"}},
 	},
-	{
-		Name:  "Backend & platform",
-		Items: []string{".NET (C#)", "EF Core", "Node.js", "PostgreSQL", "REST APIs", "CI/CD (GitHub Actions)", "Vercel", "Sentry", "Amplitude", "Playwright", "Vitest"},
-	},
-	{
-		Name:  "Also",
-		Items: []string{"Go", "Svelte / SvelteKit", "React Native / Expo", "Python / Flask", "Figma (UX/UI)"},
-	},
-	{
-		Name:  "Languages",
-		Items: []string{"Spanish (native)", "French (bilingual)", "English (professional)"},
+	i18n.FR: {
+		{Name: "IA & dev agentique", Items: []string{"Claude Code", "Agents LLM (Claude, GPT/Codex)", "MCP", "Code review assisté par IA", "Conventions IA d'équipe (CLAUDE.md)"}},
+		{Name: "Frontend", Items: frontendItems},
+		{Name: "Backend & plateforme", Items: []string{".NET (C#)", "EF Core", "Node.js", "PostgreSQL", "API REST", "CI/CD (GitHub Actions)", "Vercel", "Sentry", "Amplitude", "Playwright", "Vitest"}},
+		{Name: "Aussi", Items: alsoItems},
+		{Name: "Langues", Items: []string{"Espagnol (natif)", "Français (bilingue)", "Anglais (professionnel)"}},
 	},
 }
 

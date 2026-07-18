@@ -2,14 +2,12 @@ package components
 
 import (
 	"github.com/AslanSN/CurriculumVitae/helpers"
+	"github.com/AslanSN/CurriculumVitae/internal/i18n"
 	"net/url"
 	"strings"
 )
 
 const (
-	contactMessage string = "Hi, I'm [my name], I would like to contact you..."
-	subject        string = "First contact"
-
 	myLinkedIn      string = "alanstaubnegro"
 	linkedinBaseUrl string = "https://www.linkedin.com/messaging/compose?recipientId={recipientId}&body={message}&subject={subject}"
 	whatsappBaseUrl string = "https://wa.me/+34664330610?text={message}."
@@ -49,23 +47,29 @@ func formatMessageURL(params formatMessageURLParams) templ.SafeURL {
 	return templ.SafeURL(urlStr)
 }
 
+// mailtoURL builds a localized mailto: link with a pre-filled subject and body.
+func mailtoURL(d i18n.Dict) templ.SafeURL {
+	return templ.SafeURL("mailto:aslan.staub@pm.me?subject=" +
+		url.QueryEscape(d.ContactSubject) + "&body=" + url.QueryEscape(d.ContactMessage))
+}
+
 templ ContactModalFooter() {
 	@LinkItem(formatMessageURL(formatMessageURLParams{
 		linkedinBaseUrl,
-		contactMessage,
-		subject,
+		i18n.T(ctx).ContactMessage,
+		i18n.T(ctx).ContactSubject,
 		myLinkedIn,
 		true,
 	}), "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-transform duration-200 hover:scale-110") {
-		<img class="h-6 w-6" src={ string(helpers.RepoURL + "/icons/linkedin.svg") } alt="linkedin icon for contacting me by its web"/>
+		<img class="h-6 w-6" src={ string(helpers.RepoURL + "/icons/linkedin.svg") } alt="LinkedIn"/>
 	}
 	@LinkItem(formatMessageURL(formatMessageURLParams{
 		whatsappBaseUrl,
-		contactMessage,
+		i18n.T(ctx).ContactMessage,
 		"",
 		"",
 		false,
 	}), "inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-transform duration-200 hover:scale-110") {
-		<img class="h-6 w-6" src={ string(helpers.RepoURL + "/icons/whatsapp.svg") } alt="whatsapp green icon"/>
+		<img class="h-6 w-6" src={ string(helpers.RepoURL + "/icons/whatsapp.svg") } alt="WhatsApp"/>
 	}
 }
