@@ -11,8 +11,8 @@ import templruntime "github.com/a-h/templ/runtime"
 import (
 	"fmt"
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+	"github.com/AslanSN/CurriculumVitae/i18n"
 	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
-	"github.com/AslanSN/CurriculumVitae/internal/i18n"
 )
 
 // dayWord returns the singular/plural "day" label for the active locale.

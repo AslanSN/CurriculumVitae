@@ -1,6 +1,6 @@
 package constants
 
-import "github.com/AslanSN/CurriculumVitae/internal/i18n"
+import "github.com/AslanSN/CurriculumVitae/i18n"
 
 // AboutMe is the "About" paragraph, per locale. ES/FR are drafted from the EN
 // source and the trilingual CV PDFs — review the copy before publishing.
