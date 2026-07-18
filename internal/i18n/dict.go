@@ -72,7 +72,7 @@ var dicts = map[Locale]Dict{
 		SectionAbout:      "About",
 		SectionSkills:     "Skills",
 		SectionExperience: "Experience",
-		SectionChallenges: "Challenges",
+		SectionChallenges: "The verdict",
 
 		Share:      "Share",
 		Contact:    "Contact",
@@ -82,7 +82,7 @@ var dicts = map[Locale]Dict{
 		HeroRole:    "Senior Full-Stack Engineer",
 		HeroTagline: "AI-native · React / Next.js + .NET · platform",
 
-		ChallengesIntro:     "Company technical tests — how I approach an unfamiliar problem under a deadline, and how each one landed.",
+		ChallengesIntro:     "Company technical tests under a deadline — how I approach an unfamiliar problem, and the verdict each one earned.",
 		ChallengeRepository: "Repository",
 		ChallengeLiveDemo:   "Live demo",
 		Day:                 "day",
@@ -118,7 +118,7 @@ var dicts = map[Locale]Dict{
 		SectionAbout:      "Sobre mí",
 		SectionSkills:     "Competencias",
 		SectionExperience: "Experiencia",
-		SectionChallenges: "Pruebas técnicas",
+		SectionChallenges: "El veredicto",
 
 		Share:      "Compartir",
 		Contact:    "Contacto",
@@ -128,7 +128,7 @@ var dicts = map[Locale]Dict{
 		HeroRole:    "Ingeniero Full-Stack Senior",
 		HeroTagline: "AI-native · React / Next.js + .NET · plataforma",
 
-		ChallengesIntro:     "Pruebas técnicas de empresas — cómo abordo un problema desconocido contra reloj, y en qué acabó cada una.",
+		ChallengesIntro:     "Pruebas técnicas de empresa contra reloj — cómo abordo un problema desconocido, y el veredicto que se llevó cada una.",
 		ChallengeRepository: "Repositorio",
 		ChallengeLiveDemo:   "Demo en vivo",
 		Day:                 "día",
@@ -164,7 +164,7 @@ var dicts = map[Locale]Dict{
 		SectionAbout:      "À propos",
 		SectionSkills:     "Compétences",
 		SectionExperience: "Expérience",
-		SectionChallenges: "Tests techniques",
+		SectionChallenges: "Le verdict",
 
 		Share:      "Partager",
 		Contact:    "Contact",
@@ -174,7 +174,7 @@ var dicts = map[Locale]Dict{
 		HeroRole:    "Ingénieur Full-Stack Senior",
 		HeroTagline: "AI-native · React / Next.js + .NET · plateforme",
 
-		ChallengesIntro:     "Tests techniques d'entreprises — comment j'aborde un problème inconnu sous contrainte de délai, et le résultat de chacun.",
+		ChallengesIntro:     "Tests techniques d'entreprise sous contrainte de délai — comment j'aborde un problème inconnu, et le verdict obtenu pour chacun.",
 		ChallengeRepository: "Dépôt",
 		ChallengeLiveDemo:   "Démo en ligne",
 		Day:                 "jour",

@@ -42,13 +42,13 @@ func buildChallenge(n challengeNeutral, p challengeProse) Challenge {
 }
 
 // --- neutral facts (shared across locales) ----------------------------------
+// Ordered by outcome (the strongest third-party verdict first), not by date.
 
 var (
-	inditexN = challengeNeutral{
-		Company:  "Inditex",
-		Duration: 7,
-		RepoLink: "https://github.com/AslanSN/zara-web-challenge",
-		AppLink:  "",
+	debosChN = challengeNeutral{
+		Company:   "Debos",
+		Duration:  0, // live interview, not a timed take-home
+		Highlight: true,
 	}
 	nivimuChN = challengeNeutral{
 		Company:   "Nivimu",
@@ -56,12 +56,6 @@ var (
 		Highlight: true,
 		RepoLink:  "https://github.com/AslanSN/nivimu-front-codetest",
 		AppLink:   "https://aslansn.github.io/nivimu-front-codetest/",
-	}
-	arupN = challengeNeutral{
-		Company:  "Arup",
-		Duration: 7,
-		RepoLink: "https://github.com/AslanSN/arup-technicalTest",
-		AppLink:  "https://arup-technical-test-deploy.vercel.app/",
 	}
 	logitravelN = challengeNeutral{
 		Company:   "Logitravel",
@@ -75,23 +69,23 @@ var (
 // --- translatable copy, per locale ------------------------------------------
 
 var (
-	inditexEN = challengeProse{
-		Title:       "Zara Marvel Web Challenge",
-		State:       "Process stopped prior to review of my technical proof",
-		Dates:       "From 1 to 8 August 2024",
-		Description: "Marvel character explorer (list, search, detail, favorites) in Next.js + TypeScript. State via Context + useReducer (no Redux), favorites persisted to localStorage, Vitest tests and Husky pre-commit hooks.",
+	debosChEN = challengeProse{
+		Title:       "Debos — Live problem-solving interview",
+		State:       "Hired on the spot",
+		Dates:       "October 2024",
+		Description: "Two-part technical interview; the real test was a design problem — a search box hitting a backend with highly variable latency: how do you handle it? My answer, three layers: a minimum query length, a 200–500 ms debounce, and an AbortController cancelling the in-flight request so a slower earlier response can't overwrite a newer one — the classic typeahead race condition. Hired on the spot; joined as an external consultant, then moved in-house. I later shipped exactly this in production — a full-stack device search (React + .NET + PostgreSQL trigram indexes).",
 	}
-	inditexES = challengeProse{
-		Title:       "Zara Marvel Web Challenge",
-		State:       "Proceso detenido antes de revisar mi prueba técnica",
-		Dates:       "Del 1 al 8 de agosto de 2024",
-		Description: "Explorador de personajes de Marvel (lista, búsqueda, detalle, favoritos) en Next.js + TypeScript. Estado con Context + useReducer (sin Redux), favoritos persistidos en localStorage, tests con Vitest y hooks pre-commit con Husky.",
+	debosChES = challengeProse{
+		Title:       "Debos — Entrevista de resolución de problemas",
+		State:       "Contratado en el acto",
+		Dates:       "Octubre de 2024",
+		Description: "Entrevista técnica en dos partes; la de verdad era un problema de diseño — un buscador que ataca un backend de latencia muy variable: ¿cómo lo gestionas? Mi respuesta, tres capas: un mínimo de caracteres, un debounce de 200–500 ms y un AbortController que cancela la petición en vuelo para que una respuesta anterior más lenta no sobrescriba a una más nueva — la clásica race condition de un typeahead. Contratado en el acto; entré como consultor externo y luego pasé a plantilla. Después construí exactamente esto en producción — un buscador de dispositivos full-stack (React + .NET + índices trigram en PostgreSQL).",
 	}
-	inditexFR = challengeProse{
-		Title:       "Zara Marvel Web Challenge",
-		State:       "Processus interrompu avant l'examen de mon test technique",
-		Dates:       "Du 1er au 8 août 2024",
-		Description: "Explorateur de personnages Marvel (liste, recherche, détail, favoris) en Next.js + TypeScript. État via Context + useReducer (sans Redux), favoris persistés dans localStorage, tests Vitest et hooks pre-commit avec Husky.",
+	debosChFR = challengeProse{
+		Title:       "Debos — Entretien de résolution de problèmes",
+		State:       "Embauché sur-le-champ",
+		Dates:       "Octobre 2024",
+		Description: "Entretien technique en deux parties ; le vrai test était un problème de conception — un champ de recherche interrogeant un backend à latence très variable : comment le gérer ? Ma réponse, trois couches : un minimum de caractères, un debounce de 200–500 ms et un AbortController qui annule la requête en cours pour qu'une réponse antérieure plus lente n'écrase pas une plus récente — la classique race condition d'un typeahead. Embauché sur-le-champ ; arrivé comme consultant externe, puis passé en interne. J'ai ensuite construit exactement cela en production — une recherche d'appareils full-stack (React + .NET + index trigram PostgreSQL).",
 	}
 
 	nivimuChEN = challengeProse{
@@ -113,63 +107,42 @@ var (
 		Description: "Tableau de données utilisateurs filtrable et triable avec une carte de résumé en temps réel qui se resynchronise avec la première ligne au fil des tris et filtres. React + TypeScript + Redux Toolkit + Ant Design — livré en une seule journée.",
 	}
 
-	arupEN = challengeProse{
-		Title:       "Arup Technical Test",
-		State:       "Not enough experience",
-		Dates:       "From 7 to 14 June 2022",
-		Description: "Construction-site communications manager: a three-panel UI — discipline/status filter sidebar, sortable questions list and detail view. React (Flux) + SASS, SOLID and documented components.",
-	}
-	arupES = challengeProse{
-		Title:       "Prueba técnica de Arup",
-		State:       "Experiencia insuficiente",
-		Dates:       "Del 7 al 14 de junio de 2022",
-		Description: "Gestor de comunicaciones de obra: una UI de tres paneles — barra lateral de filtros por disciplina/estado, lista ordenable de preguntas y vista de detalle. React (Flux) + SASS, SOLID y componentes documentados.",
-	}
-	arupFR = challengeProse{
-		Title:       "Test technique Arup",
-		State:       "Expérience insuffisante",
-		Dates:       "Du 7 au 14 juin 2022",
-		Description: "Gestionnaire de communications de chantier : une UI à trois panneaux — barre latérale de filtres par discipline/statut, liste de questions triable et vue de détail. React (Flux) + SASS, SOLID et composants documentés.",
-	}
-
 	logitravelEN = challengeProse{
 		Title:       "Logitravel - PrimeIT Technical Proof",
-		State:       "Candidate with best technical skills",
+		State:       "Best technical candidate",
 		Dates:       "From 1 to 4 July 2022",
 		Description: "Text-list manager with add / select / delete and full undo–redo. React + Redux Toolkit + styled-components, a centralized design-token system and SOLID structure — built in a 3-day proof.",
 	}
 	logitravelES = challengeProse{
 		Title:       "Logitravel - Prueba técnica de PrimeIT",
-		State:       "Candidato con las mejores competencias técnicas",
+		State:       "Mejor candidato técnico",
 		Dates:       "Del 1 al 4 de julio de 2022",
 		Description: "Gestor de listas de texto con añadir / seleccionar / borrar y deshacer–rehacer completo. React + Redux Toolkit + styled-components, un sistema centralizado de design tokens y estructura SOLID — construido en una prueba de 3 días.",
 	}
 	logitravelFR = challengeProse{
 		Title:       "Logitravel - Test technique PrimeIT",
-		State:       "Candidat aux meilleures compétences techniques",
+		State:       "Meilleur candidat technique",
 		Dates:       "Du 1er au 4 juillet 2022",
 		Description: "Gestionnaire de listes de texte avec ajouter / sélectionner / supprimer et annuler–rétablir complet. React + Redux Toolkit + styled-components, un système centralisé de design tokens et une structure SOLID — construit lors d'un test de 3 jours.",
 	}
 )
 
-// Challenges is the technical-test list per locale.
+// Challenges is the technical-test list per locale, ordered by outcome:
+// Debos (hired on the spot) → Nivimu (hired) → Logitravel (best technical candidate).
 var Challenges = map[i18n.Locale][]Challenge{
 	i18n.EN: {
-		buildChallenge(inditexN, inditexEN),
+		buildChallenge(debosChN, debosChEN),
 		buildChallenge(nivimuChN, nivimuChEN),
-		buildChallenge(arupN, arupEN),
 		buildChallenge(logitravelN, logitravelEN),
 	},
 	i18n.ES: {
-		buildChallenge(inditexN, inditexES),
+		buildChallenge(debosChN, debosChES),
 		buildChallenge(nivimuChN, nivimuChES),
-		buildChallenge(arupN, arupES),
 		buildChallenge(logitravelN, logitravelES),
 	},
 	i18n.FR: {
-		buildChallenge(inditexN, inditexFR),
+		buildChallenge(debosChN, debosChFR),
 		buildChallenge(nivimuChN, nivimuChFR),
-		buildChallenge(arupN, arupFR),
 		buildChallenge(logitravelN, logitravelFR),
 	},
 }
