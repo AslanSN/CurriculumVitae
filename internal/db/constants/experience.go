@@ -10,6 +10,9 @@ type ExperienceStruct struct {
 	Company, CompanyType, Contract, Position, RangeDate, ImageAlternative string
 	Link, ImageSource                                                     templ.SafeURL
 	Techs, Responsabilities, Extra                                        []string
+	// Compact renders the workplace as a single achievement line (older,
+	// less-central roles) instead of the full Stack / What-I-did card.
+	Compact bool
 }
 
 // expNeutral holds the language-independent identity of a workplace. It is
@@ -18,6 +21,7 @@ type expNeutral struct {
 	Company, RangeDate, ImageAlternative string
 	ImageSource, Link                    templ.SafeURL
 	Techs                                []string
+	Compact                              bool
 }
 
 // expProse holds the translatable copy for a workplace.
@@ -34,6 +38,7 @@ func buildExp(n expNeutral, p expProse) ExperienceStruct {
 		ImageSource:      n.ImageSource,
 		Link:             n.Link,
 		Techs:            n.Techs,
+		Compact:          n.Compact,
 		CompanyType:      p.CompanyType,
 		Contract:         p.Contract,
 		Position:         p.Position,
@@ -59,7 +64,7 @@ var (
 		ImageSource:      helpers.RepoURL + "/images/nivimu.svg",
 		ImageAlternative: "nivimu logo consists in a blue capital n with its name bellow",
 		Link:             "https://nivimu.com/",
-		Techs:            []string{"React", "Ant Design", "Emotion", "Redux", "Redux Saga", "TanStack (React) Query", "Mockoon", "Sentry", "bitDev", "GitLab"},
+		Techs:            []string{"React", "TypeScript", "Ant Design", "Emotion", "Redux", "Redux Saga", "TanStack Query", "Bit", "Mockoon", "Sentry"},
 	}
 	memorizameN = expNeutral{
 		Company:          "Memorizame",
@@ -67,7 +72,8 @@ var (
 		ImageSource:      helpers.RepoURL + "/images/memorizame.webp",
 		ImageAlternative: "memorizeme icon, three M in three different colors, one before another getting smaller",
 		Link:             "",
-		Techs:            []string{"Svelte", "Figma", "Miro", "Supabase", "TypeScript", "JavaScript", "Github"},
+		Techs:            []string{"Svelte", "Supabase", "TypeScript", "Figma"},
+		Compact:          true,
 	}
 	integroN = expNeutral{
 		Company:          "Íntegro",
@@ -75,7 +81,8 @@ var (
 		ImageSource:      helpers.RepoURL + "/images/integro.webp",
 		ImageAlternative: "integro writed in black with the o in blue",
 		Link:             "",
-		Techs:            []string{"Qwik", "Figma", "Illustrator", "TypeScript"},
+		Techs:            []string{"Qwik", "TypeScript", "Figma"},
+		Compact:          true,
 	}
 	attlosN = expNeutral{
 		Company:          "Attlos",
@@ -83,7 +90,8 @@ var (
 		ImageSource:      helpers.RepoURL + "/images/attlos.webp",
 		ImageAlternative: "Attlos logo",
 		Link:             "https://www.youtube.com/channel/UC7hs7M2NfwWizyRIZkkOXVA",
-		Techs:            []string{"Styled-Components", "TypeScript", "React", "Flux", "Redux", "Azure", "Git"},
+		Techs:            []string{"TypeScript", "React", "Redux", "Azure"},
+		Compact:          true,
 	}
 )
 
@@ -140,112 +148,94 @@ var (
 	}
 
 	nivimuEN = expProse{
-		CompanyType:      "Startup",
-		Contract:         "Employee",
-		Position:         "Frontend",
-		Responsabilities: []string{"Code review", "Branch self-approval", "QA of UX", "Freedom of choice of tasks", "Deadlines"},
-		Extra: []string{
-			"Specializing in Time Zones, Ant Design and React Query",
-			"Intense teamwork",
-			"Cutting edge startup",
-			"Complex application",
-			"Short deadlines",
-			"Agile, Lean, Extreme Programming",
+		CompanyType: "HR PWA startup",
+		Contract:    "Employee",
+		Position:    "Frontend Developer",
+		Responsabilities: []string{
+			"Owned features end to end with high individual responsibility — code review, branch self-approval, UX QA",
+			"Led the JavaScript → TypeScript migration across a large-scale HR PWA",
+			"Built an internal component library, design system and micro-frontends (Bit)",
+			"Handled time-zone-correct scheduling across the product",
 		},
 	}
 	nivimuES = expProse{
-		CompanyType:      "Startup",
-		Contract:         "Empleado",
-		Position:         "Frontend",
-		Responsabilities: []string{"Code review", "Autoaprobación de ramas", "QA de la UX", "Libertad para elegir tareas", "Plazos"},
-		Extra: []string{
-			"Especialización en zonas horarias, Ant Design y React Query",
-			"Trabajo en equipo intenso",
-			"Startup puntera",
-			"Aplicación compleja",
-			"Plazos ajustados",
-			"Agile, Lean, Extreme Programming",
+		CompanyType: "Startup de PWA de RR. HH.",
+		Contract:    "Empleado",
+		Position:    "Desarrollador Frontend",
+		Responsabilities: []string{
+			"Ownership de features de principio a fin con alta responsabilidad individual — code review, autoaprobación de ramas, QA de UX",
+			"Lideré la migración JavaScript → TypeScript en una PWA de RR. HH. a gran escala",
+			"Construí una biblioteca de componentes interna, design system y micro-frontends (Bit)",
+			"Gestioné el manejo correcto de zonas horarias en todo el producto",
 		},
 	}
 	nivimuFR = expProse{
-		CompanyType:      "Startup",
-		Contract:         "Salarié",
-		Position:         "Frontend",
-		Responsabilities: []string{"Code review", "Auto-approbation des branches", "QA de l'UX", "Liberté de choix des tâches", "Délais"},
-		Extra: []string{
-			"Spécialisation en fuseaux horaires, Ant Design et React Query",
-			"Travail d'équipe intense",
-			"Startup de pointe",
-			"Application complexe",
-			"Délais serrés",
-			"Agile, Lean, Extreme Programming",
+		CompanyType: "Startup PWA RH",
+		Contract:    "Salarié",
+		Position:    "Développeur Frontend",
+		Responsabilities: []string{
+			"Ownership des fonctionnalités de bout en bout avec forte responsabilité individuelle — code review, auto-approbation des branches, QA de l'UX",
+			"Piloté la migration JavaScript → TypeScript sur une PWA RH à grande échelle",
+			"Construit une bibliothèque de composants interne, un design system et des micro-frontends (Bit)",
+			"Assuré la gestion correcte des fuseaux horaires dans tout le produit",
 		},
 	}
 
 	memorizameEN = expProse{
-		CompanyType:      "Project",
+		CompanyType:      "Freelance project",
 		Contract:         "Freelancer",
 		Position:         "Full stack",
-		Responsabilities: []string{"Design system", "UI/UX", "Architecture", "Layout", "Single frontend developer"},
-		Extra:            []string{"App for learning with supermemo methodology"},
+		Responsabilities: []string{"Sole frontend for a spaced-repetition learning app (SuperMemo method) — design system, UI/UX and architecture."},
 	}
 	memorizameES = expProse{
-		CompanyType:      "Proyecto",
+		CompanyType:      "Proyecto freelance",
 		Contract:         "Freelance",
 		Position:         "Full stack",
-		Responsabilities: []string{"Design system", "UI/UX", "Arquitectura", "Maquetación", "Único desarrollador frontend"},
-		Extra:            []string{"App para aprender con la metodología SuperMemo"},
+		Responsabilities: []string{"Único frontend de una app de aprendizaje por repetición espaciada (método SuperMemo) — design system, UI/UX y arquitectura."},
 	}
 	memorizameFR = expProse{
-		CompanyType:      "Projet",
+		CompanyType:      "Projet freelance",
 		Contract:         "Freelance",
 		Position:         "Full stack",
-		Responsabilities: []string{"Design system", "UI/UX", "Architecture", "Intégration", "Seul développeur frontend"},
-		Extra:            []string{"Application d'apprentissage avec la méthodologie SuperMemo"},
+		Responsabilities: []string{"Seul frontend d'une application d'apprentissage par répétition espacée (méthode SuperMemo) — design system, UI/UX et architecture."},
 	}
 
 	integroEN = expProse{
 		CompanyType:      "Startup",
 		Contract:         "Freelancer",
-		Position:         "Full stack and more",
-		Responsabilities: []string{"Design system", "UI/UX", "Architecture", "Layout", "Single software developer", "Branding", "Tech analyst"},
-		Extra:            []string{"Thanks to my vision I have helped to create the identity of the Íntegro company"},
+		Position:         "Full stack",
+		Responsabilities: []string{"Sole developer and technical analyst for a startup — company site end to end, design system and branding."},
 	}
 	integroES = expProse{
 		CompanyType:      "Startup",
 		Contract:         "Freelance",
-		Position:         "Full stack y más",
-		Responsabilities: []string{"Design system", "UI/UX", "Arquitectura", "Maquetación", "Único desarrollador de software", "Branding", "Analista técnico"},
-		Extra:            []string{"Con mi visión ayudé a crear la identidad de la empresa Íntegro"},
+		Position:         "Full stack",
+		Responsabilities: []string{"Único desarrollador y analista técnico de una startup — web de empresa de principio a fin, design system y branding."},
 	}
 	integroFR = expProse{
 		CompanyType:      "Startup",
 		Contract:         "Freelance",
-		Position:         "Full stack et plus",
-		Responsabilities: []string{"Design system", "UI/UX", "Architecture", "Intégration", "Seul développeur logiciel", "Branding", "Analyste technique"},
-		Extra:            []string{"Grâce à ma vision, j'ai contribué à créer l'identité de l'entreprise Íntegro"},
+		Position:         "Full stack",
+		Responsabilities: []string{"Seul développeur et analyste technique d'une startup — site d'entreprise de bout en bout, design system et branding."},
 	}
 
 	attlosEN = expProse{
 		CompanyType:      "Startup",
 		Contract:         "Intern",
 		Position:         "Front End",
-		Responsabilities: []string{"Team Lead", "Deadlines", "Architecture"},
-		Extra:            []string{"Implementing Tokenizations", "Agile Scrum"},
+		Responsabilities: []string{"First professional TypeScript/React role — built product features in an Agile/Scrum team."},
 	}
 	attlosES = expProse{
 		CompanyType:      "Startup",
 		Contract:         "Becario",
 		Position:         "Front End",
-		Responsabilities: []string{"Team Lead", "Plazos", "Arquitectura"},
-		Extra:            []string{"Implementación de tokenizaciones", "Agile Scrum"},
+		Responsabilities: []string{"Primer puesto profesional con TypeScript/React — desarrollé features de producto en un equipo Agile/Scrum."},
 	}
 	attlosFR = expProse{
 		CompanyType:      "Startup",
 		Contract:         "Stagiaire",
 		Position:         "Front End",
-		Responsabilities: []string{"Team Lead", "Délais", "Architecture"},
-		Extra:            []string{"Implémentation de tokenisations", "Agile Scrum"},
+		Responsabilities: []string{"Premier poste professionnel en TypeScript/React — développé des fonctionnalités produit dans une équipe Agile/Scrum."},
 	}
 )
 
