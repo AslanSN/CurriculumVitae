@@ -11,7 +11,7 @@ import templruntime "github.com/a-h/templ/runtime"
 import (
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
 	"github.com/AslanSN/CurriculumVitae/helpers"
-	"github.com/AslanSN/CurriculumVitae/internal/i18n"
+	"github.com/AslanSN/CurriculumVitae/i18n"
 )
 
 // Sidebar is the mobile navigation drawer (CSS-only open/close via a peer

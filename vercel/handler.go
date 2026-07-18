@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/AslanSN/CurriculumVitae/app/views"
-	"github.com/AslanSN/CurriculumVitae/internal/i18n"
+	"github.com/AslanSN/CurriculumVitae/i18n"
 )
 
 // Handler is the Vercel (@vercel/go) entrypoint. Static assets under /assets are

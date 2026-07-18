@@ -10,7 +10,7 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import (
 	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
-	"github.com/AslanSN/CurriculumVitae/internal/i18n"
+	"github.com/AslanSN/CurriculumVitae/i18n"
 )
 
 func ContactModal() templ.Component {
