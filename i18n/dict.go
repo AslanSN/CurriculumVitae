@@ -102,7 +102,7 @@ var dicts = map[Locale]Dict{
 		Highlights: "Highlights",
 
 		ColophonHeading: "How this site is built",
-		ColophonBody:    "server-rendered and deployed on Vercel — no client-side framework, just fast HTML. Rebuilt with an AI-native workflow (Claude Code), the way I ship day to day.",
+		ColophonBody:    "server-rendered on Vercel — no client framework, just fast HTML. The stack is a deliberate choice, not my daily React/.NET: a content site doesn't need a SPA, so I fit the tool to the problem — type-safe end to end, down to an i18n catalog that fails the build if a translation is missing. The honest cost: a smaller ecosystem than React. The AI-native workflow behind it — Claude Code — is how I actually ship, day to day.",
 		SourceOnGitHub:  "Source on GitHub",
 
 		ShareTitle: "Share this portfolio",
@@ -152,7 +152,7 @@ var dicts = map[Locale]Dict{
 		Highlights: "Destacados",
 
 		ColophonHeading: "Cómo está hecha esta web",
-		ColophonBody:    "renderizada en el servidor y desplegada en Vercel — sin framework de cliente, solo HTML rápido. Reconstruida con un flujo AI-native (Claude Code), tal como trabajo cada día.",
+		ColophonBody:    "renderizada en el servidor y desplegada en Vercel — sin framework de cliente, solo HTML rápido. El stack es una elección deliberada, no mi React/.NET del día a día: un sitio de contenido no necesita una SPA, así que ajusté la herramienta al problema — tipado de punta a punta, hasta un catálogo i18n que rompe el build si falta una traducción. El coste honesto: un ecosistema menor que el de React. El flujo AI-native que hay detrás — Claude Code — es como trabajo de verdad, cada día.",
 		SourceOnGitHub:  "Código en GitHub",
 
 		ShareTitle: "Comparte este portfolio",
@@ -202,7 +202,7 @@ var dicts = map[Locale]Dict{
 		Highlights: "Points forts",
 
 		ColophonHeading: "Comment ce site est construit",
-		ColophonBody:    "rendu côté serveur et déployé sur Vercel — sans framework côté client, juste du HTML rapide. Reconstruit avec un flux de travail AI-native (Claude Code), comme je livre au quotidien.",
+		ColophonBody:    "rendu côté serveur et déployé sur Vercel — sans framework côté client, juste du HTML rapide. Le stack est un choix délibéré, pas mon React/.NET du quotidien : un site de contenu n'a pas besoin d'une SPA, alors j'ai adapté l'outil au problème — typé de bout en bout, jusqu'à un catalogue i18n qui casse le build s'il manque une traduction. Le coût honnête : un écosystème plus petit que React. Le flux de travail AI-native derrière — Claude Code — est ma façon de livrer, au quotidien.",
 		SourceOnGitHub:  "Code source sur GitHub",
 
 		ShareTitle: "Partagez ce portfolio",
