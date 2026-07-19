@@ -8,6 +8,7 @@ templ Index() {
 		<head>
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			@templ.Raw(revealScriptTag)
 			<title>{ i18n.T(ctx).MetaTitle }</title>
 			<meta name="description" content={ i18n.T(ctx).MetaDescription }/>
 			<link rel="canonical" href={ i18n.FromContext(ctx).CanonicalURL() }/>
@@ -35,9 +36,7 @@ templ Index() {
 			<link rel="stylesheet" href="/assets/css/output.css"/>
 			<script src="/assets/js/customAlert.js" defer></script>
 			<script src="/assets/js/alpine.min.js" defer></script>
-			<script type="application/ld+json">
-				@templ.Raw(personLDJSON)
-			</script>
+			@templ.Raw(personLDJSONTag)
 		</head>
 		<body>
 			<a

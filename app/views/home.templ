@@ -13,11 +13,11 @@ templ home() {
 			@components.ContactModal()
 			@components.ShareModal()
 			@components.Hero()
-			<section class="grid w-full grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+			<section class="reveal grid w-full grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
 				@components.AboutMe()
 				@components.Skills()
 			</section>
-			<section id="experience" class="w-full scroll-mt-24">
+			<section id="experience" class="reveal w-full scroll-mt-24">
 				<h2 class="mb-8 text-3xl font-bold sm:text-4xl">{ i18n.T(ctx).SectionExperience }</h2>
 				<ul class="flex flex-col gap-6">
 					for _, workplace := range constants.Workplaces[i18n.FromContext(ctx)] {
@@ -25,7 +25,7 @@ templ home() {
 					}
 				</ul>
 			</section>
-			<section id="challenges" class="w-full scroll-mt-24">
+			<section id="challenges" class="reveal w-full scroll-mt-24">
 				<h2 class="mb-3 text-3xl font-bold sm:text-4xl">{ i18n.T(ctx).SectionChallenges }</h2>
 				<p class="mb-8 max-w-2xl text-zinc-400">
 					{ i18n.T(ctx).ChallengesIntro }
@@ -38,14 +38,14 @@ templ home() {
 					}
 				</ul>
 			</section>
-			<section id="artifact" class="w-full scroll-mt-24">
+			<section id="artifact" class="reveal w-full scroll-mt-24">
 				<h2 class="mb-3 text-3xl font-bold sm:text-4xl">{ i18n.T(ctx).SectionArtifact }</h2>
 				<p class="mb-8 max-w-2xl text-zinc-400">
 					{ i18n.T(ctx).ArtifactIntro }
 				</p>
 				@components.ArtifactCard(constants.Artifacts[i18n.FromContext(ctx)])
 			</section>
-			<section id="colophon" class="w-full scroll-mt-24 border-t border-white/10 pt-10">
+			<section id="colophon" class="reveal w-full scroll-mt-24 border-t border-white/10 pt-10">
 				<h2 class="mb-3 text-3xl font-bold sm:text-4xl">{ i18n.T(ctx).ColophonHeading }</h2>
 				<p class="max-w-prose text-zinc-300">
 					Go + <a class="link-e" href="https://templ.guide" target="_blank" rel="noopener noreferrer">templ</a> + Tailwind CSS, { i18n.T(ctx).ColophonBody }
