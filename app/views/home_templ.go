@@ -64,7 +64,7 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"grid w-full grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"reveal grid w-full grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -76,7 +76,7 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section id=\"experience\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-8 text-3xl font-bold sm:text-4xl\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section id=\"experience\" class=\"reveal w-full scroll-mt-24\"><h2 class=\"mb-8 text-3xl font-bold sm:text-4xl\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -99,7 +99,7 @@ func home() templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section><section id=\"challenges\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section><section id=\"challenges\" class=\"reveal w-full scroll-mt-24\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -156,7 +156,7 @@ func home() templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section><section id=\"artifact\" class=\"w-full scroll-mt-24\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></section><section id=\"artifact\" class=\"reveal w-full scroll-mt-24\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -190,7 +190,7 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section id=\"colophon\" class=\"w-full scroll-mt-24 border-t border-white/10 pt-10\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section id=\"colophon\" class=\"reveal w-full scroll-mt-24 border-t border-white/10 pt-10\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

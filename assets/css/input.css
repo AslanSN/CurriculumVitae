@@ -15,6 +15,12 @@
   /* Single signal accent — cyan (AAA contrast on base surfaces) */
   --color-accent: #22d3ee;
 
+  /* Motion: one signature ease-out ("ease-out-quint") for the whole site, so
+     every transition shares the same hand. Overriding the Tailwind default makes
+     existing transition-* utilities adopt it too; duration stays snappy (150ms). */
+  --ease-signature: cubic-bezier(0.22, 1, 0.36, 1);
+  --default-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+
   /* Type: system stacks (zero external fetch); mono is the engineer tell */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
@@ -53,25 +59,51 @@
 
 @layer components {
   .btn-editorial {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 font-medium text-base-950 transition-colors hover:bg-accent/90;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 font-medium text-base-950 transition-[background-color,transform] hover:bg-accent/90 active:scale-[0.97];
   }
   .btn-ghost-e {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-zinc-300 transition-colors hover:bg-white/5;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-zinc-300 transition-[background-color,transform] hover:bg-white/5 active:scale-[0.97];
   }
   .card-e {
     @apply rounded-2xl border border-white/10 bg-base-900 p-6 md:p-8;
+    /* hover-lift lives in the (hover:hover) block below so touch doesn't stick */
+    transition:
+      transform 250ms var(--ease-signature),
+      border-color 250ms var(--ease-signature),
+      box-shadow 250ms var(--ease-signature);
   }
   .chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-zinc-200;
+    @apply inline-flex items-center rounded-full border border-white/10 px-3 py-1 text-sm text-zinc-200;
+    /* subtle cyan glow in the top-right quadrant, layered over the base grey fill */
+    background:
+      radial-gradient(80% 80% at 100% 0%, rgba(34, 211, 238, 0.13), rgba(34, 211, 238, 0) 60%),
+      rgba(255, 255, 255, 0.05);
   }
   .eyebrow {
     @apply font-mono text-xs uppercase tracking-widest text-accent;
   }
   .link-e {
-    @apply text-accent underline-offset-4 transition-colors hover:underline;
+    @apply text-accent;
+    /* underline that grows from the left on hover (see the hover:hover block) */
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 1.5px;
+    padding-bottom: 1px;
+    transition:
+      background-size 250ms var(--ease-signature),
+      color 150ms var(--ease-signature);
   }
   .navlink {
-    @apply font-mono text-sm uppercase tracking-wider text-zinc-400 transition-colors hover:text-zinc-100;
+    @apply font-mono text-sm uppercase tracking-wider text-zinc-400 hover:text-zinc-100;
+    background-image: linear-gradient(var(--color-accent), var(--color-accent));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 1.5px;
+    padding-bottom: 2px;
+    transition:
+      background-size 250ms var(--ease-signature),
+      color 150ms var(--ease-signature);
   }
   /* Ambient glow fixed to the viewport; on its own GPU layer so content
      composites over it without repainting (smooth scroll, no filter). */
@@ -81,5 +113,39 @@
       radial-gradient(45rem 45rem at 92% -12%, rgba(124, 92, 255, 0.1), transparent 55%);
     transform: translateZ(0);
     will-change: transform;
+  }
+
+  /* Hover affordances — pointer devices only, so a tap on touch doesn't stick a
+     hover state. Cards lift + gain a cyan-tinted border; links grow an underline. */
+  @media (hover: hover) {
+    .card-e:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in oklab, var(--color-accent) 30%, transparent);
+      box-shadow: 0 12px 32px -14px rgba(0, 0, 0, 0.7);
+    }
+    .link-e:hover {
+      background-size: 100% 1.5px;
+    }
+    .navlink:hover {
+      background-size: 100% 1.5px;
+    }
+  }
+
+  /* Scroll-reveal — opt in with .reveal. revealScript (in <head>) adds
+     .reveal-ready to <html> ONLY when motion is allowed and IntersectionObserver
+     exists, then toggles .is-visible as each element scrolls into view. No-JS and
+     reduced-motion visitors never get .reveal-ready, so they always see content. */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-ready .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 600ms var(--ease-signature),
+        transform 600ms var(--ease-signature);
+    }
+    .reveal-ready .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
