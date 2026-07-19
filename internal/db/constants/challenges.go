@@ -73,19 +73,19 @@ var (
 		Title:       "Debos — Live problem-solving interview",
 		State:       "Hired on the spot",
 		Dates:       "October 2024",
-		Description: "Two-part technical interview; the real test was a design problem — a search box hitting a backend with highly variable latency: how do you handle it? My answer, three layers: a minimum query length, a 200–500 ms debounce, and an AbortController cancelling the in-flight request so a slower earlier response can't overwrite a newer one — the classic typeahead race condition. Hired on the spot; joined as an external consultant, then moved in-house. I later shipped exactly this in production — a full-stack device search (React + .NET + PostgreSQL trigram indexes).",
+		Description: "Two-part technical interview; the real test was a design problem — a search box hitting a backend with highly variable latency: how do you handle it? My answer, three layers: a minimum query length, a 200–500 ms debounce, and an AbortController cancelling the in-flight request so a slower earlier response can't overwrite a newer one — the classic typeahead race condition. That was enough: I joined as an external consultant and later moved in-house, then shipped exactly this in production — the same search, now backed by a .NET endpoint and PostgreSQL trigram indexes.",
 	}
 	debosChES = challengeProse{
 		Title:       "Debos — Entrevista de resolución de problemas",
 		State:       "Contratado en el acto",
 		Dates:       "Octubre de 2024",
-		Description: "Entrevista técnica en dos partes; la de verdad era un problema de diseño — un buscador que ataca un backend de latencia muy variable: ¿cómo lo gestionas? Mi respuesta, tres capas: un mínimo de caracteres, un debounce de 200–500 ms y un AbortController que cancela la petición en vuelo para que una respuesta anterior más lenta no sobrescriba a una más nueva — la clásica race condition de un typeahead. Contratado en el acto; entré como consultor externo y luego pasé a plantilla. Después construí exactamente esto en producción — un buscador de dispositivos full-stack (React + .NET + índices trigram en PostgreSQL).",
+		Description: "Entrevista técnica en dos partes; la de verdad era un problema de diseño — un buscador que ataca un backend de latencia muy variable: ¿cómo lo gestionas? Mi respuesta, tres capas: un mínimo de caracteres, un debounce de 200–500 ms y un AbortController que cancela la petición en vuelo para que una respuesta anterior más lenta no sobrescriba a una más nueva — la clásica race condition de un typeahead. Con eso bastó: entré como consultor externo y luego pasé a plantilla, y después lo llevé exactamente a producción — la misma búsqueda, ahora sobre un endpoint en .NET e índices trigram en PostgreSQL.",
 	}
 	debosChFR = challengeProse{
 		Title:       "Debos — Entretien de résolution de problèmes",
 		State:       "Embauché sur-le-champ",
 		Dates:       "Octobre 2024",
-		Description: "Entretien technique en deux parties ; le vrai test était un problème de conception — un champ de recherche interrogeant un backend à latence très variable : comment le gérer ? Ma réponse, trois couches : un minimum de caractères, un debounce de 200–500 ms et un AbortController qui annule la requête en cours pour qu'une réponse antérieure plus lente n'écrase pas une plus récente — la classique race condition d'un typeahead. Embauché sur-le-champ ; arrivé comme consultant externe, puis passé en interne. J'ai ensuite construit exactement cela en production — une recherche d'appareils full-stack (React + .NET + index trigram PostgreSQL).",
+		Description: "Entretien technique en deux parties ; le vrai test était un problème de conception — un champ de recherche interrogeant un backend à latence très variable : comment le gérer ? Ma réponse, trois couches : un minimum de caractères, un debounce de 200–500 ms et un AbortController qui annule la requête en cours pour qu'une réponse antérieure plus lente n'écrase pas une plus récente — la classique race condition d'un typeahead. Cela a suffi : arrivé comme consultant externe puis passé en interne, je l'ai ensuite porté exactement en production — la même recherche, désormais adossée à un endpoint .NET et des index trigram PostgreSQL.",
 	}
 
 	nivimuChEN = challengeProse{
