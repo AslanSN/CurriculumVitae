@@ -1,0 +1,62 @@
+package components
+
+import (
+	icons "github.com/AslanSN/CurriculumVitae/app/components/iconComponents"
+	"github.com/AslanSN/CurriculumVitae/internal/db/constants"
+	"github.com/AslanSN/CurriculumVitae/i18n"
+)
+
+templ ArtifactCard(a constants.Artifact) {
+	<article class="card-e flex flex-col gap-6">
+		<header class="flex flex-col gap-3">
+			if a.Eyebrow != "" {
+				<p class="eyebrow">{ a.Eyebrow }</p>
+			}
+			<h3 class="text-2xl font-bold sm:text-3xl">{ a.Name }</h3>
+			if a.Tagline != "" {
+				<p class="max-w-prose text-lg text-zinc-200">{ a.Tagline }</p>
+			}
+		</header>
+		if string(a.VideoMP4) != "" {
+			<figure class="flex flex-col gap-2">
+				<video
+					class="w-full rounded-xl border border-white/10"
+					autoplay
+					loop
+					muted
+					playsinline
+					preload="metadata"
+					poster={ string(a.VideoPoster) }
+					aria-label={ a.VideoAlt }
+				>
+					<source src={ string(a.VideoMP4) } type="video/mp4"/>
+				</video>
+				if a.VideoCaption != "" {
+					<figcaption class="max-w-prose font-mono text-xs leading-relaxed text-zinc-500">{ a.VideoCaption }</figcaption>
+				}
+			</figure>
+		}
+		if a.Lead != "" {
+			<p class="max-w-prose text-zinc-300">{ a.Lead }</p>
+		}
+		if len(a.Highlights) > 0 {
+			<ul class="flex flex-wrap gap-2">
+				for _, h := range a.Highlights {
+					<li class="chip">{ h }</li>
+				}
+			</ul>
+		}
+		<footer class="flex flex-wrap items-center gap-4 pt-1">
+			@LinkItem(a.RepoLink, "btn-editorial font-mono text-sm uppercase tracking-wider") {
+				<span>{ i18n.T(ctx).SourceOnGitHub }</span>
+				@icons.GithubIcon(4)
+			}
+			if string(a.ColophonLink) != "" {
+				@LinkItem(a.ColophonLink, "link-e inline-flex items-center gap-2 text-sm") {
+					<span>{ i18n.T(ctx).ArtifactColophon }</span>
+					@icons.OpenNewTabIcon()
+				}
+			}
+		</footer>
+	</article>
+}

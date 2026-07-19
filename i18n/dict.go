@@ -16,6 +16,7 @@ type Dict struct {
 	SectionSkills     string
 	SectionExperience string
 	SectionChallenges string
+	SectionArtifact   string
 
 	// Actions
 	Share      string
@@ -33,6 +34,10 @@ type Dict struct {
 	ChallengeLiveDemo   string
 	Day                 string
 	Days                string
+
+	// Artifact section (the self-directed, open-source flagship)
+	ArtifactIntro    string
+	ArtifactColophon string
 
 	// Experience-card labels
 	Stack      string
@@ -73,6 +78,7 @@ var dicts = map[Locale]Dict{
 		SectionSkills:     "Skills",
 		SectionExperience: "Experience",
 		SectionChallenges: "The verdict",
+		SectionArtifact:   "The artifact",
 
 		Share:      "Share",
 		Contact:    "Contact",
@@ -87,6 +93,9 @@ var dicts = map[Locale]Dict{
 		ChallengeLiveDemo:   "Live demo",
 		Day:                 "day",
 		Days:                "days",
+
+		ArtifactIntro:    "Self-directed and open source. Not the word “AI-native” — the thing itself: a harness that makes an AI produce correct code, one you can clone and run.",
+		ArtifactColophon: "How it was built",
 
 		Stack:      "Stack",
 		WhatIDid:   "What I did",
@@ -119,6 +128,7 @@ var dicts = map[Locale]Dict{
 		SectionSkills:     "Competencias",
 		SectionExperience: "Experiencia",
 		SectionChallenges: "El veredicto",
+		SectionArtifact:   "El artefacto",
 
 		Share:      "Compartir",
 		Contact:    "Contacto",
@@ -133,6 +143,9 @@ var dicts = map[Locale]Dict{
 		ChallengeLiveDemo:   "Demo en vivo",
 		Day:                 "día",
 		Days:                "días",
+
+		ArtifactIntro:    "Autodirigido y de código abierto. No la palabra «AI-native» — la cosa en sí: un harness que hace que una IA produzca código correcto, y que puedes clonar y ejecutar.",
+		ArtifactColophon: "Cómo se construyó",
 
 		Stack:      "Stack",
 		WhatIDid:   "Qué hice",
@@ -165,6 +178,7 @@ var dicts = map[Locale]Dict{
 		SectionSkills:     "Compétences",
 		SectionExperience: "Expérience",
 		SectionChallenges: "Le verdict",
+		SectionArtifact:   "L'artefact",
 
 		Share:      "Partager",
 		Contact:    "Contact",
@@ -179,6 +193,9 @@ var dicts = map[Locale]Dict{
 		ChallengeLiveDemo:   "Démo en ligne",
 		Day:                 "jour",
 		Days:                "jours",
+
+		ArtifactIntro:    "En autonomie et open source. Pas le mot « AI-native » — la chose elle-même : un harness qui fait qu'une IA produit du code correct, que vous pouvez cloner et exécuter.",
+		ArtifactColophon: "Comment il est construit",
 
 		Stack:      "Stack",
 		WhatIDid:   "Ce que j'ai fait",
