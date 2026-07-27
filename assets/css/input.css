@@ -47,14 +47,6 @@
   --font-mono: "iA Writer Quattro", ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* Registered so the card-glow angle can interpolate (a plain custom property
-   can't animate). Drives the conic gradient in .card-e::before. */
-@property --card-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
 @layer base {
   html {
     color-scheme: dark;
@@ -95,32 +87,13 @@
   }
   .card-e {
     @apply rounded-2xl border border-white/10 bg-base-900 p-6 md:p-8;
-    position: relative;
-    isolation: isolate;
-    /* hover cue is an ambient glow (::before), not a lift — see the hover block */
+    /* Hover = a still, symmetric accent glow (see the hover block): a "presence"
+       cue in the Linear/Vercel idiom, NOT a lift — no transform, cursor stays
+       default — so it never promises a click these non-interactive cards can't
+       honour. Reuses the site's static chip-glow motif for consistency. */
     transition:
       border-color 250ms var(--ease-signature),
       box-shadow 250ms var(--ease-signature);
-  }
-  /* Ambient "presence" glow: a soft accent arc that slowly circles the card
-     edge on hover. Deliberately NOT a click affordance — the card keeps the
-     default cursor; the arc reads as "alive", not "pressable". */
-  .card-e::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    z-index: -1;
-    border-radius: inherit;
-    background: conic-gradient(
-      from var(--card-angle),
-      transparent 0deg,
-      color-mix(in oklab, var(--color-accent) 60%, transparent) 60deg,
-      transparent 160deg
-    );
-    filter: blur(10px);
-    opacity: 0;
-    transition: opacity 320ms var(--ease-signature);
-    pointer-events: none;
   }
   .chip {
     @apply inline-flex items-center rounded-full border border-white/10 px-3 py-1 text-sm text-zinc-200;
@@ -169,35 +142,14 @@
      hover state. Cards lift + gain a cyan-tinted border; links grow an underline. */
   @media (hover: hover) {
     .card-e:hover {
-      border-color: color-mix(in oklab, var(--color-accent) 30%, transparent);
-    }
-    .card-e:hover::before {
-      opacity: 0.7;
+      border-color: color-mix(in oklab, var(--color-accent) 26%, transparent);
+      box-shadow: 0 0 18px -9px color-mix(in oklab, var(--color-accent) 16%, transparent);
     }
     .link-e:hover {
       background-size: 100% 1.5px;
     }
     .navlink:hover {
       background-size: 100% 1.5px;
-    }
-  }
-  /* Rotate the glow only when motion is welcome; reduced-motion gets a soft,
-     even halo instead of a frozen lopsided arc (the global kill-switch already
-     freezes animations — this keeps the still frame from looking broken). */
-  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    .card-e:hover::before {
-      animation: card-glow-travel 8s linear infinite;
-    }
-  }
-  @media (hover: hover) and (prefers-reduced-motion: reduce) {
-    .card-e:hover::before {
-      background: radial-gradient(closest-side, color-mix(in oklab, var(--color-accent) 26%, transparent), transparent);
-      filter: blur(6px);
-    }
-  }
-  @keyframes card-glow-travel {
-    to {
-      --card-angle: 360deg;
     }
   }
 
@@ -324,8 +276,11 @@
       0 6px 16px -12px rgba(36, 31, 25, 0.12);
   }
   @media (hover: hover) {
-    .card-e:hover::before {
-      opacity: 0.4;
+    .card-e:hover {
+      box-shadow:
+        0 1px 2px rgba(36, 31, 25, 0.04),
+        0 6px 16px -12px rgba(36, 31, 25, 0.12),
+        0 0 16px -10px color-mix(in oklab, var(--color-accent) 26%, transparent);
     }
   }
 
