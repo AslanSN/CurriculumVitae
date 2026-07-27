@@ -3,7 +3,10 @@
 /* templ sources (.templ) + generated Go both live under app/ */
 @source "../../app";
 
-/* Dark-only site: make any `dark:` utility always apply. */
+/* Dark is the default palette; a light palette engages under
+   `prefers-color-scheme: light` (see the block at the end of this file).
+   This variant makes any `dark:` utility always apply — a no-op today
+   (the components use unprefixed colour utilities), kept for compatibility. */
 @custom-variant dark (&);
 
 @theme {
@@ -176,4 +179,118 @@
     opacity: 1;
     transform: none;
   }
+}
+
+/* ============================================================================
+   LIGHT THEME — driven by the theme toggle. The <head> script (meta.go:
+   themeScript) resolves the theme once, before first paint — the visitor's
+   explicit choice in localStorage, else the OS preference — and writes
+   data-theme="light|dark" on <html>, so there's no flash. This block keys off
+   :root[data-theme="light"]; dark is the default and needs no rules. No-JS
+   visitors get the core palette from the <noscript> @media fallback in <head>.
+
+   Built by RE-POINTING the design tokens the whole site already consumes rather
+   than rewriting components: in Tailwind v4 `bg-base-900` → var(--color-base-900),
+   `text-zinc-300` → var(--color-zinc-300), and even `border-white/10` →
+   color-mix(var(--color-white) …). Flip those variables and every element follows.
+
+   The palette is tuned to sit with the profile photo: a warm paper page (echoes
+   the cream backdrop), clean white cards that float, a deep-teal accent kin to the
+   aqua shirt (and to dark mode's cyan), and subtly warm-grey ink. All ink/accent
+   pairings clear WCAG AA. Nested rules compile to `:root[data-theme="light"] X`;
+   the block is unlayered so it wins over Tailwind's @layer theme/base/components.
+   ============================================================================ */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces — warm paper page, ivory cards that float. NO pure #fff (harsh in
+     UI); the page sits a touch deeper than the cards so elevation reads clearly. */
+  --color-base-950: #f6f2ea; /* page — warm paper (mirrors the photo's cream) */
+  --color-base-900: #fefcf8; /* cards / panels — warm ivory, floats above the page (never pure white) */
+  --color-base-800: #efe9de; /* inset / hover — one step deeper */
+
+  /* Single signal accent — deep teal. AA as text on the page (5.0:1) and as a
+     button fill under near-white text; same hue family as the aqua shirt. */
+  --color-accent: #0e7490;
+
+  /* Hairlines & faint fills come from `white/N` (color-mix over --color-white).
+     Re-point white to a warm near-black so those overlays become subtle
+     DARK-on-light lines/fills instead of vanishing on a light background. */
+  --color-white: #241f19;
+
+  /* Ink — warm-neutral greys; hierarchy preserved (100 = strongest → 500 = faint) */
+  --color-zinc-100: #1c1a17; /* headings / primary text (16:1) */
+  --color-zinc-200: #2b2823; /* strong */
+  --color-zinc-300: #413d36; /* secondary body — the workhorse (10:1) */
+  --color-zinc-400: #6b655b; /* muted labels (5.4:1) */
+  --color-zinc-500: #736d63; /* faint / meta */
+
+  /* Components that bake in literal colours can't ride the tokens — restate them. */
+
+  /* Chip: a clean ivory pill that floats on the paper. The first pass filled it
+     with a warm-DARK wash (4% black), which read as grubby grey — replace it with
+     an ivory fill + a subtle teal outline + a whisper of teal in the corner, so it
+     reads crisp and cohesive with the eyebrow. Overrides the flipped border-white/10. */
+  .chip {
+    background:
+      radial-gradient(90% 90% at 100% 0%, rgba(14, 116, 144, 0.08), transparent 60%),
+      #fefcf8;
+    border-color: rgba(14, 116, 144, 0.22);
+  }
+
+  /* Ambient wash: teal (top-left) + warm peach (top-right, echoing the photo).
+     Pushed up in intensity — a light tint reads far weaker on paper than the same
+     alpha does on near-black, so it needs more to match dark mode's presence — yet
+     still soft. Fixed to the viewport, so it parallaxes as content scrolls over it. */
+  .ambient-glow {
+    background:
+      radial-gradient(60rem 60rem at 10% -10%, rgba(14, 116, 144, 0.22), transparent 60%),
+      radial-gradient(52rem 52rem at 94% -12%, rgba(226, 158, 96, 0.26), transparent 60%);
+  }
+
+  /* Cards: on near-white a hairline alone is too faint, so give a soft resting
+     float that deepens on hover — the light-mode analogue of the dark lift. */
+  .card-e {
+    box-shadow:
+      0 1px 2px rgba(36, 31, 25, 0.04),
+      0 6px 16px -12px rgba(36, 31, 25, 0.12);
+  }
+  @media (hover: hover) {
+    .card-e:hover {
+      box-shadow:
+        0 2px 4px rgba(36, 31, 25, 0.05),
+        0 16px 34px -18px rgba(36, 31, 25, 0.2);
+    }
+  }
+
+  /* Two social glyphs ship as near-white <img> SVGs (github.svg #f0f6fc,
+     x.svg #e7e9ea) for the dark theme, and would vanish on paper. They're
+     <img>, so currentColor can't reach them — flip them to near-black with a
+     filter. Brand-coloured logos (LinkedIn, WhatsApp, …) are left untouched. */
+  img[src$="/icons/github.svg"],
+  img[src$="/icons/x.svg"] {
+    filter: invert(1);
+  }
+
+  /* Text selection: a hint of the accent (dark mode keeps the browser default). */
+  ::selection {
+    background: rgba(14, 116, 144, 0.18);
+    color: #1c1a17;
+  }
+}
+
+/* Theme-toggle glyph — show the ACTION: a sun while dark (tap → go light), a moon
+   while light (tap → go dark). Base state is dark; the light override flips it.
+   Icons inherit currentColor, so they track the ink in both themes. */
+.theme-toggle .icon-sun {
+  display: block;
+}
+.theme-toggle .icon-moon {
+  display: none;
+}
+:root[data-theme="light"] .theme-toggle .icon-sun {
+  display: none;
+}
+:root[data-theme="light"] .theme-toggle .icon-moon {
+  display: block;
 }
