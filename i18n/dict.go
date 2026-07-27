@@ -78,7 +78,7 @@ var dicts = map[Locale]Dict{
 		SectionAbout:      "About",
 		SectionSkills:     "Skills",
 		SectionExperience: "Experience",
-		SectionChallenges: "Tests",
+		SectionChallenges: "Trials",
 		SectionArtifact:   "The artifact",
 
 		Share:      "Share",
