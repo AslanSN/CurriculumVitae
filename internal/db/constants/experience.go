@@ -163,7 +163,7 @@ var (
 		Contract:    "Empleado",
 		Position:    "Desarrollador Frontend",
 		Responsabilities: []string{
-			"Ownership de features de principio a fin con alta responsabilidad individual — code review, autoaprobación de ramas, QA de UX",
+			"Ownership de features de punta a punta con alta responsabilidad individual — code review, autoaprobación de ramas, QA de UX",
 			"Lideré la migración JavaScript → TypeScript en una PWA de RR. HH. a gran escala",
 			"Construí una biblioteca de componentes interna, design system y micro-frontends (Bit)",
 			"Gestioné el manejo correcto de zonas horarias en todo el producto",
@@ -210,7 +210,7 @@ var (
 		CompanyType:      "Startup",
 		Contract:         "Freelance",
 		Position:         "Full stack",
-		Responsabilities: []string{"Único desarrollador y analista técnico de una startup — web de empresa de principio a fin, design system y branding."},
+		Responsabilities: []string{"Único desarrollador y analista técnico de una startup — web de empresa de punta a punta, design system y branding."},
 	}
 	integroFR = expProse{
 		CompanyType:      "Startup",

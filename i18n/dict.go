@@ -78,7 +78,7 @@ var dicts = map[Locale]Dict{
 		SectionAbout:      "About",
 		SectionSkills:     "Skills",
 		SectionExperience: "Experience",
-		SectionChallenges: "The verdict",
+		SectionChallenges: "Tests",
 		SectionArtifact:   "The artifact",
 
 		Share:      "Share",
@@ -118,7 +118,7 @@ var dicts = map[Locale]Dict{
 		ThemeToggle: "Toggle theme",
 
 		MetaTitle:       "Alan Staub Negro — Senior Full-Stack Engineer (AI-native)",
-		MetaDescription: "Senior full-stack engineer (~4.5y): React 19 / Next.js + TypeScript on the front, real .NET / PostgreSQL on the back, AI-native (Claude Code, MCP). Trilingual, remote-first.",
+		MetaDescription: "Senior full-stack engineer (~5y): React 19 / Next.js + TypeScript on the front, real .NET / PostgreSQL on the back, AI-native (Claude Code, MCP). Trilingual, remote-first.",
 	},
 
 	ES: {
@@ -129,7 +129,7 @@ var dicts = map[Locale]Dict{
 		SectionAbout:      "Sobre mí",
 		SectionSkills:     "Competencias",
 		SectionExperience: "Experiencia",
-		SectionChallenges: "El veredicto",
+		SectionChallenges: "Pruebas",
 		SectionArtifact:   "El artefacto",
 
 		Share:      "Compartir",
@@ -169,7 +169,7 @@ var dicts = map[Locale]Dict{
 		ThemeToggle: "Cambiar tema",
 
 		MetaTitle:       "Alan Staub Negro — Ingeniero Full-Stack Senior (AI-native)",
-		MetaDescription: "Ingeniero full-stack senior (~4,5 años): React 19 / Next.js + TypeScript en el front, .NET / PostgreSQL real en el back, AI-native (Claude Code, MCP). Trilingüe, remote-first.",
+		MetaDescription: "Ingeniero full-stack senior (~5 años): React 19 / Next.js + TypeScript en el front, .NET / PostgreSQL real en el back, AI-native (Claude Code, MCP). Trilingüe, remote-first.",
 	},
 
 	FR: {
@@ -180,7 +180,7 @@ var dicts = map[Locale]Dict{
 		SectionAbout:      "À propos",
 		SectionSkills:     "Compétences",
 		SectionExperience: "Expérience",
-		SectionChallenges: "Le verdict",
+		SectionChallenges: "Épreuves",
 		SectionArtifact:   "L'artefact",
 
 		Share:      "Partager",
@@ -220,7 +220,7 @@ var dicts = map[Locale]Dict{
 		ThemeToggle: "Changer de thème",
 
 		MetaTitle:       "Alan Staub Negro — Ingénieur Full-Stack Senior (AI-native)",
-		MetaDescription: "Ingénieur full-stack senior (~4,5 ans) : React 19 / Next.js + TypeScript côté front, .NET / PostgreSQL réel côté back, AI-native (Claude Code, MCP). Trilingue, remote-first.",
+		MetaDescription: "Ingénieur full-stack senior (~5 ans) : React 19 / Next.js + TypeScript côté front, .NET / PostgreSQL réel côté back, AI-native (Claude Code, MCP). Trilingue, remote-first.",
 	},
 }
 
