@@ -52,6 +52,7 @@ templ NavBar() {
 			</ul>
 			<div class="flex items-center gap-2">
 				@LanguageSwitcher(i18n.FromContext(ctx), i18n.T(ctx), "right-0")
+				@ThemeToggle(i18n.T(ctx))
 				<button type="button" class="btn-ghost-e whitespace-nowrap font-mono text-sm uppercase tracking-wider" onclick="document.getElementById('shareDlg').showModal()">{ i18n.T(ctx).Share }</button>
 				<button type="button" class="btn-editorial whitespace-nowrap font-mono text-sm uppercase tracking-wider" onclick="document.getElementById('contactDlg').showModal()">{ i18n.T(ctx).Contact }</button>
 			</div>

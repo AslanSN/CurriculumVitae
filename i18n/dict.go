@@ -57,10 +57,11 @@ type Dict struct {
 	ContactMessage string
 
 	// Accessibility labels
-	Close     string
-	OpenMenu  string
-	CopyPhone string
-	CopyEmail string
+	Close       string
+	OpenMenu    string
+	CopyPhone   string
+	CopyEmail   string
+	ThemeToggle string // theme toggle button aria-label
 
 	// <head> metadata
 	MetaTitle       string
@@ -110,10 +111,11 @@ var dicts = map[Locale]Dict{
 		ContactSubject: "First contact",
 		ContactMessage: "Hi Alan, I came across your portfolio and would like to get in touch.",
 
-		Close:     "Close",
-		OpenMenu:  "Open menu",
-		CopyPhone: "Copy phone number",
-		CopyEmail: "Copy email",
+		Close:       "Close",
+		OpenMenu:    "Open menu",
+		CopyPhone:   "Copy phone number",
+		CopyEmail:   "Copy email",
+		ThemeToggle: "Toggle theme",
 
 		MetaTitle:       "Alan Staub Negro — Senior Full-Stack Engineer (AI-native)",
 		MetaDescription: "Senior full-stack engineer (~4.5y): React 19 / Next.js + TypeScript on the front, real .NET / PostgreSQL on the back, AI-native (Claude Code, MCP). Trilingual, remote-first.",
@@ -160,10 +162,11 @@ var dicts = map[Locale]Dict{
 		ContactSubject: "Primer contacto",
 		ContactMessage: "Hola Alan, he visto tu portfolio y me gustaría ponerme en contacto contigo.",
 
-		Close:     "Cerrar",
-		OpenMenu:  "Abrir menú",
-		CopyPhone: "Copiar número de teléfono",
-		CopyEmail: "Copiar correo",
+		Close:       "Cerrar",
+		OpenMenu:    "Abrir menú",
+		CopyPhone:   "Copiar número de teléfono",
+		CopyEmail:   "Copiar correo",
+		ThemeToggle: "Cambiar tema",
 
 		MetaTitle:       "Alan Staub Negro — Ingeniero Full-Stack Senior (AI-native)",
 		MetaDescription: "Ingeniero full-stack senior (~4,5 años): React 19 / Next.js + TypeScript en el front, .NET / PostgreSQL real en el back, AI-native (Claude Code, MCP). Trilingüe, remote-first.",
@@ -210,10 +213,11 @@ var dicts = map[Locale]Dict{
 		ContactSubject: "Premier contact",
 		ContactMessage: "Bonjour Alan, j'ai vu votre portfolio et j'aimerais entrer en contact avec vous.",
 
-		Close:     "Fermer",
-		OpenMenu:  "Ouvrir le menu",
-		CopyPhone: "Copier le numéro de téléphone",
-		CopyEmail: "Copier l'e-mail",
+		Close:       "Fermer",
+		OpenMenu:    "Ouvrir le menu",
+		CopyPhone:   "Copier le numéro de téléphone",
+		CopyEmail:   "Copier l'e-mail",
+		ThemeToggle: "Changer de thème",
 
 		MetaTitle:       "Alan Staub Negro — Ingénieur Full-Stack Senior (AI-native)",
 		MetaDescription: "Ingénieur full-stack senior (~4,5 ans) : React 19 / Next.js + TypeScript côté front, .NET / PostgreSQL réel côté back, AI-native (Claude Code, MCP). Trilingue, remote-first.",

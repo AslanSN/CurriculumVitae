@@ -33,7 +33,10 @@ templ Sidebar() {
 		</nav>
 		<hr class="border-white/10"/>
 		<div>
-			<p class="eyebrow mb-2">{ i18n.T(ctx).Language }</p>
+			<div class="mb-2 flex items-center justify-between gap-2">
+				<p class="eyebrow">{ i18n.T(ctx).Language }</p>
+				@ThemeToggle(i18n.T(ctx))
+			</div>
 			<div class="flex gap-2">
 				for _, l := range i18n.Supported {
 					<a

@@ -57,3 +57,46 @@ const personLDJSON = `{
 // the @-expression). Fixes the structured data that was previously emitted as the
 // literal text "@templ.Raw(personLDJSON)".
 const personLDJSONTag = `<script type="application/ld+json">` + personLDJSON + `</script>`
+
+// themeScript resolves and applies the colour theme BEFORE first paint (it is
+// emitted synchronously at the top of <head>), so there's no flash of the wrong
+// theme. Order of precedence: the visitor's explicit choice (localStorage) →
+// otherwise the OS/browser preference. It writes data-theme="light|dark" on
+// <html>; the light palette in output.css keys off :root[data-theme="light"].
+// It also exposes window.__toggleTheme() for the toggle button, and keeps the
+// page in sync with the OS while the visitor hasn't chosen explicitly.
+const themeScript = `(function () {
+  var root = document.documentElement, KEY = 'theme';
+  function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function resolve() {
+    var s = stored();
+    if (s === 'light' || s === 'dark') return s;
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+  }
+  root.setAttribute('data-theme', resolve());
+  window.__toggleTheme = function () {
+    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  };
+  if (window.matchMedia) {
+    try {
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+        if (!stored()) root.setAttribute('data-theme', e.matches ? 'light' : 'dark');
+      });
+    } catch (e) {}
+  }
+})();`
+
+// themeScriptTag wraps themeScript in a <script> element (rendered via templ.Raw,
+// see revealScriptTag). Emitted as early as possible in <head> to avoid a flash.
+const themeScriptTag = "<script>" + themeScript + "</script>"
+
+// noscriptThemeTag is the no-JS fallback: with scripting off, data-theme is never
+// set, so honour the OS preference directly. Covers the core palette tokens (the
+// same values output.css uses); component-level refinements are JS-only.
+const noscriptThemeTag = `<noscript><style>@media (prefers-color-scheme: light){:root{color-scheme:light;` +
+	`--color-base-950:#f6f2ea;--color-base-900:#fefcf8;--color-base-800:#efe9de;` +
+	`--color-accent:#0e7490;--color-white:#241f19;` +
+	`--color-zinc-100:#1c1a17;--color-zinc-200:#2b2823;--color-zinc-300:#413d36;` +
+	`--color-zinc-400:#6b655b;--color-zinc-500:#736d63;}}</style></noscript>`

@@ -8,6 +8,7 @@ templ Index() {
 		<head>
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			@templ.Raw(themeScriptTag)
 			@templ.Raw(revealScriptTag)
 			<title>{ i18n.T(ctx).MetaTitle }</title>
 			<meta name="description" content={ i18n.T(ctx).MetaDescription }/>
@@ -16,7 +17,8 @@ templ Index() {
 				<link rel="alternate" hreflang={ l.Lang() } href={ l.CanonicalURL() }/>
 			}
 			<link rel="alternate" hreflang="x-default" href={ i18n.EN.CanonicalURL() }/>
-			<meta name="theme-color" content="#0b0c0f"/>
+			<meta name="theme-color" content="#0b0c0f" media="(prefers-color-scheme: dark)"/>
+			<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)"/>
 			<meta property="og:type" content="profile"/>
 			<meta property="og:title" content={ i18n.T(ctx).MetaTitle }/>
 			<meta property="og:description" content={ i18n.T(ctx).MetaDescription }/>
@@ -34,6 +36,7 @@ templ Index() {
 			<meta name="twitter:image" content="https://aslansn-cv.vercel.app/assets/images/AslanSNPhoto.webp"/>
 			<link rel="shortcut icon" type="image/webp" href="/assets/images/FaviconCV.webp"/>
 			<link rel="stylesheet" href="/assets/css/output.css"/>
+			@templ.Raw(noscriptThemeTag)
 			<script src="/assets/js/customAlert.js" defer></script>
 			<script src="/assets/js/alpine.min.js" defer></script>
 			@templ.Raw(personLDJSONTag)
