@@ -54,7 +54,7 @@ var (
 		Company:          "Debos",
 		RangeDate:        "10/24 - 08/26",
 		ImageSource:      helpers.RepoURL + "/images/debos.svg",
-		ImageAlternative: "Debos logo, the word debos in white on a dark tile",
+		ImageAlternative: "Debos wordmark",
 		Link:             "https://debos.ai/",
 		Techs:            []string{"React 19", "Next.js", "TypeScript", ".NET", "PostgreSQL", "Playwright", "Sentry", "Claude Code / MCP"},
 	}
@@ -62,7 +62,7 @@ var (
 		Company:          "Nivimu",
 		RangeDate:        "04/23 - 04/24",
 		ImageSource:      helpers.RepoURL + "/images/nivimu.svg",
-		ImageAlternative: "nivimu logo consists in a blue capital n with its name bellow",
+		ImageAlternative: "Nivimu wordmark",
 		Link:             "https://nivimu.com/",
 		Techs:            []string{"React", "TypeScript", "Ant Design", "Emotion", "Redux", "Redux Saga", "TanStack Query", "Bit", "Mockoon", "Sentry"},
 	}

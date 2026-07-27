@@ -281,12 +281,14 @@
     }
   }
 
-  /* Two social glyphs ship as near-white <img> SVGs (github.svg #f0f6fc,
-     x.svg #e7e9ea) for the dark theme, and would vanish on paper. They're
-     <img>, so currentColor can't reach them — flip them to near-black with a
-     filter. Brand-coloured logos (LinkedIn, WhatsApp, …) are left untouched. */
+  /* All logos ship as near-white <img> SVGs (#e7e9ea) for the dark theme and
+     would vanish on paper. They're <img>, so currentColor can't reach them —
+     flip them to near-black with a filter on light. */
   img[src$="/icons/github.svg"],
-  img[src$="/icons/x.svg"] {
+  img[src$="/icons/x.svg"],
+  img[src$="/icons/linkedin.svg"],
+  img[src$="/images/debos.svg"],
+  img[src$="/images/nivimu.svg"] {
     filter: invert(1);
   }
 
