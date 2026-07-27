@@ -54,7 +54,7 @@ var (
 		Company:          "Debos",
 		RangeDate:        "10/24 - 08/26",
 		ImageSource:      helpers.RepoURL + "/images/debos.svg",
-		ImageAlternative: "Debos wordmark",
+		ImageAlternative: "Debos logo",
 		Link:             "https://debos.ai/",
 		Techs:            []string{"React 19", "Next.js", "TypeScript", ".NET", "PostgreSQL", "Playwright", "Sentry", "Claude Code / MCP"},
 	}
