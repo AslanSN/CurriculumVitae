@@ -66,8 +66,8 @@ templ Sidebar() {
 		</div>
 		<hr class="border-white/10"/>
 		<div class="mt-auto flex flex-col gap-2">
-			<button type="button" class="btn-editorial w-full" onclick="document.getElementById('drawer').checked=false;document.getElementById('contactDlg').showModal()">{ i18n.T(ctx).ContactMe }</button>
-			<button type="button" class="btn-ghost-e w-full" onclick="document.getElementById('drawer').checked=false;document.getElementById('shareDlg').showModal()">{ i18n.T(ctx).Share }</button>
+			<button type="button" class="btn-editorial w-full font-mono text-sm uppercase tracking-wider" onclick="document.getElementById('drawer').checked=false;document.getElementById('contactDlg').showModal()">{ i18n.T(ctx).Contact }</button>
+			<button type="button" class="btn-ghost-e w-full font-mono text-sm uppercase tracking-wider" onclick="document.getElementById('drawer').checked=false;document.getElementById('shareDlg').showModal()">{ i18n.T(ctx).Share }</button>
 		</div>
 	</aside>
 }

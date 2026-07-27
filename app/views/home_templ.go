@@ -190,46 +190,46 @@ func home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><section id=\"colophon\" class=\"reveal w-full scroll-mt-24 border-t border-white/10 pt-10\"><h2 class=\"mb-3 text-3xl font-bold sm:text-4xl\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</section><footer id=\"colophon\" class=\"reveal w-full scroll-mt-24 border-t border-white/10 pt-8\"><div class=\"flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-8\"><div class=\"max-w-prose\"><h2 class=\"mb-2 font-mono text-xs uppercase tracking-widest text-zinc-500\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var9 string
 			templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).ColophonHeading)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 49, Col: 81}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 51, Col: 110}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h2><p class=\"max-w-prose text-zinc-300\">Go + <a class=\"link-e\" href=\"https://templ.guide\" target=\"_blank\" rel=\"noopener noreferrer\">templ</a> + Tailwind CSS, ")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h2><p class=\"text-sm text-zinc-500\">Go + <a class=\"link-e\" href=\"https://templ.guide\" target=\"_blank\" rel=\"noopener noreferrer\">templ</a> + Tailwind CSS, ")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var10 string
 			templ_7745c5c3_Var10, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).ColophonBody)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 51, Col: 149}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 53, Col: 151}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var10))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><a class=\"mt-4 inline-flex w-fit items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/5\" href=\"https://github.com/AslanSN/CurriculumVitae\" target=\"_blank\" rel=\"noopener noreferrer\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><p class=\"mt-2 text-xs text-zinc-600\"><a class=\"link-e\" href=\"https://github.com/iaolo/iA-Fonts\" target=\"_blank\" rel=\"noopener noreferrer\">iA Writer Quattro</a> · Information Architects · OFL</p></div><a class=\"inline-flex w-fit shrink-0 items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:bg-white/5\" href=\"https://github.com/AslanSN/CurriculumVitae\" target=\"_blank\" rel=\"noopener noreferrer\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var11 string
 			templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).SourceOnGitHub)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 59, Col: 33}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/home.templ`, Line: 65, Col: 34}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></section></main>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></div></footer></main>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

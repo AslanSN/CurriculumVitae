@@ -359,27 +359,27 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><hr class=\"border-white/10\"><div class=\"mt-auto flex flex-col gap-2\"><button type=\"button\" class=\"btn-editorial w-full\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false;document.getElementById(&#39;contactDlg&#39;).showModal()\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><hr class=\"border-white/10\"><div class=\"mt-auto flex flex-col gap-2\"><button type=\"button\" class=\"btn-editorial w-full font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false;document.getElementById(&#39;contactDlg&#39;).showModal()\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var24 string
-		templ_7745c5c3_Var24, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).ContactMe)
+		templ_7745c5c3_Var24, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).Contact)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/sidebar.templ`, Line: 69, Col: 185}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/sidebar.templ`, Line: 69, Col: 226}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var24))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button> <button type=\"button\" class=\"btn-ghost-e w-full\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false;document.getElementById(&#39;shareDlg&#39;).showModal()\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button> <button type=\"button\" class=\"btn-ghost-e w-full font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false;document.getElementById(&#39;shareDlg&#39;).showModal()\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var25 string
 		templ_7745c5c3_Var25, templ_7745c5c3_Err = templ.JoinStringErrs(i18n.T(ctx).Share)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/sidebar.templ`, Line: 70, Col: 177}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/sidebar.templ`, Line: 70, Col: 220}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var25))
 		if templ_7745c5c3_Err != nil {
