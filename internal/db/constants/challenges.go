@@ -89,38 +89,38 @@ var (
 	}
 
 	nivimuChEN = challengeProse{
-		Title:       "Nivimu Code Test",
-		State:       "HIRED",
+		Title:       "Nivimu — Code Test",
+		State:       "Hired",
 		Dates:       "From 20 to 21 March 2023",
 		Description: "Filterable, sortable user-data table with a live summary card that re-syncs to the top row as sorting and filtering change. React + TypeScript + Redux Toolkit + Ant Design — delivered in a single day.",
 	}
 	nivimuChES = challengeProse{
-		Title:       "Prueba de código de Nivimu",
-		State:       "CONTRATADO",
+		Title:       "Nivimu — Prueba de código",
+		State:       "Contratado",
 		Dates:       "Del 20 al 21 de marzo de 2023",
 		Description: "Tabla de datos de usuarios filtrable y ordenable con una tarjeta de resumen en tiempo real que se resincroniza con la primera fila al cambiar el orden y los filtros. React + TypeScript + Redux Toolkit + Ant Design — entregada en un solo día.",
 	}
 	nivimuChFR = challengeProse{
-		Title:       "Test de code Nivimu",
-		State:       "EMBAUCHÉ",
+		Title:       "Nivimu — Test de code",
+		State:       "Embauché",
 		Dates:       "Du 20 au 21 mars 2023",
 		Description: "Tableau de données utilisateurs filtrable et triable avec une carte de résumé en temps réel qui se resynchronise avec la première ligne au fil des tris et filtres. React + TypeScript + Redux Toolkit + Ant Design — livré en une seule journée.",
 	}
 
 	logitravelEN = challengeProse{
-		Title:       "Logitravel - PrimeIT Technical Proof",
+		Title:       "Logitravel — PrimeIT Technical Proof",
 		State:       "Best technical candidate",
 		Dates:       "From 1 to 4 July 2022",
 		Description: "Text-list manager with add / select / delete and full undo–redo. React + Redux Toolkit + styled-components, a centralized design-token system and SOLID structure — built in a 3-day proof.",
 	}
 	logitravelES = challengeProse{
-		Title:       "Logitravel - Prueba técnica de PrimeIT",
+		Title:       "Logitravel — Prueba técnica de PrimeIT",
 		State:       "Mejor candidato técnico",
 		Dates:       "Del 1 al 4 de julio de 2022",
 		Description: "Gestor de listas de texto con añadir / seleccionar / borrar y deshacer–rehacer completo. React + Redux Toolkit + styled-components, un sistema centralizado de design tokens y estructura SOLID — construido en una prueba de 3 días.",
 	}
 	logitravelFR = challengeProse{
-		Title:       "Logitravel - Test technique PrimeIT",
+		Title:       "Logitravel — Test technique PrimeIT",
 		State:       "Meilleur candidat technique",
 		Dates:       "Du 1er au 4 juillet 2022",
 		Description: "Gestionnaire de listes de texte avec ajouter / sélectionner / supprimer et annuler–rétablir complet. React + Redux Toolkit + styled-components, un système centralisé de design tokens et une structure SOLID — construit lors d'un test de 3 jours.",
