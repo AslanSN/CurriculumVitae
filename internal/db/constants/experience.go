@@ -70,7 +70,7 @@ var (
 		Company:          "Memorízame",
 		RangeDate:        "12/22 - 04/23",
 		ImageSource:      helpers.RepoURL + "/images/memorizame.svg",
-		ImageAlternative: "Memorízame logo — a two-tone M in teal and fuchsia",
+		ImageAlternative: "Memorízame logo — an M monogram",
 		Link:             "",
 		Techs:            []string{"Svelte", "TypeScript", "Supabase", "PostgreSQL", "Figma", "Miro"},
 	}

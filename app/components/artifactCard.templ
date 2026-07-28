@@ -12,7 +12,12 @@ templ ArtifactCard(a constants.Artifact) {
 			if a.Eyebrow != "" {
 				<p class="eyebrow">{ a.Eyebrow }</p>
 			}
-			<h3 class="text-2xl font-bold sm:text-3xl">{ a.Name }</h3>
+			<div class="flex items-center gap-3">
+				if string(a.LogoSrc) != "" {
+					<img class="h-9 w-9 shrink-0" src={ string(a.LogoSrc) } alt={ a.LogoAlt }/>
+				}
+				<h3 class="text-2xl font-bold sm:text-3xl">{ a.Name }</h3>
+			</div>
 			if a.Tagline != "" {
 				<p class="max-w-prose text-lg text-zinc-200">{ a.Tagline }</p>
 			}
