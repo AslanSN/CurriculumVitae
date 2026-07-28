@@ -329,14 +329,14 @@
    flips on light ONLY; these need a per-theme pair.
    ============================================================================ */
 img[src$="/images/integro.webp"] {
-  filter: grayscale(1) invert(1); /* dark: white bg → near-black, text → light */
+  filter: grayscale(1) invert(1) contrast(0.55) brightness(1.3); /* dark: white bg → soft grey box, text → light (tuned to match the set) */
 }
 img[src$="/images/attlos.webp"] {
-  filter: grayscale(1); /* dark: brand blue → grey, white mark stays light */
+  filter: grayscale(1) brightness(0.72); /* dark: brand blue → muted grey (dialled down so it isn't too vivid), white mark stays light */
 }
 :root[data-theme="light"] img[src$="/images/integro.webp"] {
   filter: grayscale(1); /* light: dark text on its own white, blends with paper */
 }
 :root[data-theme="light"] img[src$="/images/attlos.webp"] {
-  filter: grayscale(1) invert(1); /* light: flip the light mark to a dark one */
+  filter: grayscale(1) invert(1) brightness(1.28); /* light: flip to a dark mark, lightened so the box isn't too heavy on paper */
 }
