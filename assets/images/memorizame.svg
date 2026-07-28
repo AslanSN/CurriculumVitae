@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Memorízame logo">
+	<!-- Two-tone monoline "M": a teal layer offset behind a fuchsia layer, the current
+	     Memorízame brand mark (github.com/AslanSN/memorizame-v2). Stroke colours are the
+	     brand mid-tones, legible on both the dark cards and the light-paper theme, so the
+	     mark needs no per-theme inversion (unlike the near-white SVG logos). -->
+	<g stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="translate(1.2,0.6)">
+		<path stroke="#0f7d80" d="M8 24 L8 9 L16 16 L24 9 L24 24" transform="translate(-2.4,-2.2)"/>
+		<path stroke="#f03669" d="M8 24 L8 9 L16 16 L24 9 L24 24"/>
+	</g>
+</svg>

@@ -10,14 +10,19 @@ import (
 // executable proof behind the "AI-native" label rather than the label itself.
 type Artifact struct {
 	Name         string // brand name, not localized
+	ID           string // ASCII slug for the section anchor / list id
 	RepoLink     templ.SafeURL
 	ColophonLink templ.SafeURL
+	LiveLink     templ.SafeURL // live-demo URL; when set it becomes the primary CTA
+	// EmbedURL renders a live, interactive <iframe> preview in place of a video.
+	// Exactly one of EmbedURL / VideoMP4 should be set per artifact.
+	EmbedURL     templ.SafeURL
 	VideoMP4     templ.SafeURL
 	VideoPoster  templ.SafeURL
 	Eyebrow      string
 	Tagline      string
 	Lead         string
-	VideoAlt     string
+	VideoAlt     string // also the <iframe> title when EmbedURL is used
 	VideoCaption string
 	Highlights   []string
 }
@@ -25,8 +30,11 @@ type Artifact struct {
 // artifactNeutral holds the language-independent facts: links and media.
 type artifactNeutral struct {
 	Name         string
+	ID           string
 	RepoLink     templ.SafeURL
 	ColophonLink templ.SafeURL
+	LiveLink     templ.SafeURL
+	EmbedURL     templ.SafeURL
 	VideoMP4     templ.SafeURL
 	VideoPoster  templ.SafeURL
 }
@@ -44,8 +52,11 @@ type artifactProse struct {
 func buildArtifact(n artifactNeutral, p artifactProse) Artifact {
 	return Artifact{
 		Name:         n.Name,
+		ID:           n.ID,
 		RepoLink:     n.RepoLink,
 		ColophonLink: n.ColophonLink,
+		LiveLink:     n.LiveLink,
+		EmbedURL:     n.EmbedURL,
 		VideoMP4:     n.VideoMP4,
 		VideoPoster:  n.VideoPoster,
 		Eyebrow:      p.Eyebrow,
@@ -61,12 +72,25 @@ func buildArtifact(n artifactNeutral, p artifactProse) Artifact {
 
 var gotchaN = artifactNeutral{
 	Name:         "Gotcha",
+	ID:           "gotcha",
 	RepoLink:     "https://github.com/AslanSN/gotcha",
 	ColophonLink: "https://github.com/AslanSN/gotcha/blob/main/COLOPHON.md",
 	// Recorded from gotcha's own robust-search slice; re-encoded H.264 (~115 KB,
 	// down from a 1.6 MB GIF) so the demo doesn't tax the "just fast HTML" budget.
 	VideoMP4:    helpers.RepoURL + "/images/gotcha-robust-search.mp4",
 	VideoPoster: helpers.RepoURL + "/images/gotcha-robust-search.jpg",
+}
+
+// Memorízame is the design-engineering artifact: a spaced-repetition study PWA
+// Alan designed and built end to end. The product he did this design work in is
+// private, so this is a public, self-contained demo (github.com/AslanSN/memorizame-v2)
+// that carries the design evidence. Shown as a LIVE embed rather than a video.
+var memorizameArtN = artifactNeutral{
+	Name:         "Memorízame",
+	ID:           "memorizame",
+	RepoLink:     "https://github.com/AslanSN/memorizame-v2",
+	LiveLink:     "https://memorizame-v2.vercel.app/",
+	EmbedURL:     "https://memorizame-v2.vercel.app/",
 }
 
 // --- translatable copy, per locale ------------------------------------------
@@ -111,11 +135,64 @@ var (
 			".NET · PostgreSQL · Next.js / React 19",
 		},
 	}
+
+	memorizameArtEN = artifactProse{
+		Eyebrow: "Design engineering · open source",
+		Tagline: "A spaced-repetition study app I designed and built end to end — brand, design system and interface, grounded in the science of learning.",
+		Lead:    "The product I did this design work in is private, so I rebuilt it as an open, installable demo you can actually use — seeded with public-domain content. Every surface is mine: the two-tone logo, a tokenised light/dark design system (WCAG-AA / APCA-checked colour, three typefaces chosen for reading science), a trilingual UI and a real SM-2 scheduler. Held to the same senior bar as the rest — a design-token contract test and an axe-core accessibility gate fail the build on any regression.",
+		VideoAlt:     "Live embedded demo of Memorízame, a spaced-repetition study PWA",
+		VideoCaption: "Live and interactive — three modes (study, review, test), a real SM-2 scheduler, trilingual UI in light and dark. Try it right here.",
+		Highlights: []string{
+			"Design system · tokens",
+			"SM-2 · offline PWA",
+			"WCAG 2.2 AA · APCA colour",
+			"Trilingual · light/dark",
+			"SvelteKit 2 · Svelte 5",
+		},
+	}
+	memorizameArtES = artifactProse{
+		Eyebrow: "Ingeniería de diseño · código abierto",
+		Tagline: "Una app de estudio por repetición espaciada que diseñé y construí de punta a punta — marca, design system e interfaz, fundamentados en la ciencia del aprendizaje.",
+		Lead:    "El producto donde hice este trabajo de diseño es privado, así que lo reconstruí como una demo abierta e instalable que puedes usar de verdad — con contenido de dominio público. Cada superficie es mía: el logo de dos tonos, un design system tokenizado claro/oscuro (color verificado WCAG-AA / APCA, tres tipografías elegidas por la ciencia de la lectura), una interfaz trilingüe y un planificador SM-2 real. Al mismo nivel senior que el resto — un test de contrato de design tokens y un gate de accesibilidad (axe-core) rompen el build ante cualquier regresión.",
+		VideoAlt:     "Demo embebido en vivo de Memorízame, una PWA de estudio por repetición espaciada",
+		VideoCaption: "En vivo e interactivo — tres modos (estudiar, repasar, test), un planificador SM-2 real, interfaz trilingüe en claro y oscuro. Pruébalo aquí mismo.",
+		Highlights: []string{
+			"Design system · tokens",
+			"SM-2 · PWA offline",
+			"Color WCAG 2.2 AA · APCA",
+			"Trilingüe · claro/oscuro",
+			"SvelteKit 2 · Svelte 5",
+		},
+	}
+	memorizameArtFR = artifactProse{
+		Eyebrow: "Ingénierie du design · open source",
+		Tagline: "Une app d'étude en répétition espacée que j'ai conçue et construite de bout en bout — identité, design system et interface, fondés sur la science de l'apprentissage.",
+		Lead:    "Le produit où j'ai réalisé ce travail de design est privé ; je l'ai donc reconstruit en une démo ouverte et installable, réellement utilisable — avec du contenu du domaine public. Chaque surface est de moi : le logo bicolore, un design system tokenisé clair/sombre (couleurs vérifiées WCAG-AA / APCA, trois typographies choisies selon la science de la lecture), une interface trilingue et un vrai planificateur SM-2. Tenu au même niveau senior que le reste — un test de contrat de design tokens et un gate d'accessibilité (axe-core) cassent le build à la moindre régression.",
+		VideoAlt:     "Démo intégrée en direct de Memorízame, une PWA d'étude en répétition espacée",
+		VideoCaption: "En direct et interactif — trois modes (étudier, réviser, test), un vrai planificateur SM-2, interface trilingue en clair et sombre. Essayez-le ici.",
+		Highlights: []string{
+			"Design system · tokens",
+			"SM-2 · PWA hors-ligne",
+			"Couleur WCAG 2.2 AA · APCA",
+			"Trilingue · clair/sombre",
+			"SvelteKit 2 · Svelte 5",
+		},
+	}
 )
 
-// Artifacts is the featured self-directed project, per locale.
-var Artifacts = map[i18n.Locale]Artifact{
-	i18n.EN: buildArtifact(gotchaN, gotchaEN),
-	i18n.ES: buildArtifact(gotchaN, gotchaES),
-	i18n.FR: buildArtifact(gotchaN, gotchaFR),
+// Artifacts lists the self-directed projects per locale, in feature order:
+// Gotcha (AI-native engineering) first, then Memorízame (design engineering).
+var Artifacts = map[i18n.Locale][]Artifact{
+	i18n.EN: {
+		buildArtifact(gotchaN, gotchaEN),
+		buildArtifact(memorizameArtN, memorizameArtEN),
+	},
+	i18n.ES: {
+		buildArtifact(gotchaN, gotchaES),
+		buildArtifact(memorizameArtN, memorizameArtES),
+	},
+	i18n.FR: {
+		buildArtifact(gotchaN, gotchaFR),
+		buildArtifact(memorizameArtN, memorizameArtFR),
+	},
 }
