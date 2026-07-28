@@ -79,7 +79,7 @@ var dicts = map[Locale]Dict{
 		SectionSkills:     "Skills",
 		SectionExperience: "Experience",
 		SectionChallenges: "Trials",
-		SectionArtifact:   "The artifact",
+		SectionArtifact:   "Artifacts",
 
 		Share:      "Share",
 		Contact:    "Contact",
@@ -95,7 +95,7 @@ var dicts = map[Locale]Dict{
 		Day:                 "day",
 		Days:                "days",
 
-		ArtifactIntro:    "Self-directed and open source. Not the word “AI-native” — the thing itself: a harness that makes an AI produce correct code, one you can clone and run.",
+		ArtifactIntro:    "Self-directed and open source — the proof behind the labels, not the labels themselves. One makes an AI produce correct code; the other is a product I designed and built end to end.",
 		ArtifactColophon: "How it was built",
 
 		Stack:      "Stack",
@@ -130,7 +130,7 @@ var dicts = map[Locale]Dict{
 		SectionSkills:     "Competencias",
 		SectionExperience: "Experiencia",
 		SectionChallenges: "Pruebas",
-		SectionArtifact:   "El artefacto",
+		SectionArtifact:   "Artefactos",
 
 		Share:      "Compartir",
 		Contact:    "Contacto",
@@ -146,7 +146,7 @@ var dicts = map[Locale]Dict{
 		Day:                 "día",
 		Days:                "días",
 
-		ArtifactIntro:    "Autodirigido y de código abierto. No la palabra «AI-native» — la cosa en sí: un harness que hace que una IA produzca código correcto, y que puedes clonar y ejecutar.",
+		ArtifactIntro:    "Autodirigidos y de código abierto — la prueba detrás de las etiquetas, no las etiquetas. Uno hace que una IA produzca código correcto; el otro es un producto que diseñé y construí de punta a punta.",
 		ArtifactColophon: "Cómo se construyó",
 
 		Stack:      "Stack",
@@ -181,7 +181,7 @@ var dicts = map[Locale]Dict{
 		SectionSkills:     "Compétences",
 		SectionExperience: "Expérience",
 		SectionChallenges: "Épreuves",
-		SectionArtifact:   "L'artefact",
+		SectionArtifact:   "Artefacts",
 
 		Share:      "Partager",
 		Contact:    "Contact",
@@ -197,7 +197,7 @@ var dicts = map[Locale]Dict{
 		Day:                 "jour",
 		Days:                "jours",
 
-		ArtifactIntro:    "En autonomie et open source. Pas le mot « AI-native » — la chose elle-même : un harness qui fait qu'une IA produit du code correct, que vous pouvez cloner et exécuter.",
+		ArtifactIntro:    "En autonomie et open source — la preuve derrière les étiquettes, pas les étiquettes. L'un fait qu'une IA produit du code correct ; l'autre est un produit que j'ai conçu et construit de bout en bout.",
 		ArtifactColophon: "Comment il est construit",
 
 		Stack:      "Stack",

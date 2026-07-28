@@ -67,13 +67,12 @@ var (
 		Techs:            []string{"React", "TypeScript", "Ant Design", "Emotion", "Redux", "Redux Saga", "TanStack Query", "Bit", "Mockoon", "Sentry"},
 	}
 	memorizameN = expNeutral{
-		Company:          "Memorizame",
+		Company:          "Memorízame",
 		RangeDate:        "12/22 - 04/23",
-		ImageSource:      helpers.RepoURL + "/images/memorizame.webp",
-		ImageAlternative: "memorizeme icon, three M in three different colors, one before another getting smaller",
+		ImageSource:      helpers.RepoURL + "/images/memorizame.svg",
+		ImageAlternative: "Memorízame logo — an M monogram",
 		Link:             "",
-		Techs:            []string{"Svelte", "Supabase", "TypeScript", "Figma"},
-		Compact:          true,
+		Techs:            []string{"Svelte", "TypeScript", "Supabase", "PostgreSQL", "Figma", "Miro"},
 	}
 	integroN = expNeutral{
 		Company:          "Íntegro",
@@ -182,22 +181,34 @@ var (
 	}
 
 	memorizameEN = expProse{
-		CompanyType:      "Freelance project",
-		Contract:         "Freelancer",
-		Position:         "Full stack",
-		Responsabilities: []string{"Sole frontend for a spaced-repetition learning app (SuperMemo method) — design system, UI/UX and architecture."},
+		CompanyType: "Spaced-repetition study app",
+		Contract:    "Freelancer",
+		Position:    "Full-stack · design",
+		Responsabilities: []string{
+			"Sole front-end developer; designed the product end to end — brand and logo, design system, UI/UX and layout",
+			"Owned the Svelte front-end architecture; collaborated on the Supabase back-end (PostgreSQL)",
+			"Built the SuperMemo spaced-repetition study flow",
+		},
 	}
 	memorizameES = expProse{
-		CompanyType:      "Proyecto freelance",
-		Contract:         "Freelance",
-		Position:         "Full stack",
-		Responsabilities: []string{"Único frontend de una app de aprendizaje por repetición espaciada (método SuperMemo) — design system, UI/UX y arquitectura."},
+		CompanyType: "App de repetición espaciada",
+		Contract:    "Freelance",
+		Position:    "Full-stack · diseño",
+		Responsabilities: []string{
+			"Único desarrollador front-end; diseñé el producto de punta a punta — marca y logo, design system, UI/UX y layout",
+			"Responsable de la arquitectura front-end en Svelte; colaboré en el back-end con Supabase (PostgreSQL)",
+			"Construí el flujo de estudio por repetición espaciada (método SuperMemo)",
+		},
 	}
 	memorizameFR = expProse{
-		CompanyType:      "Projet freelance",
-		Contract:         "Freelance",
-		Position:         "Full stack",
-		Responsabilities: []string{"Seul frontend d'une application d'apprentissage par répétition espacée (méthode SuperMemo) — design system, UI/UX et architecture."},
+		CompanyType: "App de répétition espacée",
+		Contract:    "Freelance",
+		Position:    "Full-stack · design",
+		Responsabilities: []string{
+			"Seul développeur front-end ; j'ai conçu le produit de bout en bout — identité et logo, design system, UI/UX et mise en page",
+			"Responsable de l'architecture front-end en Svelte ; collaboration sur le back-end Supabase (PostgreSQL)",
+			"Construit le parcours d'étude en répétition espacée (méthode SuperMemo)",
+		},
 	}
 
 	integroEN = expProse{

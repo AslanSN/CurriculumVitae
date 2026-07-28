@@ -12,12 +12,33 @@ templ ArtifactCard(a constants.Artifact) {
 			if a.Eyebrow != "" {
 				<p class="eyebrow">{ a.Eyebrow }</p>
 			}
-			<h3 class="text-2xl font-bold sm:text-3xl">{ a.Name }</h3>
+			<div class="flex items-center gap-3">
+				if string(a.LogoSrc) != "" {
+					<img class="h-9 w-9 shrink-0" src={ string(a.LogoSrc) } alt={ a.LogoAlt }/>
+				}
+				<h3 class="text-2xl font-bold sm:text-3xl">{ a.Name }</h3>
+			</div>
 			if a.Tagline != "" {
 				<p class="max-w-prose text-lg text-zinc-200">{ a.Tagline }</p>
 			}
 		</header>
-		if string(a.VideoMP4) != "" {
+		if string(a.EmbedURL) != "" {
+			<figure class="flex flex-col gap-2">
+				<div class="aspect-[16/10] w-full overflow-hidden rounded-xl border border-white/10 bg-base-950">
+					<iframe
+						class="h-full w-full"
+						src={ string(a.EmbedURL) }
+						title={ a.VideoAlt }
+						loading="lazy"
+						referrerpolicy="strict-origin-when-cross-origin"
+						sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+					></iframe>
+				</div>
+				if a.VideoCaption != "" {
+					<figcaption class="max-w-prose font-mono text-xs leading-relaxed text-zinc-500">{ a.VideoCaption }</figcaption>
+				}
+			</figure>
+		} else if string(a.VideoMP4) != "" {
 			<figure class="flex flex-col gap-2">
 				<video
 					class="w-full rounded-xl border border-white/10"
@@ -47,9 +68,22 @@ templ ArtifactCard(a constants.Artifact) {
 			</ul>
 		}
 		<footer class="flex flex-wrap items-center gap-4 pt-1">
-			@LinkItem(a.RepoLink, "btn-editorial font-mono text-sm uppercase tracking-wider") {
-				<span>{ i18n.T(ctx).SourceOnGitHub }</span>
-				@icons.GithubIcon(4)
+			if string(a.LiveLink) != "" {
+				@LinkItem(a.LiveLink, "btn-editorial font-mono text-sm uppercase tracking-wider") {
+					<span>{ i18n.T(ctx).ChallengeLiveDemo }</span>
+					@icons.OpenNewTabIcon()
+				}
+				if string(a.RepoLink) != "" {
+					@LinkItem(a.RepoLink, "link-e inline-flex items-center gap-2 text-sm") {
+						<span>{ i18n.T(ctx).SourceOnGitHub }</span>
+						@icons.GithubIcon(4)
+					}
+				}
+			} else if string(a.RepoLink) != "" {
+				@LinkItem(a.RepoLink, "btn-editorial font-mono text-sm uppercase tracking-wider") {
+					<span>{ i18n.T(ctx).SourceOnGitHub }</span>
+					@icons.GithubIcon(4)
+				}
 			}
 			if string(a.ColophonLink) != "" {
 				@LinkItem(a.ColophonLink, "link-e inline-flex items-center gap-2 text-sm") {

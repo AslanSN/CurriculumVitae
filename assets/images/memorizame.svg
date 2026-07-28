@@ -1,0 +1,11 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Memorízame logo">
+	<!-- Monochrome version of the brand's two-layer "M" for the Experience row (sits with
+	     debos.svg / nivimu.svg); flipped to near-black on the light theme by the invert
+	     rule in input.css. Keeps the offset double-M — the two layers use two slightly
+	     different greys so the layering still reads without the brand hues. The two-tone
+	     teal/fuchsia version, used in the Artifact card, lives in memorizame-color.svg. -->
+	<g stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="translate(1.2,0.6)">
+		<path stroke="#adb0b5" d="M8 24 L8 9 L16 16 L24 9 L24 24" transform="translate(-2.4,-2.2)"/>
+		<path stroke="#e7e9ea" d="M8 24 L8 9 L16 16 L24 9 L24 24"/>
+	</g>
+</svg>
