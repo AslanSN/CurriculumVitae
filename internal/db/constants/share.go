@@ -48,7 +48,7 @@ var (
 		Icon: helpers.IconLabelParams{
 				Id:          "linkedin",
 				Label:       "",
-				Source:      templ.SafeURL(helpers.RepoURL + "/icons/linkedin.svg"),
+				Source:      templ.SafeURL(helpers.RepoURL + "/icons/linkedin-color.svg"),
 				Alternative: "Linkedin Icon",
 			
 		},
