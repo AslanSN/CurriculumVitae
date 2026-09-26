@@ -43,21 +43,21 @@ var SkillGroups = map[i18n.Locale][]SkillGroup{
 		{Name: "Frontend", Items: frontendItems},
 		{Name: "Backend & platform", Items: []string{".NET (C#)", "EF Core", "Go", "Node.js", "PostgreSQL", "REST APIs", "CI/CD (GitHub Actions)", "Vercel", "Sentry", "Amplitude", "Playwright", "Vitest"}},
 		{Name: "Also", Items: alsoItems},
-		{Name: "Languages", Items: []string{"Spanish (native)", "French (bilingual)", "English (professional)"}},
+		{Name: "Languages", Items: []string{"Spanish (native)", "French (bilingual)", "English (C1)"}},
 	},
 	i18n.ES: {
-		{Name: "IA y desarrollo agéntico", Items: []string{"Claude Code", "Agentes LLM (Claude, GPT)", "MCP", "Harness de IA", "Code review con IA", "Convenciones IA (CLAUDE.md)"}},
+		{Name: "IA y desarrollo agéntico", Items: []string{"Claude Code", "Agentes LLM (Claude, GPT)", "MCP", "Evals de IA", "Code review con IA", "Convenciones IA (CLAUDE.md)"}},
 		{Name: "Frontend", Items: frontendItems},
 		{Name: "Backend y plataforma", Items: []string{".NET (C#)", "EF Core", "Go", "Node.js", "PostgreSQL", "APIs REST", "CI/CD (GitHub Actions)", "Vercel", "Sentry", "Amplitude", "Playwright", "Vitest"}},
 		{Name: "También", Items: alsoItems},
-		{Name: "Idiomas", Items: []string{"Español (nativo)", "Francés (bilingüe)", "Inglés (profesional)"}},
+		{Name: "Idiomas", Items: []string{"Español (nativo)", "Francés (bilingüe)", "Inglés (C1)"}},
 	},
 	i18n.FR: {
-		{Name: "IA & dev agentique", Items: []string{"Claude Code", "Agents LLM (Claude, GPT)", "MCP", "Harness IA", "Code review avec IA", "Conventions IA (CLAUDE.md)"}},
+		{Name: "IA & dev agentique", Items: []string{"Claude Code", "Agents LLM (Claude, GPT)", "MCP", "Evals IA", "Code review avec IA", "Conventions IA (CLAUDE.md)"}},
 		{Name: "Frontend", Items: frontendItems},
 		{Name: "Backend & plateforme", Items: []string{".NET (C#)", "EF Core", "Go", "Node.js", "PostgreSQL", "API REST", "CI/CD (GitHub Actions)", "Vercel", "Sentry", "Amplitude", "Playwright", "Vitest"}},
 		{Name: "Aussi", Items: alsoItems},
-		{Name: "Langues", Items: []string{"Espagnol (natif)", "Français (bilingue)", "Anglais (professionnel)"}},
+		{Name: "Langues", Items: []string{"Espagnol (natif)", "Français (bilingue)", "Anglais (C1)"}},
 	},
 }
 
