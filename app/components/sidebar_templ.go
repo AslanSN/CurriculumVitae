@@ -322,7 +322,7 @@ func Sidebar() templ.Component {
 				return templ_7745c5c3_Err
 			}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><hr class=\"border-white/10\"><div x-data=\"{ open: false }\" x-on:keydown.escape.window=\"open = false\"><button type=\"button\" x-on:click=\"open = !open\" x-bind:aria-expanded=\"open\" class=\"navlink flex w-full cursor-pointer items-center justify-between py-1\"><span>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><hr class=\"border-white/10\"><details class=\"disclosure\"><summary class=\"navlink flex w-full cursor-pointer items-center justify-between py-1\"><span>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -335,7 +335,7 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <span class=\"transition-transform\" x-bind:class=\"open &amp;&amp; &#39;rotate-180&#39;\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span> <span class=\"dropdown-chevron\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -343,7 +343,7 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></button><div x-show=\"open\" x-transition x-cloak class=\"mt-1 flex flex-col gap-1 pl-2\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></summary><div class=\"mt-1 flex flex-col gap-1 pl-2\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -359,7 +359,7 @@ func Sidebar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><hr class=\"border-white/10\"><div class=\"mt-auto flex flex-col gap-2\"><button type=\"button\" class=\"btn-editorial w-full font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false;document.getElementById(&#39;contactDlg&#39;).showModal()\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></details><hr class=\"border-white/10\"><div class=\"mt-auto flex flex-col gap-2\"><button type=\"button\" class=\"btn-editorial w-full font-mono text-sm uppercase tracking-wider\" onclick=\"document.getElementById(&#39;drawer&#39;).checked=false;document.getElementById(&#39;contactDlg&#39;).showModal()\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -66,15 +66,65 @@
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-accent;
   }
-  [x-cloak] {
-    display: none !important;
-  }
   @media (prefers-reduced-motion: reduce) {
     * {
       animation-duration: 0.01ms !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+}
+
+/* Native dropdowns: a popovertarget button + a popover="auto" panel. The browser
+   gives light-dismiss, Esc and aria-expanded; CSS only places the panel. Popovers
+   live in the top layer, so `absolute` can't tether them: anchor positioning does,
+   and without it the panel falls back to fixed under the sticky navbar, which is
+   the only place these dropdowns are rendered. */
+@layer components {
+  [popovertarget="downloadMenu"] { anchor-name: --downloadMenu; }
+  #downloadMenu { position-anchor: --downloadMenu; }
+  [popovertarget="languageMenu"] { anchor-name: --languageMenu; }
+  #languageMenu { position-anchor: --languageMenu; }
+
+  .dropdown-panel {
+    position: fixed;
+    inset: auto;
+    top: 3.75rem;
+    margin: 0;
+    color: inherit;
+    opacity: 0;
+    translate: 0 -0.25rem;
+    transition: opacity 150ms ease-out, translate 150ms ease-out, display 150ms allow-discrete, overlay 150ms allow-discrete;
+  }
+  .dropdown-panel-start { left: clamp(1.5rem, 4vw, 8rem); }
+  .dropdown-panel-end { right: clamp(1.5rem, 4vw, 8rem); }
+  .dropdown-panel:popover-open {
+    opacity: 1;
+    translate: 0 0;
+    @starting-style {
+      opacity: 0;
+      translate: 0 -0.25rem;
+    }
+  }
+  @supports (anchor-name: --a) {
+    .dropdown-panel {
+      top: auto;
+      left: auto;
+      right: auto;
+      margin-top: 0.5rem;
+      position-try-fallbacks: flip-block;
+    }
+    .dropdown-panel-start { position-area: block-end span-inline-end; }
+    .dropdown-panel-end { position-area: block-end span-inline-start; }
+  }
+
+  .dropdown-chevron {
+    display: inline-flex;
+    transition: rotate 150ms ease-out;
+  }
+  .dropdown:has(:popover-open) .dropdown-chevron,
+  .disclosure[open] .dropdown-chevron {
+    rotate: 180deg;
   }
 }
 
