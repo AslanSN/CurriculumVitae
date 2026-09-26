@@ -12,7 +12,7 @@ import "github.com/AslanSN/CurriculumVitae/i18n"
 
 // ThemeToggle is an icon-only button that flips the colour theme. It calls the
 // global window.__toggleTheme() (defined in the <head> theme script), so it works
-// before Alpine loads and needs no per-instance state. Which glyph shows — sun in
+// before any deferred script loads and needs no per-instance state. Which glyph shows — sun in
 // dark, moon in light — is driven purely by CSS off :root[data-theme] (see
 // input.css), so the same component can appear in both the navbar and the mobile
 // drawer without a duplicate id. Icons inherit currentColor, so they follow the ink.
