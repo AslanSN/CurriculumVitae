@@ -56,7 +56,7 @@ var (
 		ImageSource:      helpers.RepoURL + "/images/debos.svg",
 		ImageAlternative: "Debos logo",
 		Link:             "https://debos.ai/",
-		Techs:            []string{"React 19", "Next.js", "TypeScript", ".NET", "PostgreSQL", "Playwright", "Sentry", "Claude Code / MCP"},
+		Techs:            []string{"React 19", "Next.js", "TypeScript", ".NET", "PostgreSQL", "Playwright", "Sentry", "Tailwind CSS", "Claude Code / MCP"},
 	}
 	nivimuN = expNeutral{
 		Company:          "Nivimu",
@@ -105,12 +105,12 @@ var (
 			"Owned frontend delivery; sustained it solo for ~8 months (3 large features to production, zero critical reverts)",
 			"Took over the tech department's delivery coordination — deadlines, unblocking, comms — a function the CTO handed over; the team's delivery benchmark",
 			"Built 6+ product modules end to end + a full-stack device search (React UI + .NET endpoint + PostgreSQL trigram indexes)",
-			"Cross-cutting architectural refactors adopted as team conventions; built the design system and type-safe i18n across the app",
+			"Cross-cutting refactors (barrel-file removal, route groups, cross-module alignment) adopted as team conventions; built the design system and type-safe i18n across the app",
 			"Built the end-to-end test suite (Playwright) from a dormant setup; added feature flags (Amplitude) + observability (Sentry)",
 		},
 		Extra: []string{
 			"Authored the team's AI-engineering conventions (CLAUDE.md + versioned code-review skills)",
-			"AI-augmented workflow: Claude Code, LLM agents, MCP",
+			"Claude Code let me learn .NET far faster and work safely inside the backend — I shipped the advanced trigram/GIN search end to end without waiting on the backend team",
 		},
 	}
 	debosES = expProse{
@@ -121,12 +121,12 @@ var (
 			"Lideré la entrega del frontend; la sostuve en solitario durante ~8 meses (3 grandes funcionalidades a producción, cero reverts críticos)",
 			"Asumí la coordinación de entrega del departamento técnico — plazos, desbloqueos, comunicación — una función que me delegó el CTO; el referente de entrega del equipo",
 			"Construí más de 6 módulos de producto de punta a punta + un buscador de dispositivos full-stack (UI en React + endpoint en .NET + índices trigram en PostgreSQL)",
-			"Refactors arquitectónicos transversales adoptados como convenciones del equipo; creé el design system y la i18n type-safe de toda la app",
+			"Refactors transversales (eliminación de barrel files, route groups, alineación entre módulos) adoptados como convenciones del equipo; creé el design system y la i18n type-safe de toda la app",
 			"Construí la suite de tests end-to-end (Playwright) desde una configuración inactiva; añadí feature flags (Amplitude) + observabilidad (Sentry)",
 		},
 		Extra: []string{
 			"Redacté las convenciones de ingeniería con IA del equipo (CLAUDE.md + skills de code review versionadas)",
-			"Flujo de trabajo potenciado por IA: Claude Code, agentes LLM, MCP",
+			"Claude Code me permitió aprender .NET mucho más rápido y trabajar con seguridad dentro del backend — saqué el buscador avanzado con trigram/GIN de punta a punta sin depender del equipo de backend",
 		},
 	}
 	debosFR = expProse{
@@ -137,12 +137,12 @@ var (
 			"Pilotage de la livraison du frontend ; maintenu seul pendant ~8 mois (3 grandes fonctionnalités en production, zéro revert critique)",
 			"Pris en charge la coordination de la livraison du département technique — délais, déblocages, communication — une fonction déléguée par le CTO ; la référence de livraison de l'équipe",
 			"Construit plus de 6 modules produit de bout en bout + une recherche d'appareils full-stack (UI React + endpoint .NET + index trigram PostgreSQL)",
-			"Refactorisations architecturales transverses adoptées comme conventions d'équipe ; créé le design system et l'i18n type-safe de toute l'application",
+			"Refactorisations transverses (suppression des barrel files, route groups, alignement entre modules) adoptées comme conventions d'équipe ; créé le design system et l'i18n type-safe de toute l'application",
 			"Construit la suite de tests end-to-end (Playwright) à partir d'une configuration dormante ; ajouté des feature flags (Amplitude) + observabilité (Sentry)",
 		},
 		Extra: []string{
 			"Rédigé les conventions d'ingénierie IA de l'équipe (CLAUDE.md + skills de code review versionnées)",
-			"Flux de travail augmenté par l'IA : Claude Code, agents LLM, MCP",
+			"Claude Code m'a permis d'apprendre .NET bien plus vite et d'intervenir en toute sécurité dans le backend — j'ai livré la recherche avancée trigram/GIN de bout en bout sans dépendre de l'équipe backend",
 		},
 	}
 
@@ -214,37 +214,37 @@ var (
 	integroEN = expProse{
 		CompanyType:      "Startup",
 		Contract:         "Freelancer",
-		Position:         "Full stack",
+		Position:         "Front End",
 		Responsabilities: []string{"Sole developer and technical analyst for a startup — company site end to end, design system and branding."},
 	}
 	integroES = expProse{
 		CompanyType:      "Startup",
 		Contract:         "Freelance",
-		Position:         "Full stack",
+		Position:         "Front End",
 		Responsabilities: []string{"Único desarrollador y analista técnico de una startup — web de empresa de punta a punta, design system y branding."},
 	}
 	integroFR = expProse{
 		CompanyType:      "Startup",
 		Contract:         "Freelance",
-		Position:         "Full stack",
+		Position:         "Front End",
 		Responsabilities: []string{"Seul développeur et analyste technique d'une startup — site d'entreprise de bout en bout, design system et branding."},
 	}
 
 	attlosEN = expProse{
 		CompanyType:      "Startup",
-		Contract:         "Intern",
+		Contract:         "",
 		Position:         "Front End",
 		Responsabilities: []string{"First professional TypeScript/React role — built product features in an Agile/Scrum team."},
 	}
 	attlosES = expProse{
 		CompanyType:      "Startup",
-		Contract:         "Becario",
+		Contract:         "",
 		Position:         "Front End",
 		Responsabilities: []string{"Primer puesto profesional con TypeScript/React — desarrollé features de producto en un equipo Agile/Scrum."},
 	}
 	attlosFR = expProse{
 		CompanyType:      "Startup",
-		Contract:         "Stagiaire",
+		Contract:         "",
 		Position:         "Front End",
 		Responsabilities: []string{"Premier poste professionnel en TypeScript/React — développé des fonctionnalités produit dans une équipe Agile/Scrum."},
 	}

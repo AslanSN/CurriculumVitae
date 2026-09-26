@@ -32,7 +32,12 @@ templ ExperienceCard(workplace constants.ExperienceStruct) {
 						<p class="text-sm text-zinc-400">{ workplace.CompanyType } · { workplace.Position }</p>
 					</div>
 				</div>
-				<p class="font-mono text-sm text-zinc-500">{ workplace.Contract } · { workplace.RangeDate }</p>
+				<p class="font-mono text-sm text-zinc-500">
+					if workplace.Contract != "" {
+						{ workplace.Contract } · 
+					}
+					{ workplace.RangeDate }
+				</p>
 			</div>
 			if workplace.Compact {
 				<div>

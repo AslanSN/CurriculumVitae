@@ -86,8 +86,8 @@ var dicts = map[Locale]Dict{
 		ContactMe:  "Contact me",
 		DownloadCV: "Download CV",
 
-		HeroRole:    "Senior Full-Stack Engineer",
-		HeroTagline: "AI-native · React / Next.js + .NET · platform",
+		HeroRole:    "AI-native Full-Stack Engineer",
+		HeroTagline: "Senior · React / Next.js + .NET · platform",
 
 		ChallengesIntro:     "Company technical tests under a deadline — how I approach an unfamiliar problem, and the verdict each one earned.",
 		ChallengeRepository: "Repository",
@@ -117,7 +117,7 @@ var dicts = map[Locale]Dict{
 		CopyEmail:   "Copy email",
 		ThemeToggle: "Toggle theme",
 
-		MetaTitle:       "Alan Staub Negro — Senior Full-Stack Engineer (AI-native)",
+		MetaTitle:       "Alan Staub Negro — AI-native Full-Stack Engineer (Senior)",
 		MetaDescription: "Senior full-stack engineer (~5y): React 19 / Next.js + TypeScript on the front, real .NET / PostgreSQL on the back, AI-native (Claude Code, MCP). Trilingual, remote-first.",
 	},
 
@@ -137,8 +137,8 @@ var dicts = map[Locale]Dict{
 		ContactMe:  "Contáctame",
 		DownloadCV: "Descargar CV",
 
-		HeroRole:    "Ingeniero Full-Stack Senior",
-		HeroTagline: "AI-native · React / Next.js + .NET · plataforma",
+		HeroRole:    "Ingeniero Full-Stack AI-native",
+		HeroTagline: "Senior · React / Next.js + .NET · plataforma",
 
 		ChallengesIntro:     "Pruebas técnicas de empresa contra reloj — cómo abordo un problema desconocido, y el veredicto que se llevó cada una.",
 		ChallengeRepository: "Repositorio",
@@ -168,7 +168,7 @@ var dicts = map[Locale]Dict{
 		CopyEmail:   "Copiar correo",
 		ThemeToggle: "Cambiar tema",
 
-		MetaTitle:       "Alan Staub Negro — Ingeniero Full-Stack Senior (AI-native)",
+		MetaTitle:       "Alan Staub Negro — Ingeniero Full-Stack AI-native (Senior)",
 		MetaDescription: "Ingeniero full-stack senior (~5 años): React 19 / Next.js + TypeScript en el front, .NET / PostgreSQL real en el back, AI-native (Claude Code, MCP). Trilingüe, remote-first.",
 	},
 
@@ -188,8 +188,8 @@ var dicts = map[Locale]Dict{
 		ContactMe:  "Me contacter",
 		DownloadCV: "Télécharger le CV",
 
-		HeroRole:    "Ingénieur Full-Stack Senior",
-		HeroTagline: "AI-native · React / Next.js + .NET · plateforme",
+		HeroRole:    "Ingénieur Full-Stack AI-native",
+		HeroTagline: "Senior · React / Next.js + .NET · plateforme",
 
 		ChallengesIntro:     "Tests techniques d'entreprise sous contrainte de délai — comment j'aborde un problème inconnu, et le verdict obtenu pour chacun.",
 		ChallengeRepository: "Dépôt",
@@ -219,7 +219,7 @@ var dicts = map[Locale]Dict{
 		CopyEmail:   "Copier l'e-mail",
 		ThemeToggle: "Changer de thème",
 
-		MetaTitle:       "Alan Staub Negro — Ingénieur Full-Stack Senior (AI-native)",
+		MetaTitle:       "Alan Staub Negro — Ingénieur Full-Stack AI-native (Senior)",
 		MetaDescription: "Ingénieur full-stack senior (~5 ans) : React 19 / Next.js + TypeScript côté front, .NET / PostgreSQL réel côté back, AI-native (Claude Code, MCP). Trilingue, remote-first.",
 	},
 }

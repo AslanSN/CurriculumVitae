@@ -113,7 +113,7 @@ var (
 		Highlights: []string{
 			"16-defect catalog",
 			"MCP server · 5 agent tools",
-			"Evals 11/16 · recall & precision 11/11",
+			"Evals: 11/16 statically detected · recall & precision 11/11",
 			".NET · PostgreSQL · Next.js / React 19",
 		},
 	}
@@ -122,11 +122,11 @@ var (
 		Tagline:      "Un harness de ingeniería AI-native — y el catálogo de bugs sutiles que compilan, pasan la revisión y llegan a producción igualmente.",
 		Lead:         "La diferencia que importa no es usar un LLM para teclear más rápido — es diseñar el sistema que le hace producir código correcto en un dominio lleno de trampas. Gotcha es ese sistema: un catálogo de defectos, skills de revisión versionadas, un servidor MCP que le pasa esas reglas a un agente mientras escribe, y una suite de evals que mide si la IA cae en cada trampa.",
 		VideoAlt:     "Grabación de pantalla: al teclear se filtra un buscador de tickets sobre ~500k filas, se cancela una petición obsoleta y aparecen los resultados coincidentes.",
-		VideoCaption: "Flagship — búsqueda robusta de tickets sobre ~500k filas: mínimo de caracteres, debounce y cancelación de peticiones en el cliente; una búsqueda trigram que sigue siendo un BitmapOr, no un Seq Scan, en el servidor.",
+		VideoCaption: "Caso estrella — búsqueda robusta de tickets sobre ~500k filas: mínimo de caracteres, debounce y cancelación de peticiones en el cliente; una búsqueda trigram que sigue siendo un BitmapOr, no un Seq Scan, en el servidor.",
 		Highlights: []string{
 			"Catálogo de 16 defectos",
 			"Servidor MCP · 5 herramientas",
-			"Evals 11/16 · recall y precisión 11/11",
+			"Evals: 11/16 detectables en estático · recall y precisión 11/11",
 			".NET · PostgreSQL · Next.js / React 19",
 		},
 	}
@@ -135,11 +135,11 @@ var (
 		Tagline:      "Un harness d'ingénierie AI-native — et le catalogue de bugs subtils qui compilent, passent la revue et partent en production quand même.",
 		Lead:         "L'écart qui compte n'est pas d'utiliser un LLM pour taper plus vite — c'est de concevoir le système qui lui fait produire du code correct dans un domaine plein de pièges. Gotcha est ce système : un catalogue de défauts, des skills de revue versionnées, un serveur MCP qui fournit ces règles à un agent pendant qu'il écrit, et une suite d'evals qui mesure si l'IA tombe dans chaque piège.",
 		VideoAlt:     "Capture d'écran : la saisie filtre une recherche de tickets sur ~500k lignes, une requête obsolète est annulée et les résultats correspondants s'affichent.",
-		VideoCaption: "Flagship — recherche robuste de tickets sur ~500k lignes : minimum de caractères, debounce et annulation des requêtes côté client ; une recherche trigram qui reste un BitmapOr, pas un Seq Scan, côté serveur.",
+		VideoCaption: "Cas phare — recherche robuste de tickets sur ~500k lignes : minimum de caractères, debounce et annulation des requêtes côté client ; une recherche trigram qui reste un BitmapOr, pas un Seq Scan, côté serveur.",
 		Highlights: []string{
 			"Catalogue de 16 défauts",
 			"Serveur MCP · 5 outils",
-			"Evals 11/16 · rappel et précision 11/11",
+			"Evals : 11/16 détectables en statique · rappel et précision 11/11",
 			".NET · PostgreSQL · Next.js / React 19",
 		},
 	}
