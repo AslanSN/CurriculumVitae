@@ -6,7 +6,7 @@ import (
 	"github.com/a-h/templ"
 )
 
-// Artifact is a self-directed, open-source project shown on its own — the
+// Artifact is a self-directed project shown on its own — the
 // executable proof behind the "AI-native" label rather than the label itself.
 type Artifact struct {
 	Name         string        // brand name, not localized
@@ -101,6 +101,16 @@ var memorizameArtN = artifactNeutral{
 	EmbedURL: "https://memorizame-v2.vercel.app/",
 }
 
+// Valkiara is the technical-SEO artifact: a realist tattoo artist's site in
+// Palma, live in production. The repo is private, so there is no RepoLink —
+// the live site is the evidence. Shown as a LIVE embed, like Memorízame.
+var valkiaraN = artifactNeutral{
+	Name:     "Valkiara",
+	ID:       "valkiara",
+	LiveLink: "https://valkiara.com/",
+	EmbedURL: "https://valkiara.com/",
+}
+
 // --- translatable copy, per locale ------------------------------------------
 
 var (
@@ -186,21 +196,68 @@ var (
 			"SvelteKit 2 · Svelte 5",
 		},
 	}
+
+	valkiaraEN = artifactProse{
+		Eyebrow:      "Live site · technical SEO",
+		Tagline:      "The website of a realist tattoo artist in Palma de Mallorca — designed from scratch and built to be found on Google in three languages.",
+		Lead:         "Server-rendered with Go and Templ, with no JavaScript beyond the essentials. I designed it from scratch (layout, typography, colour) and engineered its technical SEO: canonical URLs, hreflang across Spanish, English and German with translated slugs, a sitemap, JSON-LD structured data, a share card per page, and thin pages kept out of the index until they have content.",
+		VideoAlt:     "Live embedded preview of valkiara.com, a tattoo artist's website",
+		VideoCaption: "Live — the production site, embedded, and still evolving: the design is a work in progress. Open it in a new tab to browse it in full.",
+		Highlights: []string{
+			"Technical SEO",
+			"hreflang · ES/EN/DE",
+			"JSON-LD · sitemap",
+			"Server-rendered · minimal JS",
+			"Go · Templ",
+		},
+	}
+	valkiaraES = artifactProse{
+		Eyebrow:      "Web en producción · SEO técnico",
+		Tagline:      "La web de una tatuadora realista en Palma de Mallorca — diseñada desde cero y construida para que Google la encuentre en tres idiomas.",
+		Lead:         "Renderizada en servidor con Go y Templ, sin más JavaScript que el imprescindible. La diseñé desde cero (maquetación, tipografía, color) y me encargué de su SEO técnico: URLs canónicas, hreflang en español, inglés y alemán con slugs traducidos, sitemap, datos estructurados JSON-LD, una tarjeta para compartir por página, y las páginas con poco contenido fuera del índice hasta que lo tengan.",
+		VideoAlt:     "Vista previa en vivo de valkiara.com, la web de una tatuadora",
+		VideoCaption: "En vivo — la web en producción, embebida, y aún evolucionando: el diseño está en curso. Ábrela en otra pestaña para recorrerla entera.",
+		Highlights: []string{
+			"SEO técnico",
+			"hreflang · ES/EN/DE",
+			"JSON-LD · sitemap",
+			"Renderizado en servidor · JS mínimo",
+			"Go · Templ",
+		},
+	}
+	valkiaraFR = artifactProse{
+		Eyebrow:      "Site en production · SEO technique",
+		Tagline:      "Le site d'une tatoueuse réaliste à Palma de Majorque — conçu de zéro et construit pour être trouvé sur Google en trois langues.",
+		Lead:         "Rendu côté serveur en Go et Templ, sans JavaScript au-delà de l'essentiel. Je l'ai conçu de zéro (mise en page, typographie, couleur) et j'en ai assuré le SEO technique : URL canoniques, hreflang en espagnol, anglais et allemand avec des slugs traduits, un sitemap, des données structurées JSON-LD, une carte de partage par page, et les pages trop minces exclues de l'index tant qu'elles n'ont pas de contenu.",
+		VideoAlt:     "Aperçu en direct intégré de valkiara.com, le site d'une tatoueuse",
+		VideoCaption: "En direct — le site en production, intégré, et toujours en évolution : le design est en cours. Ouvrez-le dans un nouvel onglet pour le parcourir en entier.",
+		Highlights: []string{
+			"SEO technique",
+			"hreflang · ES/EN/DE",
+			"JSON-LD · sitemap",
+			"Rendu serveur · JS minimal",
+			"Go · Templ",
+		},
+	}
 )
 
 // Artifacts lists the self-directed projects per locale, in feature order:
-// Gotcha (AI-native engineering) first, then Memorízame (design engineering).
+// Gotcha (AI-native engineering) first, then Memorízame (design engineering),
+// then Valkiara (technical SEO on a live site).
 var Artifacts = map[i18n.Locale][]Artifact{
 	i18n.EN: {
 		buildArtifact(gotchaN, gotchaEN),
 		buildArtifact(memorizameArtN, memorizameArtEN),
+		buildArtifact(valkiaraN, valkiaraEN),
 	},
 	i18n.ES: {
 		buildArtifact(gotchaN, gotchaES),
 		buildArtifact(memorizameArtN, memorizameArtES),
+		buildArtifact(valkiaraN, valkiaraES),
 	},
 	i18n.FR: {
 		buildArtifact(gotchaN, gotchaFR),
 		buildArtifact(memorizameArtN, memorizameArtFR),
+		buildArtifact(valkiaraN, valkiaraFR),
 	},
 }
