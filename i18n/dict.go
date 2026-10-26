@@ -35,7 +35,7 @@ type Dict struct {
 	Day                 string
 	Days                string
 
-	// Artifact section (the self-directed, open-source flagship)
+	// Artifact section (the self-directed projects)
 	ArtifactIntro    string
 	ArtifactColophon string
 
@@ -95,7 +95,7 @@ var dicts = map[Locale]Dict{
 		Day:                 "day",
 		Days:                "days",
 
-		ArtifactIntro:    "Self-directed and open source — the proof behind the labels, not the labels themselves. One makes an AI produce correct code; the other is a product I designed and built end to end.",
+		ArtifactIntro:    "Self-directed — the proof behind the labels, not the labels themselves. One makes an AI produce correct code; one is a product I designed and built end to end; one is a live site engineered to be found.",
 		ArtifactColophon: "How it was built",
 
 		Stack:      "Stack",
@@ -146,7 +146,7 @@ var dicts = map[Locale]Dict{
 		Day:                 "día",
 		Days:                "días",
 
-		ArtifactIntro:    "Autodirigidos y de código abierto — la prueba detrás de las etiquetas, no las etiquetas. Uno hace que una IA produzca código correcto; el otro es un producto que diseñé y construí de punta a punta.",
+		ArtifactIntro:    "Autodirigidos — la prueba detrás de las etiquetas, no las etiquetas. Uno hace que una IA produzca código correcto; otro es un producto que diseñé y construí de punta a punta; el tercero, una web en producción hecha para que la encuentren.",
 		ArtifactColophon: "Cómo se construyó",
 
 		Stack:      "Stack",
@@ -197,7 +197,7 @@ var dicts = map[Locale]Dict{
 		Day:                 "jour",
 		Days:                "jours",
 
-		ArtifactIntro:    "En autonomie et open source — la preuve derrière les étiquettes, pas les étiquettes. L'un fait qu'une IA produit du code correct ; l'autre est un produit que j'ai conçu et construit de bout en bout.",
+		ArtifactIntro:    "En autonomie — la preuve derrière les étiquettes, pas les étiquettes. L'un fait qu'une IA produit du code correct ; un autre est un produit que j'ai conçu et construit de bout en bout ; le troisième, un site en production pensé pour être trouvé.",
 		ArtifactColophon: "Comment il est construit",
 
 		Stack:      "Stack",
